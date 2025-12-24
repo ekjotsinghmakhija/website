@@ -1,0 +1,109 @@
+import NotebookLayout from '@/components/layout/NotebookLayout';
+import { Network, ShieldCheck, Zap, Cpu, Search, Scale } from 'lucide-react';
+
+export const meta = {
+  title: "Why I Founded Metanthropic",
+  date: "Dec 13, 2025",
+  readTime: "7 min read",
+  tag: "Manifesto"
+};
+
+<NotebookLayout meta={meta}>
+
+Today marks a significant milestone in my career and research. I founded **Metanthropic AI** because I believe the current paradigm of AI development faces a critical <span className="text-rose-400 font-bold font-serif italic">Alignment Gap</span>.
+
+We are currently building engines of immense power, but treating their steering mechanisms as an afterthought. Safety is too often treated as a post-training patch—a layer of "Reinforcement Learning from Human Feedback" (RLHF) slapped onto a completed model like a sticker on a rocket engine.
+
+My thesis is straightforward but demanding: **True Artificial General Intelligence (AGI) cannot be built by simply scaling parameters; it must be architected for understanding.**
+
+For the past year, I have been working to establish an independent lab that operates differently. We are not interested in incremental improvements. We are architecting novel large-scale models from scratch, integrating <span className="text-blue-400 font-bold">interpretability</span> and <span className="text-purple-400 font-bold">safety objectives</span> directly into the pre-training compute loop.
+
+## The Core Thesis
+
+Under my leadership, Metanthropic operates on a single defining principle: **Capability and Safety are not opposing forces.**
+
+In traditional engineering, safety often comes at the cost of speed (think of nuclear regulations). In Intelligence Engineering, I argue the opposite: **Safe systems are more capable systems.**
+
+A model that hallucinates is unsafe *and* incompetent. A model that deceives is misaligned *and* unreliable. By solving for safety (robustness, truthfulness, stability), we are inherently solving for capability.
+
+> **The Axiom:** "The path to AGI requires a deep, empirical understanding of increasingly general systems."
+
+## Our Research Agenda
+
+Our work pushes the frontier of deep learning across three integrated pillars. We are moving beyond standard transformer implementations to architect next-generation models designed for high efficiency and massive scale.
+
+{/* FIXED: Changed <p> to <div> to prevent hydration errors in grid */}
+<div className="grid grid-cols-1 gap-6 my-12 not-prose">
+  {/* Pillar 1: Scaling */}
+  <div className="p-8 bg-[#0A0A0A] border border-blue-500/20 rounded-sm hover:border-blue-500/50 transition-all group relative overflow-hidden">
+    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+        <Scale size={64} className="text-blue-400" />
+    </div>
+    <div className="flex items-center gap-3 mb-4 text-blue-400">
+      <Cpu size={24} />
+      <h3 className="font-serif text-2xl m-0 text-white">Scaling & Novel Architectures</h3>
+    </div>
+    <div className="text-gray-400 m-0 leading-relaxed">
+      We focus on optimizing <strong className="text-blue-300">compute-to-performance ratios</strong>. We are developing architectures that sustain coherence over long contexts, moving beyond the quadratic bottlenecks of standard attention mechanisms.
+    </div>
+  </div>
+
+  {/* Pillar 2: Capabilities */}
+  <div className="p-8 bg-[#0A0A0A] border border-purple-500/20 rounded-sm hover:border-purple-500/50 transition-all group relative overflow-hidden">
+    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+        <Zap size={64} className="text-purple-400" />
+    </div>
+    <div className="flex items-center gap-3 mb-4 text-purple-400">
+      <Network size={24} />
+      <h3 className="font-serif text-2xl m-0 text-white">Foundational Capabilities</h3>
+    </div>
+    <div className="text-gray-400 m-0 leading-relaxed">
+      True general intelligence requires more than pattern matching. We are advancing the state of the art in <strong className="text-purple-300">reasoning</strong> and <strong className="text-purple-300">long-horizon planning</strong>. We aim to build systems capable of complex, multi-step problem solving, not just next-token prediction.
+    </div>
+  </div>
+
+  {/* Pillar 3: Safety */}
+  <div className="p-8 bg-[#0A0A0A] border border-indigo-500/20 rounded-sm hover:border-indigo-500/50 transition-all group relative overflow-hidden">
+    <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+        <ShieldCheck size={64} className="text-indigo-400" />
+    </div>
+    <div className="flex items-center gap-3 mb-4 text-indigo-400">
+      <Search size={24} />
+      <h3 className="font-serif text-2xl m-0 text-white">Safety & Alignment</h3>
+    </div>
+    <div className="text-gray-400 m-0 leading-relaxed">
+      At Metanthropic, safety is not an adjunct effort. We conduct rigorous, empirical analysis to ensure our models are robust against <strong className="text-indigo-300">adversarial failure modes</strong>. We treat alignment as a physics problem, not a policy problem.
+    </div>
+  </div>
+</div>
+
+## The Road Ahead
+
+The development of AGI presents the greatest technical opportunity of our time, but it necessitates an uncompromising commitment to rigor.
+
+We are moving alignment from **theoretical philosophy** to **rigorous engineering**. We are ensuring the path to AGI remains broadly beneficial and accessible.
+
+This is the most challenging and important technical work I have ever undertaken. I am excited to finally share our progress as we push the boundaries of what is possible.
+
+<div className="not-prose mt-12 p-10 bg-gradient-to-r from-blue-900/10 via-black to-purple-900/10 border border-blue-500/20 rounded-sm text-center relative overflow-hidden group">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+  <h3 className="relative z-10 text-3xl font-serif text-white mb-6 tracking-tight">
+    Join the Odyssey.
+  </h3>
+
+  <div className="relative z-10 text-blue-200/60 mb-8 max-w-lg mx-auto font-light">
+    Follow our research as we map the physics of intelligence.
+  </div>
+
+  <a
+    href="https://metanthropic.vercel.app"
+    target="_blank"
+    className="relative z-10 inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-sm hover:bg-blue-600 hover:text-white transition-all duration-300 no-underline shadow-[0_0_30px_rgba(59,130,246,0.3)]"
+  >
+    <Zap size={20} />
+    Visit Metanthropic
+  </a>
+</div>
+
+</NotebookLayout>
