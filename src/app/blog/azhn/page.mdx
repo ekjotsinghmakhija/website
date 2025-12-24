@@ -1,0 +1,139 @@
+import NotebookLayout from '@/components/layout/NotebookLayout';
+import { Code, Image as ImageIcon, Layers, Github, Cpu, Zap, Box } from 'lucide-react';
+
+export const meta = {
+  title: "Drawing with DOM",
+  date: "Aug 05, 2025",
+  readTime: "4 min read",
+  tag: "Library"
+};
+
+<NotebookLayout meta={meta}>
+
+Generating dynamic images on the web has traditionally been a choice between <span className="text-rose-400 font-bold">two evils</span>.
+
+It usually starts with a simple requirement: *"We need dynamic Open Graph images for our blog posts."* You want every shared link on Twitter/X to have a custom image with the title and author.
+
+You have two options, and they both hurt:
+
+1.  <strong className="text-amber-400">The Heavyweight (Puppeteer):</strong> Spawning a headless Chrome browser just to take a screenshot. This is slow, expensive, and crashes serverless functions like a house of cards.
+2.  <strong className="text-amber-400">The Hard Way (Canvas API):</strong> Writing imperative, low-level drawing instructions like `ctx.moveTo(10, 10)`. It is painful, unreadable, and impossible to debug.
+
+I wanted **Option C**: Write HTML/CSS, and get a vector image.
+
+I didn't want a screenshot. I wanted a <span className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent font-bold font-serif italic">Compiler</span>.
+
+## The "Photographer" Fallacy
+
+To understand why **Azhn** exists, you have to understand why Puppeteer is the wrong tool for this job.
+
+Using a headless browser to generate an image is like **hiring a professional photographer to take a picture of a blueprint.**
+
+{/* Note: Use div instead of p inside custom blocks to avoid hydration errors */}
+<div className="my-8 p-6 border-l-4 border-amber-500 bg-amber-500/5 text-gray-300 italic not-prose">
+  1. You have to build the physical studio (spin up Chrome / Chromium).<br/>
+  2. You have to paint the wall (render HTML/CSS).<br/>
+  3. You have to set up lighting and take the photo (screenshot).<br/>
+  4. You tear down the studio.
+</div>
+
+It is wasteful. It is heavy. It is <span className="text-rose-400 font-medium">entropy</span>.
+
+**Azhn** is different. Azhn doesn't take a photo. **Azhn reads the blueprint.** It reads your HTML instructions and translates them directly into mathematical SVG code.
+
+## Enter Azhn
+
+**Azhn** is a TypeScript engine that tricks the browser (or Node.js) into thinking it's rendering a webpage, but captures the render tree as an SVG.
+
+It allows you to build Open Graph images, dynamic charts, and generative art using the same `<div>` and `flex` semantics you use every day.
+
+### The "Aha" Moment
+
+I realized that the <span className="text-lime-400 font-mono">DOM</span> (Document Object Model) is actually just a very complex <span className="text-fuchsia-400 font-bold">Vector Graphics Instruction Set</span>.
+
+If you can traverse the DOM tree, calculate the **Computed Styles** of every node, and map them to SVG attributes, you can "compile" HTML to SVG without ever rendering a pixel.
+
+* `<div style="background: red">` becomes `<rect fill="#ff0000" />`
+* `border-radius: 50%` becomes `<circle />`
+* `Text` becomes `<text />`
+
+```typescript
+// The Azhn Experience
+import { render } from 'azhn';
+
+// We write React/HTML...
+const svg = await render(
+  <div style={{
+    display: 'flex',
+    background: '#000',
+    alignItems: 'center'
+  }}>
+    <h1 style={{
+      color: '#00FFFF', // Cyan
+      fontFamily: 'Geist Mono'
+    }}>
+      Hello World
+    </h1>
+  </div>
+);
+// ...and we get a pure SVG string back.
+```
+
+## Why Vectors?
+
+Unlike Puppeteer, which gives you a rasterized PNG (a grid of pixels), **Azhn** gives you a crisp, infinite-resolution SVG (mathematical shapes).
+
+{/* FIXED: Changed inner <p> tags to <div> to prevent 'p inside p' hydration errors */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8 not-prose">
+  <div className="p-4 bg-cyan-500/5 border border-cyan-500/20 rounded-lg hover:border-cyan-500/50 transition-colors">
+    <div className="text-cyan-400 mb-2">
+      <Box size={24} />
+    </div>
+    <h4 className="text-white font-serif mb-1">File Size</h4>
+    <div className="text-sm text-gray-400">
+      <span className="text-cyan-400 font-mono font-bold">5kb</span> vs 500kb. SVG text is just text, not thousands of pixels.
+    </div>
+  </div>
+
+  <div className="p-4 bg-yellow-500/5 border border-yellow-500/20 rounded-lg hover:border-yellow-500/50 transition-colors">
+    <div className="text-yellow-400 mb-2">
+      <Zap size={24} />
+    </div>
+    <h4 className="text-white font-serif mb-1">Speed</h4>
+    <div className="text-sm text-gray-400">
+      <span className="text-yellow-400 font-mono font-bold">&lt;10ms</span> generation time. No browser boot-up time.
+    </div>
+  </div>
+
+  <div className="p-4 bg-fuchsia-500/5 border border-fuchsia-500/20 rounded-lg hover:border-fuchsia-500/50 transition-colors">
+    <div className="text-fuchsia-400 mb-2">
+      <Layers size={24} />
+    </div>
+    <h4 className="text-white font-serif mb-1">Scalability</h4>
+    <div className="text-sm text-gray-400">
+      Perfect for <span className="text-fuchsia-400">Edge Functions</span>. No Chromium binary required.
+    </div>
+  </div>
+</div>
+
+It is the engine running the dynamic visualizations you see on my personal site. It turns the "heavy" task of image generation into a lightweight, <span className="text-lime-400 font-bold">deterministic function</span>.
+
+<div className="not-prose mt-12 p-8 bg-gradient-to-br from-cyan-900/10 via-black to-fuchsia-900/10 border border-white/10 rounded-xl text-center backdrop-blur-sm group hover:border-cyan-500/30 transition-all">
+  <div className="flex justify-center mb-4 text-cyan-400 group-hover:scale-110 transition-transform duration-500">
+    <Cpu size={40} />
+  </div>
+  <h3 className="text-3xl font-serif text-white mb-4">Start Drawing</h3>
+  <div className="text-gray-400 mb-8 max-w-md mx-auto">
+    Zero-dependency HTML-to-SVG generation. <span className="text-cyan-400 font-mono">npm install azhn</span>
+  </div>
+  <a
+    href="https://github.com/ekjotsinghmakhija/azhn"
+    target="_blank"
+    className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-cyan-400 transition-colors no-underline shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+  >
+    <Github size={20} />
+    View Source Code
+  </a>
+</div>
+
+</NotebookLayout>
