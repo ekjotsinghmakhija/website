@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #030304;
+  --foreground: #ededed;
+}
+
+body {
+  /* CHANGE: Deep dark base with a vibrant top glow */
+  background-color: #030304;
+  background-image:
+    radial-gradient(at 50% 0%, rgba(124, 58, 237, 0.25) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(24, 47, 255, 0.15) 0px, transparent 50%);
+
+  color: var(--foreground);
+  min-height: 100vh;
+  /* Removed the dizzying animation */
+}
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
