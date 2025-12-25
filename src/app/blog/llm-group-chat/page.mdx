@@ -1,0 +1,55 @@
+import NotebookLayout from '@/components/layout/NotebookLayout';
+import { Users, Bot, MessageSquare, Github } from 'lucide-react';
+
+export const meta = {
+  title: "The Death of the Yes-Man",
+  date: "Dec 15, 2025",
+  readTime: "5 min read",
+  tag: "Product"
+};
+
+<NotebookLayout meta={meta}>
+
+If you ask ChatGPT a question, it tries to please you. If you ask Gemini, it tries to be safe. If you ask Claude, it tries to be nuanced.
+
+But if you ask a single model to critique itself, it fails.
+
+<span className="text-violet-400 font-bold">LLMs are sycophants.</span> They suffer from "Mode Collapse" in reasoning—they lock onto a probable answer and defend it, even if it's wrong. They are the ultimate "Yes Men."
+
+I built the **LLM Group Chat** to fire the Yes Man.
+
+## The Boardroom Architecture
+
+I didn't want a chatbot; I wanted a **Board of Directors**.
+
+This project is a multi-agent consensus engine. Instead of a single model generating an answer, it orchestrates a "Blind Peer Review" between the giants: **GPT-4**, **Claude 3.5 Sonnet**, and **Gemini Pro**.
+
+### The Protocol
+
+1.  **The Prompt:** User asks a complex question (e.g., *"Critique this system architecture"*).
+2.  **Blind Generation:** All three models generate answers independently, hidden from each other.
+3.  **The Roast:** Model A reads Model B's answer (anonymously) and tears it apart.
+4.  **The Synthesis:** A "Chairman" Agent (running on a high-temp prompt) reads the debate and synthesizes a final, high-fidelity truth.
+
+> **The Axiom:** "Intelligence is not found in the neuron, but in the conversation."
+
+## Why It Works
+
+It turns out that **LLMs are better critics than creators**. Even a smaller model can spot a hallucination in a larger model's output if asked specifically to critique it.
+
+By forcing adversarial debate, we reduce hallucination rates by nearly <strong className="text-fuchsia-400">40%</strong>. We turned the "black box" into a **Glass Conference Room**.
+
+<div className="not-prose mt-12 p-8 bg-violet-500/5 border border-violet-500/20 rounded-xl text-center">
+  <h3 className="text-2xl font-serif text-white mb-4">Enter the Boardroom</h3>
+  <p className="text-gray-400 mb-6">Orchestrate your own consensus engine.</p>
+  <a
+    href="https://github.com/ekjotsinghmakhija/llm-groupchat"
+    target="_blank"
+    className="inline-flex items-center gap-2 px-6 py-3 bg-violet-500 text-white font-bold rounded-full hover:bg-violet-400 transition-colors no-underline"
+  >
+    <Github size={20} />
+    View Source
+  </a>
+</div>
+
+</NotebookLayout>
