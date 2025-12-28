@@ -3,11 +3,10 @@ import type { Metadata } from "next";
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/sections/Footer';
 import InteractiveGrid from '@/components/ui/InteractiveGrid';
-import { PUBLICATIONS } from '@/lib/publications'; // FIX: Import from new modular file
-import { FileText, ArrowUpRight, BookOpen } from 'lucide-react';
+import { PUBLICATIONS } from '@/lib/publications';
+import { FileText, ArrowUpRight, BookOpen, FlaskConical, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-// FIX: SEO Metadata (Now works because we removed 'use client')
 export const metadata: Metadata = {
   title: "Publications | Ekjot Singh",
   description: "Research papers, preprints, and technical notes on the thermodynamics of intelligence.",
@@ -31,7 +30,6 @@ export default function PublicationsPage() {
               <BookOpen size={14} />
               <span>Research & Writing</span>
            </div>
-           {/* FIX: Clamped Typography for Mobile */}
            <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">
              Publications.
            </h1>
@@ -40,6 +38,34 @@ export default function PublicationsPage() {
            </p>
         </header>
 
+        {/* NEW: Metanthropic Lab Banner */}
+        {/* This solves your dilemma: It keeps them on your site, but offers a clear path to the Lab. */}
+        <div className="mb-16 p-8 md:p-10 rounded-sm border border-blue-500/20 bg-gradient-to-r from-blue-900/10 via-[#050505] to-purple-900/10 relative overflow-hidden group">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent opacity-50" />
+
+            <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+                <div>
+                    <div className="flex items-center gap-3 mb-3 text-blue-400">
+                        <FlaskConical size={20} />
+                        <span className="font-mono text-xs uppercase tracking-widest">Primary Affiliation</span>
+                    </div>
+                    <h3 className="text-2xl font-serif text-white mb-2">Metanthropic Research</h3>
+                    <p className="text-gray-400 max-w-xl leading-relaxed">
+                        I publish the majority of my formal research under the Metanthropic charter.
+                        Access our full archives, including safety evaluations and interpretability logs.
+                    </p>
+                </div>
+
+                <a
+                    href="https://metanthropic.vercel.app/research"
+                    target="_blank"
+                    className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-sm hover:bg-blue-500 transition-colors shrink-0"
+                >
+                    Visit Lab Archives <ArrowRight size={18} />
+                </a>
+            </div>
+        </div>
+
         {/* Publications Grid */}
         <div className="grid gap-6">
           {PUBLICATIONS.map((pub, index) => (
@@ -47,7 +73,6 @@ export default function PublicationsPage() {
               key={index}
               href={pub.link}
               target="_blank"
-              // FIX: Responsive Padding (p-6 on mobile, p-8 on desktop)
               className="group block p-6 md:p-8 border border-white/10 bg-[#050505] hover:bg-[#0A0A0A] hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden"
             >
                {/* Blue Glow on Hover */}
