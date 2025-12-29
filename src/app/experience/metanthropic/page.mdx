@@ -5,12 +5,22 @@ import { ArrowLeft, ArrowRight, FileText, Globe, ShieldCheck, Zap, Lock, Externa
 import Link from 'next/link';
 import Image from 'next/image';
 
-
 <div className="min-h-screen bg-[#030304] text-gray-200 font-sans selection:bg-[#3B82F6] selection:text-white overflow-hidden relative">
   <Navbar />
 
-  {/* --- REPEATING PATTERN BACKGROUND --- */}
-  {/* z-0 ensures it stays behind content. pointer-events-none prevents it from blocking clicks. */}
+  {/* --- BACKGROUND MONOGRAM CANVAS --- */}
+  {/* 'cover' ensures the single image fills the screen.
+      On mobile, this naturally crops to a subsection, keeping the logos legible. */}
+  <div
+    className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
+    style={{
+        backgroundImage: "url('/metanthropic_canvas.png')",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.08
+    }}
+  />
 
   <main className="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-24">
     <Link
@@ -54,9 +64,13 @@ import Image from 'next/image';
 
       ## The Event Horizon
 
-      By late 2025, the silence in the room was deafening. We were watching loss curves plummet and capabilities skyrocket, yet our understanding of *why* it worked remained stagnant. We were building gods in black boxes, hoping they would be benevolent.
+      By late 2025, the silence in the room was deafening.
+      We were watching loss curves plummet and capabilities skyrocket, yet our understanding of *why* it worked remained stagnant.
+      We were building gods in black boxes, hoping they would be benevolent.
 
-      That uncertainty kept me up at night. I realized that the "Alignment Problem" wasn't an engineering bug to be patched with more RLHF. It was a fundamental crisis of physics.
+      That uncertainty kept me up at night.
+      I realized that the "Alignment Problem" wasn't an engineering bug to be patched with more RLHF.
+      It was a fundamental crisis of physics.
 
       {/* CENTERED THESIS */}
       <div className="my-12 py-8 border-y border-white/5 text-center backdrop-blur-sm bg-black/20">
@@ -68,17 +82,22 @@ import Image from 'next/image';
 
       ## A Cathedral, Not a Factory
 
-      We chose to operate differently. In an industry obsessed with speed, we chose depth. We aren't racing to train the largest model; we are racing to understand the smallest circuit.
+      We chose to operate differently.
+      In an industry obsessed with speed, we chose depth. We aren't racing to train the largest model;
+      we are racing to understand the smallest circuit.
 
-      This philosophy drove us to move beyond the probabilistic guessing games of standard transformers. We started asking dangerous questions: *Can we mathematically prove a model is safe before it speaks its first word?*
+      This philosophy drove us to move beyond the probabilistic guessing games of standard transformers.
+      We started asking dangerous questions: *Can we mathematically prove a model is safe before it speaks its first word?*
 
-      This is why we focus on **Mechanistic Interpretability**. Just as biologists mapped the human genome to cure disease, we are mapping the "connectome" of AI to cure deception.
+      This is why we focus on **Mechanistic Interpretability**.
+      Just as biologists mapped the human genome to cure disease, we are mapping the "connectome" of AI to cure deception.
 
       ---
 
       ## The Charter
 
-      Before we wrote a single line of CUDA, we wrote our **Charter**. It is our constitution. It binds us to a simple promise: if we ever feel our work endangers humanity, we stop.
+      Before we wrote a single line of CUDA, we wrote our **Charter**.
+      It is our constitution. It binds us to a simple promise: if we ever feel our work endangers humanity, we stop.
 
       <div className="grid md:grid-cols-2 gap-4 my-12 not-prose">
         <div className="p-6 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm">
@@ -113,7 +132,8 @@ import Image from 'next/image';
 
       ## Our Contributions
 
-      We publish our findings openly. Our work on **Dataset Distillation** and **Sub-Quadratic Attention** is not a trade secret; it is a contribution to the species.
+      We publish our findings openly.
+      Our work on **Dataset Distillation** and **Sub-Quadratic Attention** is not a trade secret; it is a contribution to the species.
 
       <div>
         <a href="https://metanthropic.vercel.app/research" target="_blank" className="block mt-8 no-underline group">
