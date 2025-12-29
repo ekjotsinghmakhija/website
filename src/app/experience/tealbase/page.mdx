@@ -8,11 +8,18 @@ import Image from 'next/image';
 <div className="min-h-screen bg-[#030304] text-gray-200 font-sans selection:bg-teal-400 selection:text-black overflow-hidden relative">
   <Navbar />
 
-  {/* AMBIENT BACKGROUND */}
-  <div className="fixed inset-0 z-0 pointer-events-none">
-      <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-teal-500/10 blur-[120px] rounded-full mix-blend-screen" />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-emerald-500/5 blur-[100px] rounded-full mix-blend-screen" />
-  </div>
+  {/* --- BACKGROUND MONOGRAM CANVAS --- */}
+  {/* 'cover' ensures the single image fills the screen. Opacity set to 0.08. */}
+  <div
+    className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
+    style={{
+        backgroundImage: "url('/tealbase_canvas.png')",
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        opacity: 0.1
+    }}
+  />
 
   <main className="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-24">
     <Link
@@ -66,11 +73,14 @@ import Image from 'next/image';
 
       ## The Breaking Point
 
-      It was 3 AM on a Sunday. Our app had just hit #1 on Product Hunt. Champagne was popped. Then the alerts started.
+      It was 3 AM on a Sunday. Our app had just hit #1 on Product Hunt.
+      Champagne was popped. Then the alerts started.
 
-      We weren't fighting traffic; we were fighting our own infrastructure. The NoSQL database, once our best friend for rapid prototyping, had become a prison. We couldn't query our own data. We couldn't ensure consistency. We were bleeding money on opaque read/write costs.
-
-      I realized then that the "Modern Data Stack" was a lie. It forced a binary choice: move fast and break later, or move slow and survive.
+      We weren't fighting traffic; we were fighting our own infrastructure.
+      The NoSQL database, once our best friend for rapid prototyping, had become a prison. We couldn't query our own data.
+      We couldn't ensure consistency. We were bleeding money on opaque read/write costs.
+      I realized then that the "Modern Data Stack" was a lie.
+      It forced a binary choice: move fast and break later, or move slow and survive.
 
       {/* CENTERED AXIOM (Metanthropic Style) */}
       <div className="my-12 py-8 border-y border-white/5 text-center backdrop-blur-sm bg-black/20">
@@ -84,8 +94,8 @@ import Image from 'next/image';
 
       We founded Tealbase to end the fundamental compromise developers are forced to make every single day: **the choice between speed and power.**
 
-      Tealbase is the open-source backend for developers who refuse to choose. We provide the instant, Firebase-like developer experience—Authentication, auto-generated APIs, and Realtime subscriptions—built directly on a true **PostgreSQL** foundation.
-
+      Tealbase is the open-source backend for developers who refuse to choose.
+      We provide the instant, Firebase-like developer experience—Authentication, auto-generated APIs, and Realtime subscriptions—built directly on a true **PostgreSQL** foundation.
       This means you ship your product in a weekend, with the absolute confidence that you have the full, unconstrained power of a relational database as you scale to millions.
 
       {/* Feature Grid */}
@@ -130,13 +140,14 @@ import Image from 'next/image';
 
       ## Technical Architecture
 
-      Tealbase is written in **Go** for high-throughput concurrency. It connects to **PostgreSQL** and uses logical replication slots (WAL) to listen for changes, broadcasting them via WebSockets to subscribed clients.
-
+      Tealbase is written in **Go** for high-throughput concurrency.
+      It connects to **PostgreSQL** and uses logical replication slots (WAL) to listen for changes, broadcasting them via WebSockets to subscribed clients.
       It bridges the gap between the developer experience of 2025 and the reliability of 1995.
 
       ## Impact
 
-      Tealbase is currently running in production for 3 indie projects. It has reduced backend boilerplate by **90%**, allowing us to handle **10k concurrent connections** on a standard 5 USD DigitalOcean droplet.
+      Tealbase is currently running in production for 3 indie projects.
+      It has reduced backend boilerplate by **90%**, allowing us to handle **10k concurrent connections** on a standard 5 USD DigitalOcean droplet.
 
       <div>
         <a href="https://github.com/tealbase/tealbase" target="_blank" className="block mt-8 no-underline group">
