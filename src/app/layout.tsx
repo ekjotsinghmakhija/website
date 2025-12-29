@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: "Ekjot Singh",
   description: "Founder & Lead Architect at Metanthropic. Researching the physics of intelligence and building interpretable AGI.",
   icons: {
-    icon: "/avatar.png",
+    icon: "/avatar.jpg",
   },
   openGraph: {
     title: "Ekjot Singh",
