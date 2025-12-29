@@ -26,7 +26,6 @@ export default function Hero() {
             Ekjot Singh
           </h1>
 
-          {/* CHANGE: Updated to a vibrant Lime-to-Emerald gradient */}
           <p className="text-lg md:text-3xl text-gray-200 font-light font-serif italic mb-8 leading-relaxed">
             Parsing the <span className="bg-gradient-to-r from-lime-300 via-green-400 to-emerald-500 bg-clip-text text-transparent font-medium border-b border-green-500/20 pb-1">Thermodynamics of Intelligence</span>.
           </p>
@@ -59,15 +58,17 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="md:col-span-4 relative"
         >
-           <div className="relative aspect-[3/4] w-full max-w-sm mx-auto grayscale hover:grayscale-0 transition-all duration-700">
-              <div className="absolute inset-0 border border-white/10 translate-x-4 translate-y-4 z-0" />
-              <div className="relative z-10 bg-[#111] overflow-hidden border border-white/10">
+           <div className="relative aspect-[4/5] w-full max-w-sm mx-auto grayscale hover:grayscale-0 transition-all duration-700">
+              {/* MODIFIED: Increased gap to 3 (12px) for better breathing room */}
+              <div className="absolute inset-0 border border-white/10 translate-x-3 translate-y-3 z-0" />
+
+              <div className="relative z-10 bg-[#111] h-full overflow-hidden border border-white/10">
                 <Image
-                  src="/images/avatar.png"
+                  src="/images/avatar.jpg"
                   alt="Ekjot Singh"
                   width={400}
                   height={500}
-                  className="object-cover opacity-90"
+                  className="object-cover opacity-90 h-full w-full"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
               </div>
