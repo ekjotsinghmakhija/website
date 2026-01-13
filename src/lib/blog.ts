@@ -1,6 +1,42 @@
 /* FILE: src/lib/blog.ts */
 export const BLOG_POSTS = [
   {
+    title: "The Infinite Pixel",
+    date: "Jan 29, 2026",
+    slug: "imgupai",
+    excerpt: "The CSI 'Enhance' button is finally real. How I built a local-first AI upscaler to recover lost details without sending your photos to the cloud.",
+    readTime: "5 min read"
+  },
+  {
+    title: "Code at the Speed of Thought",
+    date: "Jan 24, 2026",
+    slug: "ahhcode",
+    excerpt: "We are moving from 'writing code' to 'architecting logic'. Introducing AhhCode, the agent that turns the terminal into a pair programmer.",
+    readTime: "6 min read"
+  },
+  {
+    title: "The Cloud is Just Someone Else's Computer",
+    date: "Jan 21, 2026",
+    slug: "vgd",
+    excerpt: "Why rent an H100 when you have five laptops gathering dust? Building VGD to create a decentralized home compute cluster.",
+    readTime: "7 min read"
+  },
+  {
+    title: "Knowing What They Know",
+    date: "Jan 06, 2026",
+    slug: "wibes-check",
+    excerpt: "Information is free, but it is scattered. How WibesCheck aggregates OSINT data to reveal the invisible digital footprint of any website.",
+    readTime: "4 min read"
+  },
+  {
+    title: "Rust is the New Curl",
+    date: "Dec 19, 2025",
+    slug: "thttp",
+    excerpt: "Postman is too heavy. Curl is too obscure. Why I wrote a raw HTTP client in Rust to make API testing feel like a conversation.",
+    readTime: "4 min read"
+  },
+  // ... (Existing posts below: llm-group-chat, founding-metanthropic, etc.)
+  {
     title: "The Death of the Yes-Man",
     date: "Dec 15, 2025",
     slug: "llm-group-chat",

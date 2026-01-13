@@ -1,6 +1,6 @@
 /* FILE: src/lib/personal-projects.ts */
 
-export type ProjectType = 'magnum-opus' | 'product' | 'library';
+export type ProjectType = 'magnum-opus' | 'product' | 'library' | 'research';
 
 export interface Project {
   id: string;
@@ -15,6 +15,61 @@ export interface Project {
 }
 
 export const PERSONAL_PROJECTS: Project[] = [
+  {
+    id: 'imgupai',
+    title: 'ImgUPAI',
+    tagline: 'The Infinite Pixel',
+    description: 'Creator. The #1 Open Source AI Image Upscaler. A desktop application that uses Real-ESRGAN to hallucinate detail into low-res images. Privacy-first, local-first, GPU-accelerated.',
+    role: 'Creator',
+    period: 'Jan 2026 - Present',
+    tech: ['TypeScript', 'Electron', 'Real-ESRGAN', 'Python'],
+    link: 'https://github.com/ekjotsinghmakhija/imgupai',
+    type: 'product',
+  },
+  {
+    id: 'ahhcode',
+    title: 'AhhCode',
+    tagline: 'The Agent That Codes',
+    description: 'Lead Engineer. An autonomous coding agent that lives in your terminal. It doesn\'t just suggest code; it reads your file system, plans the architecture, and executes the build.',
+    role: 'Lead Engineer',
+    period: 'Jan 2026',
+    tech: ['TypeScript', 'LLM Agents', 'AST Parsing', 'CLI'],
+    link: 'https://github.com/ekjotsinghmakhija/ahhcode',
+    type: 'magnum-opus',
+  },
+  {
+    id: 'vgd',
+    title: 'VGD',
+    tagline: 'The Home Cluster',
+    description: 'Creator. A distributed computing protocol allowing you to run an AI cluster using everyday devices. Turn your old laptops and gaming rig into a unified inference engine.',
+    role: 'Creator',
+    period: 'Jan 2026',
+    tech: ['Python', 'Distributed Systems', 'Networking', 'PyTorch'],
+    link: 'https://github.com/ekjotsinghmakhija/vgd-source',
+    type: 'product', // CHANGED: research -> product
+  },
+  {
+    id: 'wibes-check',
+    title: 'WibesCheck',
+    tagline: 'The Digital Detective',
+    description: 'Maintainer. An all-in-one OSINT (Open Source Intelligence) tool for website analysis. Scans tech stacks, DNS records, and hidden directories in seconds.',
+    role: 'Maintainer',
+    period: 'Jan 2026',
+    tech: ['TypeScript', 'Node.js', 'OSINT', 'Security'],
+    link: 'https://github.com/ekjotsinghmakhija/wibes-check',
+    type: 'library',
+  },
+  {
+    id: 'thttp',
+    title: 'tHttp',
+    tagline: 'Raw HTTP Client',
+    description: 'Engineer. A Rust-based CLI for testing HTTP requests with plain text. Built to replace Postman with something faster, lighter, and terminal-native.',
+    role: 'Engineer',
+    period: 'Dec 2025',
+    tech: ['Rust', 'HTTP', 'CLI', 'Performance'],
+    link: 'https://github.com/ekjotsinghmakhija/thttp',
+    type: 'library',
+  },
   {
     id: 'metanthropic',
     title: 'Metanthropic AI',
@@ -34,17 +89,17 @@ export const PERSONAL_PROJECTS: Project[] = [
     role: 'Founder',
     period: 'Aug 2025 - Present',
     tech: ['PostgreSQL', 'Go', 'TypeScript', 'Realtime'],
-    link: 'https://github.com/tealbase/tealbase', // Add actual link if available
+    link: 'https://github.com/tealbase/tealbase',
     type: 'magnum-opus',
   },
   {
     id: 'llm-group-chat',
     title: 'LLM Group Chat',
     tagline: 'The Digital Boardroom',
-    description: 'A multi-agent consensus engine that solves single-model bias. Orchestrates a "Blind Peer Review" between GPT-4, Claude 3.5, and Gemini, culminating in a "Chairman" synthesis for higher fidelity answers.',
+    description: 'A multi-agent consensus engine that solves single-model bias. Orchestrates a "Blind Peer Review" between GPT-4, Claude 3.5, and Gemini.',
     role: 'Creator',
     period: 'Dec 2025',
-    tech: ['Python', 'FastAPI', 'React', 'Multi-Agent', 'OpenRouter'],
+    tech: ['Python', 'FastAPI', 'React', 'Multi-Agent'],
     link: 'https://github.com/ekjotsinghmakhija/llm-groupchat',
     type: 'product',
   },
