@@ -1,0 +1,70 @@
+import NotebookLayout from '@/components/layout/NotebookLayout';
+import { Server, Network, Laptop, Lock, Share2 } from 'lucide-react';
+
+export const meta = {
+  title: "The Cloud is Just Someone Else's Computer",
+  date: "Jan 21, 2026",
+  readTime: "8 min read",
+  tag: "Product"
+};
+
+<NotebookLayout meta={meta}>
+
+We are living through a <span className="text-rose-400 font-bold">Compute Famine</span>.
+NVIDIA H100s are the new gold bullion. Cloud providers are rationing GPUs like water in a desert. To run a decent LLM, you are expected to pay a monthly rent that rivals a car payment.
+
+But look around your room.
+You have a gaming PC. You have an old MacBook Pro from 2020. You have a desktop gathering dust in the closet.
+Individually, they are weak.
+Together? They are a **Cluster**.
+
+## Enter VGD
+
+**VGD** (Virtual GPU Daemon) is a protocol I designed to smash the walls between your devices.
+It allows you to pool the VRAM of every device in your house into a single, unified inference engine.
+
+* **The Gaming Rig (RTX 4090):** Handles the heavy matrix multiplication.
+* **The MacBook (M1 Max):** Handles the pre-fill and prompt encoding.
+* **The Old Laptop:** Handles the routing and API serving.
+
+### The Technical Challenge: Latency
+
+Distributed inference is notoriously hard because of **The Speed of Light**.
+The interconnects in a data center run at 800 Gbps. Your home Wifi runs at maybe 500 Mbps.
+If you simply split a model in half, the time spent sending data between devices outweighs the time saved by computing in parallel.
+
+VGD solves this with **Optimized Tensor Splitting**.
+We don't just split the model anywhere. We analyze the neural network graph to find "Cut Points"—layers where the data transfer volume is minimal.
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-10 not-prose">
+  <div className="bg-stone-900/50 p-4 border border-stone-800 rounded text-center">
+    <Laptop className="mx-auto mb-2 text-stone-400" />
+    <div className="font-mono text-cyan-400">Node A</div>
+    <div className="text-xs text-stone-500">Layers 1-12</div>
+  </div>
+  <div className="flex items-center justify-center text-stone-600">
+    <Network className="animate-pulse" />
+  </div>
+  <div className="bg-stone-900/50 p-4 border border-stone-800 rounded text-center">
+    <Server className="mx-auto mb-2 text-stone-400" />
+    <div className="font-mono text-fuchsia-400">Node B</div>
+    <div className="text-xs text-stone-500">Layers 13-32</div>
+  </div>
+</div>
+
+We also implement **Pipeline Parallelism**.
+While Node B is computing Layer 13, Node A is already computing Layer 1 for the *next token*.
+The cluster never stops breathing.
+
+## Digital Sovereignty
+
+This project is about more than just saving money.
+It is about **Independence**.
+
+If you rely on OpenAI or AWS, you can be de-platformed. Your API key can be revoked. Your rates can be hiked.
+But if you own the metal, and you own the software that binds the metal, you are untouchable.
+
+VGD turns your home into a Data Center. It turns your consumer electronics into a supercomputer.
+Stop renting. Start clustering.
+
+</NotebookLayout>
