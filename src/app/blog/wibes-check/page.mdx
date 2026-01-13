@@ -1,0 +1,49 @@
+import NotebookLayout from '@/components/layout/NotebookLayout';
+import { Search, Eye, Globe, Database, Terminal } from 'lucide-react';
+
+export const meta = {
+  title: "Knowing What They Know",
+  date: "Jan 06, 2026",
+  readTime: "5 min read",
+  tag: "Library"
+};
+
+<NotebookLayout meta={meta}>
+
+The internet feels opaque. You visit a website, and you see what they *want* you to see: the landing page, the marketing copy, the shiny buttons.
+But underneath that UI layer, the server is screaming information about itself. You just need to know how to listen.
+
+**WibesCheck** is a digital stethoscope.
+
+## Open Source Intelligence (OSINT)
+
+OSINT is the art of gathering intelligence from publicly available sources. It is what hackers do before they attack. It is what security researchers do to defend.
+I built WibesCheck to automate the reconnaissance phase of security auditing.
+
+With a single command, WibesCheck performs a deep scan:
+* **Tech Stack Detection:** Identifies the frameworks (Next.js, React, Tailwind) by analyzing DOM fingerprints.
+* **DNS Enumeration:** Finds hidden subdomains (`dev.site.com`, `admin.site.com`) that the owner forgot to hide.
+* **Header Analysis:** Checks for missing security headers (CSP, X-Frame-Options) that leave the door open for XSS attacks.
+
+### The "Wibe"
+
+I called it "WibesCheck" because security shouldn't be dry.
+It gives you a "Vibe Score" for the target website. Is it locked down like Fort Knox? Or is it a leaky sieve leaking metadata?
+
+<div className="my-8 p-4 bg-black border border-green-500/20 rounded font-mono text-xs md:text-sm text-green-400 shadow-[0_0_20px_rgba(34,197,94,0.1)]">
+  <div className="flex gap-2 mb-2">
+    <Terminal size={14} />
+    <span>wibes check target.com</span>
+  </div>
+  <span className="text-stone-500">----------------------------------------</span><br/>
+  [+] Target: target.com<br/>
+  [+] Server: Nginx/1.18.0 (Ubuntu)<br/>
+  [!] WARNING: X-Powered-By header revealed (Express)<br/>
+  [+] Tech: React, Webpack, Stripe<br/>
+  <span className="text-stone-500">----------------------------------------</span><br/>
+  <span className="text-white font-bold">VIBE CHECK: PASSED (Grade B)</span>
+</div>
+
+In a world of black boxes, WibesCheck brings transparency. It reminds us that on the web, nothing is truly hidden.
+
+</NotebookLayout>
