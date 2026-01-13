@@ -1,0 +1,72 @@
+import NotebookLayout from '@/components/layout/NotebookLayout';
+import { Terminal, Zap, Gauge, ArrowRight } from 'lucide-react';
+
+export const meta = {
+  title: "Rust is the New Curl",
+  date: "Dec 19, 2025",
+  readTime: "4 min read",
+  tag: "Library"
+};
+
+<NotebookLayout meta={meta}>
+
+Every developer has a "Tool of Shame."
+For many, it is **Postman**.
+It started as a simple Chrome extension.
+It became a 500MB Electron behemoth that requires a login, cloud sync, and 10 seconds just to launch.
+I just wanted to send a `GET` request. I didn't want to join a "Workspace."
+
+So I looked at **Curl**.
+Curl is legendary. It is installed on every device on Earth.
+It is also unreadable.
+`curl -X POST -H "Content-Type: application/json" -d '{"foo":"bar"}' ...`
+By the time I type the flags, I've forgotten the endpoint.
+I built **tHttp** to find the middle ground.
+
+## The Philosophy of Speed
+
+**tHttp** (Terminal HTTP) is a CLI tool written in **Rust**.
+It is designed to be:
+1.  **Instant:** Startup time is sub-millisecond.
+2.  **Readable:** It uses a simple, intuitive syntax.
+3.  **Local:** No cloud, no sync, no login.
+
+### The Syntax
+
+I wanted the command to read like a sentence.
+
+<div className="my-8 p-6 bg-[#0d1117] border border-stone-800 rounded-lg font-mono text-sm shadow-xl">
+  <div className="text-stone-500 mb-2"># The Old Way (Curl)</div>
+  <div className="text-rose-400 mb-6 break-all">
+    curl -X POST https://api.server.com/users \<br/>
+    -H "Authorization: Bearer 123" \<br/>
+    {/* FIXED: Escaped curly braces below with backslashes */}
+    -d '\{ "name": "Ekjot" \}'
+  </div>
+
+  <div className="text-stone-500 mb-2"># The tHttp Way</div>
+  <div className="text-green-400 font-bold">
+    thttp post api.server.com/users name=Ekjot @auth
+  </div>
+</div>
+
+## Why Rust?
+I could have written this in Node.js. It would have taken an hour.
+But Node.js requires the V8 engine to boot up.
+For a CLI tool that you run hundreds of times a day, those 200ms of startup latency accumulate into a feeling of <span className="text-amber-400">sluggishness</span>.
+Rust gives us **Native Binary Performance**.
+When you hit Enter, the request is already leaving the network card before your finger lifts off the key.
+* **Memory Safety:** No segfaults when parsing malformed JSON.
+* **Binaries:** A single file you can drop into `/usr/local/bin`.
+* **Async/Await:** Rust's Tokio runtime handles concurrent requests better than almost anything else.
+
+## The Death of the GUI
+
+We are seeing a return to the terminal.
+Developers are realizing that dragging a mouse to click "Send" is slower than typing.
+**tHttp** is my contribution to this renaissance.
+
+Stop waiting for Electron windows to load.
+<span className="text-cyan-400 font-bold">Return to the command line.</span>
+
+</NotebookLayout>
