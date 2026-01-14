@@ -1,8 +1,21 @@
+/* FILE: src/components/ui/SpotlightCard.tsx */
 'use client';
 import { useRef, useState, MouseEvent } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 
-export default function SpotlightCard({ children, className = "" }: { children: React.ReactNode, className?: string }) {
+interface SpotlightCardProps {
+  children: React.ReactNode;
+  className?: string;
+  from?: string;
+  to?: string;
+}
+
+export default function SpotlightCard({
+  children,
+  className = "",
+  from = "rgba(17, 24, 39, 0.5)",
+  to = "rgba(17, 24, 39, 0.5)"
+}: SpotlightCardProps) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -14,8 +27,11 @@ export default function SpotlightCard({ children, className = "" }: { children: 
 
   return (
     <div
-      className={`group relative border border-white/10 bg-gray-900/50 overflow-hidden ${className}`}
+      className={`group relative border border-white/10 overflow-hidden ${className}`}
       onMouseMove={handleMouseMove}
+      style={{
+        background: `linear-gradient(to bottom right, ${from}, ${to})`
+      }}
     >
       <motion.div
         className="pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 group-hover:opacity-100"

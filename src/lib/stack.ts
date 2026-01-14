@@ -1,8 +1,13 @@
+/* FILE: src/lib/stack.ts */
 import {
   Code,
   Layout,
   Server,
   Cpu,
+  Terminal,
+  Globe,
+  Database,
+  Brain
 } from 'lucide-react';
 
 // --- 1. TECHNICAL ARSENAL (STACK) ---
@@ -13,56 +18,59 @@ export const STACK = [
       "Rust",
       "Python",
       "Go",
-      "Java",
-      "C",
-      "C++",
       "TypeScript",
-      "JavaScript",
-      "Kotlin",
-      "Elixir",
-      "Perl",
+      "C / C++",
+      "Java",
+      "SQL (PL/pgSQL)",
       "Vim Script",
-      "PLpgSQL"
+      "WebAssembly"
     ],
-    icon: Code
+    icon: Code,
+    color: "text-rose-400"
   },
   {
-    category: "Full Stack",
+    category: "Intelligence (AI)",
+    items: [
+      "PyTorch",
+      "CUDA / Metal",
+      "Transformers",
+      "LLM Agents",
+      "RAG Systems",
+      "Real-ESRGAN",
+      "Mechanistic Interpretability",
+      "Scikit-Learn"
+    ],
+    icon: Brain,
+    color: "text-fuchsia-400"
+  },
+  {
+    category: "Systems & Infra",
+    items: [
+      "Linux Kernel",
+      "Distributed Systems",
+      "Docker / Kubernetes",
+      "PostgreSQL",
+      "Redis",
+      "Computer Networking (TCP/IP)",
+      "WebSockets",
+      "System Design"
+    ],
+    icon: Server,
+    color: "text-amber-400"
+  },
+  {
+    category: "Product & Interface",
     items: [
       "Next.js 16",
       "React",
-      "HTML",
-      "CSS",
-      "MDX",
+      "Electron",
+      "Tauri",
       "Tailwind CSS",
       "Framer Motion",
-      "Three.js"
+      "Three.js",
+      "OSINT Tools"
     ],
-    icon: Layout
-  },
-  {
-    category: "Infrastructure",
-    items: [
-      "FastAPI",
-      "PostgreSQL",
-      "Docker (Dockerfile)",
-      "Kubernetes",
-      "Redis",
-      "Computer Networking"
-    ],
-    icon: Server
-  },
-  {
-    category: "AI & Research",
-    items: [
-      "PyTorch",
-      "TensorFlow",
-      "CUDA",
-      "Transformers",
-      "Scikit-Learn",
-      "Mechanistic Interpretability"
-    ],
-    icon: Cpu
+    icon: Layout,
+    color: "text-cyan-400"
   },
 ];
-
