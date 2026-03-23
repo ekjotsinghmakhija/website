@@ -1,76 +1,31 @@
-/* FILE: src/lib/stack.ts */
-import {
-  Code,
-  Layout,
-  Server,
-  Cpu,
-  Terminal,
-  Globe,
-  Database,
-  Brain
-} from 'lucide-react';
+export interface StackCategory {
+  category: string;
+  items: string[];
+}
 
-// --- 1. TECHNICAL ARSENAL (STACK) ---
-export const STACK = [
+export const STACK: StackCategory[] = [
   {
-    category: "Languages",
-    items: [
-      "Rust",
-      "Python",
-      "Go",
-      "TypeScript",
-      "C / C++",
-      "Java",
-      "SQL (PL/pgSQL)",
-      "Vim Script",
-      "WebAssembly"
-    ],
-    icon: Code,
-    color: "text-rose-400"
+    category: "Systems & Low-Level",
+    items: ["Rust", "Go", "C", "C++", "Assembly", "Bash"]
   },
   {
-    category: "Intelligence (AI)",
-    items: [
-      "PyTorch",
-      "CUDA / Metal",
-      "Transformers",
-      "LLM Agents",
-      "RAG Systems",
-      "Real-ESRGAN",
-      "Mechanistic Interpretability",
-      "Scikit-Learn"
-    ],
-    icon: Brain,
-    color: "text-fuchsia-400"
+    category: "Database & Real-Time Engines",
+    items: ["PostgreSQL", "libpq", "PostgREST", "Elixir", "WebSockets", "Vector Databases"]
   },
   {
-    category: "Systems & Infra",
-    items: [
-      "Linux Kernel",
-      "Distributed Systems",
-      "Docker / Kubernetes",
-      "PostgreSQL",
-      "Redis",
-      "Computer Networking (TCP/IP)",
-      "WebSockets",
-      "System Design"
-    ],
-    icon: Server,
-    color: "text-amber-400"
+    category: "AI & Applied Research",
+    items: ["Python", "PyTorch", "Llama Models", "OpenRouter API", "Dataset Distillation"]
   },
   {
-    category: "Product & Interface",
-    items: [
-      "Next.js 16",
-      "React",
-      "Electron",
-      "Tauri",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Three.js",
-      "OSINT Tools"
-    ],
-    icon: Layout,
-    color: "text-cyan-400"
+    category: "Infrastructure & Orchestration",
+    items: ["Docker", "Kubernetes", "Terraform (HCL)", "Ansible", "Linux Kernel"]
   },
+  {
+    category: "Security & Cryptography",
+    items: ["Web Crypto API", "JWT", "Row Level Security (RLS)", "Uncrypto"]
+  },
+  {
+    category: "Application Architecture",
+    items: ["TypeScript", "Next.js", "React", "Node.js", "Bun", "Tailwind CSS", "Qt 6"]
+  }
 ];

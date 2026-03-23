@@ -1,72 +1,66 @@
-/* FILE: src/app/projects/page.tsx */
 'use client';
-import { useState } from 'react';
+
+import { useState, useMemo } from 'react';
+import { PERSONAL_PROJECTS } from '@/lib/personal-projects';
+import ProjectCard from '@/components/ui/ProjectCard';
+
+// 1. Import your layout components
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/sections/Footer';
-import ProjectCard from '@/components/ui/ProjectCard';
-import { PERSONAL_PROJECTS } from '@/lib/personal-projects';
-import InteractiveGrid from '@/components/ui/InteractiveGrid';
-import { Archive, Filter } from 'lucide-react';
 
-export default function AllProjects() {
-    const [filter, setFilter] = useState('all');
-    const categories = ['all', 'magnum-opus', 'product', 'library', 'research'];
-    const filteredProjects = filter === 'all'
-        ? PERSONAL_PROJECTS
-        : PERSONAL_PROJECTS.filter(p => p.type === filter);
+export default function ProjectsPage() {
+  const [activeFilter, setActiveFilter] = useState('All');
 
-    return (
-        <div className="min-h-screen font-sans selection:bg-cyan-300 selection:text-black">
-            <Navbar />
-            <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
-                <InteractiveGrid />
-            </div>
+  // Dynamically extract unique tech stack tags from the data
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    PERSONAL_PROJECTS.forEach(p => p.techStack?.forEach(t => tags.add(t.trim())));
+    return ['All', ...Array.from(tags).sort()];
+  }, []);
 
-            <main className="relative z-10 pt-32 pb-24 max-w-7xl mx-auto px-4 sm:px-6">
-                <header className="mb-12 text-center md:text-left border-b border-white/10 pb-12">
-                    <div className="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-widest mb-4">
-                        <Archive size={14} />
-                        <span>Project Archives</span>
-                    </div>
-                    <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">
-                        The Work.
-                    </h1>
-                    <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
-                        A complete collection of products, libraries, and experiments I've engineered.
-                    </p>
-                </header>
+  const filteredProjects = PERSONAL_PROJECTS.filter(p =>
+    activeFilter === 'All' || p.techStack?.some(t => t.trim() === activeFilter)
+  );
 
-                <div className="sticky top-16 z-40 bg-[#030304]/80 backdrop-blur-md py-4 border-b border-white/5 -mx-4 px-4 md:mx-0 md:px-0 md:bg-transparent md:border-none md:static overflow-x-auto flex items-center gap-2 no-scrollbar">
-                    <span className="text-gray-500 mr-2 hidden md:block"><Filter size={16} /></span>
-                    {categories.map((cat) => (
-                        <button
-                            key={cat}
-                            onClick={() => setFilter(cat)}
-                            className={`
-                whitespace-nowrap flex-shrink-0 px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider border transition-all
-                ${filter === cat
-                                    ? 'bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)]'
-                                    : 'bg-white/5 text-gray-400 border-white/10 hover:border-white/30 hover:text-white'
-                                }
-              `}
-                        >
-                            {cat.replace('-', ' ')}
-                        </button>
-                    ))}
-                </div>
+  return (
+    <>
+      {/* 2. Add the Navbar back to the top */}
+      <Navbar />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr mt-8">
-                    {filteredProjects.map((project, index) => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                            className="h-full min-h-[320px] animate-in fade-in slide-in-from-bottom-4 duration-500"
-                            style={{ animationDelay: `${index * 50}ms` } as any}
-                        />
-                    ))}
-                </div>
-            </main>
-            <Footer />
+      {/* 3. Wrap the content in a main tag with padding-top (pt-24) so it clears the navbar */}
+      <main className="min-h-screen max-w-5xl mx-auto px-6 py-24">
+        <h1 className="text-4xl font-bold mb-4 tracking-tight text-white">Engineering Portfolio</h1>
+        <p className="text-zinc-400 mb-10">
+          A technical overview of my open-source contributions, system architecture, and AI research.
+        </p>
+
+        {/* The CTO Filter Buttons */}
+        <div className="flex flex-wrap gap-2 mb-12">
+          {allTags.map(tag => (
+            <button
+              key={tag}
+              onClick={() => setActiveFilter(tag)}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                activeFilter === tag
+                  ? 'bg-white text-black shadow-md'
+                  : 'bg-zinc-800/50 text-zinc-400 hover:bg-zinc-800 hover:text-white border border-zinc-700/50'
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
         </div>
-    );
+
+        {/* Dynamic Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {filteredProjects.map(project => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </main>
+
+      {/* 4. Add the Footer back to the bottom */}
+      <Footer />
+    </>
+  );
 }

@@ -1,128 +1,219 @@
-/* FILE: src/lib/personal-projects.ts */
-
-export type ProjectType = 'magnum-opus' | 'product' | 'library' | 'research';
-
 export interface Project {
   id: string;
   title: string;
-  tagline: string;
-  description: string;
+  repo: string;
   role: string;
-  period: string;
-  tech: string[];
-  link: string;
-  type: ProjectType;
+  visibility: string;
+  aiSummary: string;
+  techStack: string[];
+  url: string;
+  featured?: boolean;
 }
 
 export const PERSONAL_PROJECTS: Project[] = [
+  // --- FEATURED SYSTEMS & INFRASTRUCTURE ---
   {
-    id: 'imgupai',
-    title: 'ImgUPAI',
-    tagline: 'The Infinite Pixel',
-    description: 'Creator. The #1 Open Source AI Image Upscaler. A desktop application that uses Real-ESRGAN to hallucinate detail into low-res images. Privacy-first, local-first, GPU-accelerated.',
-    role: 'Creator',
-    period: 'Jan 2026 - Present',
-    tech: ['TypeScript', 'Electron', 'Real-ESRGAN', 'Python'],
-    link: 'https://github.com/ekjotsinghmakhija/imgupai',
-    type: 'product',
+    id: 'chromabase',
+    title: 'Chromabase',
+    repo: 'ekjotsinghmakhija/chromabase',
+    role: 'Owner',
+    visibility: 'Private',
+    aiSummary: 'A powerful CLI utility that encodes massive datasets and files into resilient video formats for infinite cloud storage bypass.',
+    techStack: ['Rust'],
+    url: 'https://github.com/ekjotsinghmakhija/chromabase',
+    featured: true
+  },
+  {
+    id: 'sim8086',
+    title: 'SIM8086',
+    repo: 'ekjotsinghmakhija/sim8086',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A modular cross-platform hardware emulator and assembler for the Intel 8086 microprocessor.',
+    techStack: ['C++', 'Qt 6'],
+    url: 'https://github.com/ekjotsinghmakhija/sim8086',
+    featured: true
+  },
+  {
+    id: 'pg-listen',
+    title: 'pg_listen',
+    repo: 'ekjotsinghmakhija/pg_listen',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A hyper-fast C library utilizing libpq to trigger shell commands directly from PostgreSQL NOTIFY events.',
+    techStack: ['C', 'PostgreSQL', 'libpq'],
+    url: 'https://github.com/ekjotsinghmakhija/pg_listen',
+    featured: true
+  },
+  {
+    id: 'httpfromtcp',
+    title: 'httpfromtcp',
+    repo: 'ekjotsinghmakhija/httpfromtcp',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A custom-built, low-level HTTP 1.1 server engineered entirely from scratch over raw TCP sockets.',
+    techStack: ['Go'],
+    url: 'https://github.com/ekjotsinghmakhija/httpfromtcp',
+    featured: true
+  },
+  {
+    id: 'vostsql',
+    title: 'VostSQL',
+    repo: 'ekjotsinghmakhija/vostsql',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'An advanced object-relational database engine re-engineered for modern workloads with optimized instruction frames.',
+    techStack: ['C', 'C++'],
+    url: 'https://github.com/ekjotsinghmakhija/vostsql',
+    featured: true
+  },
+
+  // --- AI & MACHINE LEARNING ---
+  {
+    id: 'ddptecmglgm',
+    title: 'Dataset Distillation (DDPTECMGLGM)',
+    repo: 'metanthropic/DDPTECMGLGM',
+    role: 'Contributor',
+    visibility: 'Public',
+    aiSummary: 'Advanced AI research implementing Linear Gradient Matching for cross-model generalization in dataset distillation.',
+    techStack: ['Python', 'PyTorch'],
+    url: 'https://github.com/metanthropic/DDPTECMGLGM',
+    featured: true
+  },
+  {
+    id: 'llama-cpp-python',
+    title: 'Llama C++ Python',
+    repo: 'metanthropic/llama-cpp-python',
+    role: 'Contributor',
+    visibility: 'Public',
+    aiSummary: 'Essential Python wrappers allowing developers to run massive Meta Llama models on standard hardware efficiently.',
+    techStack: ['Python', 'C++'],
+    url: 'https://github.com/metanthropic/llama-cpp-python',
+    featured: false
   },
   {
     id: 'ahhcode',
     title: 'AhhCode',
-    tagline: 'The Agent That Codes',
-    description: 'Lead Engineer. An autonomous coding agent that lives in your terminal. It doesn\'t just suggest code; it reads your file system, plans the architecture, and executes the build.',
-    role: 'Lead Engineer',
-    period: 'Jan 2026',
-    tech: ['TypeScript', 'LLM Agents', 'AST Parsing', 'CLI'],
-    link: 'https://github.com/ekjotsinghmakhija/ahhcode',
-    type: 'magnum-opus',
+    repo: 'ekjotsinghmakhija/ahhcode',
+    role: 'Owner',
+    visibility: 'Private',
+    aiSummary: 'An open-source AI coding assistant designed to automate and enhance complex developer workflows.',
+    techStack: ['Python', 'TypeScript', 'AI Models'],
+    url: 'https://github.com/ekjotsinghmakhija/ahhcode',
+    featured: false
   },
   {
-    id: 'vgd',
-    title: 'VGD',
-    tagline: 'The Home Cluster',
-    description: 'Creator. A distributed computing protocol allowing you to run an AI cluster using everyday devices. Turn your old laptops and gaming rig into a unified inference engine.',
-    role: 'Creator',
-    period: 'Jan 2026',
-    tech: ['Python', 'Distributed Systems', 'Networking', 'PyTorch'],
-    link: 'https://github.com/ekjotsinghmakhija/vgd-source',
-    type: 'product', // CHANGED: research -> product
+    id: 'llm-groupchat',
+    title: 'LLM Group Chat',
+    repo: 'ekjotsinghmakhija/llm-groupchat',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A local web app that routes queries to multiple top-tier LLMs via OpenRouter and forces them to debate and rank answers.',
+    techStack: ['TypeScript', 'React', 'OpenRouter API'],
+    url: 'https://github.com/ekjotsinghmakhija/llm-groupchat',
+    featured: false
+  },
+
+  // --- OPEN SOURCE CORE CONTRIBUTIONS ---
+  {
+    id: 'linux-kernel',
+    title: 'Linux Kernel',
+    repo: 'ekjotsinghmakhija/linux',
+    role: 'Contributor',
+    visibility: 'Public',
+    aiSummary: 'Contributions to the core source tree of the Linux operating system kernel.',
+    techStack: ['C', 'Assembly', 'Make'],
+    url: 'https://github.com/ekjotsinghmakhija/linux',
+    featured: true
+  },
+  {
+    id: 'tidb',
+    title: 'TiDB',
+    repo: 'ekjotsinghmakhija/tidb',
+    role: 'Contributor',
+    visibility: 'Public',
+    aiSummary: 'Contributions to the cloud-native distributed database handling extreme-scale Hybrid Transactional/Analytical Processing.',
+    techStack: ['Go', 'Rust'],
+    url: 'https://github.com/ekjotsinghmakhija/tidb',
+    featured: false
+  },
+  {
+    id: 'kusion',
+    title: 'Kusion',
+    repo: 'ekjotsinghmakhija/kusion',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A declarative orchestration engine for building Internal Developer Platforms and managing cloud-native infrastructure.',
+    techStack: ['Go', 'Kubernetes'],
+    url: 'https://github.com/ekjotsinghmakhija/kusion',
+    featured: false
+  },
+  {
+    id: 'syntrifabric',
+    title: 'SyntriFabric (Terraform)',
+    repo: 'ekjotsinghmakhija/syntrifabric',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'Contributions to the industry-standard declarative infrastructure-as-code orchestration tool.',
+    techStack: ['Go', 'HCL'],
+    url: 'https://github.com/ekjotsinghmakhija/syntrifabric',
+    featured: false
+  },
+
+  // --- WEB, AUTH & FRAMEWORKS ---
+  {
+    id: 'buttery-auth',
+    title: 'Buttery Auth',
+    repo: 'buttery-auth/buttery-auth',
+    role: 'Contributor',
+    visibility: 'Public',
+    aiSummary: 'An advanced, comprehensive authentication library designed specifically for TypeScript applications.',
+    techStack: ['TypeScript', 'Web Crypto API'],
+    url: 'https://github.com/buttery-auth/buttery-auth',
+    featured: false
+  },
+  {
+    id: 'postgrest-js',
+    title: 'PostgREST JS',
+    repo: 'ekjotsinghmakhija/postgrest-js',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'An ORM-like library enabling developers to query PostgREST APIs securely from any JavaScript environment.',
+    techStack: ['JavaScript', 'PostgREST'],
+    url: 'https://github.com/ekjotsinghmakhija/postgrest-js',
+    featured: false
+  },
+  {
+    id: 'tealbase-auth',
+    title: 'TealBase Auth',
+    repo: 'tealbase/auth',
+    role: 'Contributor',
+    visibility: 'Public',
+    aiSummary: 'A robust user management server handling JWT issuance, Row Level Security, and Magic Link authentication.',
+    techStack: ['Go', 'PostgreSQL', 'JWT'],
+    url: 'https://github.com/tealbase/auth',
+    featured: false
+  },
+  {
+    id: 'mohenjo',
+    title: 'Mohenjo',
+    repo: 'ekjotsinghmakhija/mohenjo',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A cutting-edge 3D user interface inspired by city-building games to visualize and manage developer productivity.',
+    techStack: ['Next.js', 'Convex', 'Bun', 'TypeScript'],
+    url: 'https://github.com/ekjotsinghmakhija/mohenjo',
+    featured: false
   },
   {
     id: 'wibes-check',
-    title: 'WibesCheck',
-    tagline: 'The Digital Detective',
-    description: 'Maintainer. An all-in-one OSINT (Open Source Intelligence) tool for website analysis. Scans tech stacks, DNS records, and hidden directories in seconds.',
-    role: 'Maintainer',
-    period: 'Jan 2026',
-    tech: ['TypeScript', 'Node.js', 'OSINT', 'Security'],
-    link: 'https://github.com/ekjotsinghmakhija/wibes-check',
-    type: 'library',
-  },
-  {
-    id: 'thttp',
-    title: 'tHttp',
-    tagline: 'Raw HTTP Client',
-    description: 'Engineer. A Rust-based CLI for testing HTTP requests with plain text. Built to replace Postman with something faster, lighter, and terminal-native.',
-    role: 'Engineer',
-    period: 'Dec 2025',
-    tech: ['Rust', 'HTTP', 'CLI', 'Performance'],
-    link: 'https://github.com/ekjotsinghmakhija/thttp',
-    type: 'library',
-  },
-  {
-    id: 'metanthropic',
-    title: 'Metanthropic AI',
-    tagline: 'The Physics of Intelligence',
-    description: 'Founder & Director. Leading an independent research lab dedicated to safe AGI. Focused on scaling laws, intrinsic safety, and deterministic reasoning architectures.',
-    role: 'Founder & Director',
-    period: 'Nov 2025 - Present',
-    tech: ['Research', 'PyTorch', 'Rust', 'CUDA'],
-    link: 'https://metanthropic.vercel.app',
-    type: 'magnum-opus',
-  },
-  {
-    id: 'tealbase',
-    title: 'Tealbase',
-    tagline: 'Open Source Firebase Alternative',
-    description: 'Founder. Architected a scalable backend platform giving developers the power of Postgres with the ease of Firebase. Features auto-generated APIs, realtime subscriptions, and JWT auth.',
-    role: 'Founder',
-    period: 'Aug 2025 - Present',
-    tech: ['PostgreSQL', 'Go', 'TypeScript', 'Realtime'],
-    link: 'https://github.com/tealbase/tealbase',
-    type: 'magnum-opus',
-  },
-  {
-    id: 'llm-group-chat',
-    title: 'LLM Group Chat',
-    tagline: 'The Digital Boardroom',
-    description: 'A multi-agent consensus engine that solves single-model bias. Orchestrates a "Blind Peer Review" between GPT-4, Claude 3.5, and Gemini.',
-    role: 'Creator',
-    period: 'Dec 2025',
-    tech: ['Python', 'FastAPI', 'React', 'Multi-Agent'],
-    link: 'https://github.com/ekjotsinghmakhija/llm-groupchat',
-    type: 'product',
-  },
-  {
-    id: 'azhn',
-    title: 'Azhn',
-    tagline: 'HTML/CSS to SVG Engine',
-    description: 'A TypeScript library generating crisp, scalable SVGs from standard web code. Includes a server-side rendering engine for Open Graph automation.',
-    role: 'Maintainer',
-    period: 'Aug 2025',
-    tech: ['TypeScript', 'Node.js', 'SVG'],
-    link: 'https://github.com/ekjotsinghmakhija/azhn',
-    type: 'library',
-  },
-  {
-    id: 'buttery-auth',
-    title: 'Buttery-Auth',
-    tagline: 'Full-Stack Auth Solution',
-    description: 'A plug-and-play authentication module featuring secure JWT rotation, OAuth 2.0, and Magic Links. Dockerized for instant deployment.',
-    role: 'Engineer',
-    period: 'Jul 2025',
-    tech: ['Node.js', 'MongoDB', 'Docker', 'Security'],
-    link: 'https://github.com/ekjotsinghmakhija/buttery-auth',
-    type: 'library',
+    title: 'Wibes Check',
+    repo: 'ekjotsinghmakhija/wibes-check',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A comprehensive web intelligence engine designed for Open Source Intelligence gathering and website security analysis.',
+    techStack: ['Next.js 15', 'Tailwind CSS'],
+    url: 'https://github.com/ekjotsinghmakhija/wibes-check',
+    featured: false
   }
 ];
