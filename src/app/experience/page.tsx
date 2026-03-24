@@ -4,6 +4,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/sections/Footer';
 import { EXPERIENCE } from '@/lib/experience';
 import Link from 'next/link';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 
 export default function ExperiencePage() {
   return (
@@ -17,7 +18,6 @@ export default function ExperiencePage() {
 
         <div className="relative border-l border-zinc-800 ml-3 md:ml-0">
           {EXPERIENCE.map((job) => {
-            // We set a default elegant theme here since we removed it from the raw data
             const dotColor = "bg-emerald-500";
             const borderColor = "group-hover:border-emerald-500/50";
 
@@ -59,30 +59,40 @@ export default function ExperiencePage() {
                   </p>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5">
+                  <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-white/5 mb-8">
                     {job.techStack?.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 text-xs font-medium rounded-md bg-zinc-800/50 text-zinc-300 border border-zinc-700/50"
+                        className="px-3 py-1 text-[10px] font-mono rounded-md bg-zinc-800/50 text-zinc-300 border border-zinc-700/50"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  {/* Optional External Link */}
-                  {job.link && (
-                    <div className="mt-6">
-                      <Link
+                  {/* ACTION BUTTONS */}
+                  <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                    {/* The NEW Deep-Dive Link */}
+                    <Link
+                      href={`/experience/${job.id}`}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-black text-sm font-medium rounded hover:bg-zinc-200 transition-colors"
+                    >
+                      Read Architecture Deep-Dive <ArrowRight size={16} />
+                    </Link>
+
+                    {/* The Original External Link */}
+                    {job.link && (
+                      <a
                         href={job.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm font-medium text-white hover:underline flex items-center gap-1 w-fit"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-zinc-400 hover:text-white transition-colors"
                       >
-                        Visit {job.company} &rarr;
-                      </Link>
-                    </div>
-                  )}
+                        Visit Website <ExternalLink size={16} />
+                      </a>
+                    )}
+                  </div>
+
                 </div>
               </div>
             );
