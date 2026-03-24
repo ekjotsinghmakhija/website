@@ -1,137 +1,73 @@
 import Link from 'next/link';
 
-export default function ResearchDeepSummary() {
+export default function MahenOCR() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <div className="mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-800 pb-6">
-        <Link href="/blog" className="text-sm text-zinc-400 hover:text-zinc-100 flex items-center gap-2 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to Research Library
-        </Link>
-        <a
-          href="https://metanthropic.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500/10 text-teal-400 hover:bg-teal-500/20 hover:text-teal-300 rounded-lg text-sm font-medium transition-all border border-teal-500/20 shadow-lg shadow-teal-500/5"
-        >
-          Read Full Official Paper on Metanthropic <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-        </a>
+    <div className="min-h-screen bg-[#0a0a0a] text-zinc-300 relative overflow-hidden font-mono selection:bg-yellow-500/30">
+
+      {/* Scanning Reticle Elements */}
+      <div className="absolute top-10 left-10 w-8 h-8 border-t-2 border-l-2 border-yellow-500/50 pointer-events-none"></div>
+      <div className="absolute top-10 right-10 w-8 h-8 border-t-2 border-r-2 border-yellow-500/50 pointer-events-none"></div>
+      <div className="absolute bottom-10 left-10 w-8 h-8 border-b-2 border-l-2 border-yellow-500/50 pointer-events-none"></div>
+      <div className="absolute bottom-10 right-10 w-8 h-8 border-b-2 border-r-2 border-yellow-500/50 pointer-events-none"></div>
+
+      {/* Laser Scan Line */}
+      <div className="absolute top-0 left-0 w-full h-[1px] bg-yellow-500/50 shadow-[0_0_10px_#eab308] pointer-events-none animate-[scan_4s_ease-in-out_infinite]"></div>
+
+      <div className="max-w-4xl mx-auto py-20 px-6 relative z-10">
+
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16 pb-6 border-b border-yellow-900/30">
+          <Link href="/blog" className="text-sm text-zinc-500 hover:text-yellow-500 flex items-center gap-2 transition-colors uppercase tracking-widest">
+            {'<'} System.Index
+          </Link>
+          <a href="https://metanthropic.com" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-yellow-500 text-black hover:bg-yellow-400 rounded text-sm font-bold transition-all shadow-[0_0_15px_rgba(234,179,8,0.3)]">
+            [ EXECUTE PAPER FETCH ]
+          </a>
+        </div>
+
+        <header className="mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tighter mb-4">
+            Mahen<span className="text-yellow-500">OCR</span>
+          </h1>
+          <p className="text-xl text-yellow-500/80 font-light max-w-2xl">
+            Commercial-Grade Optical Character Recognition via a highly-optimized 1B Parameter Vision-Language Model.
+          </p>
+        </header>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 text-xs text-yellow-500/60 uppercase">
+          <div className="border border-yellow-900/50 p-3 bg-zinc-900/50 rounded">TARGET: VISION</div>
+          <div className="border border-yellow-900/50 p-3 bg-zinc-900/50 rounded">SIZE: 1B PARAMS</div>
+          <div className="border border-yellow-900/50 p-3 bg-zinc-900/50 rounded">SPEED: LATENCY {'<'} 50MS</div>
+          <div className="border border-yellow-900/50 p-3 bg-zinc-900/50 rounded">DEPLOY: EDGE/LOCAL</div>
+        </div>
+
+        <article className="space-y-8 text-base md:text-lg leading-relaxed text-zinc-400 font-sans">
+          <p>
+            Traditional OCR pipelines rely on fragile, multi-stage heuristics: bounding box detection, image binarization, and independent character classification. These systems routinely fail on complex document layouts, handwritten text, or heavily artifacted images.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-12 mb-4 font-mono flex items-center gap-3">
+            <span className="w-3 h-3 bg-yellow-500 inline-block"></span>
+            The VLM Approach
+          </h2>
+          <p>
+            MahenOCR discards the multi-stage pipeline entirely. By leveraging a streamlined 1-Billion parameter Vision-Language Model (VLM), the system translates raw pixel inputs directly into structured semantic text. The vision encoder extracts deep spatial representations, while the language decoder reconstructs the text with full contextual understanding, naturally correcting typographical errors based on surrounding linguistic context.
+          </p>
+
+          <p className="p-6 bg-zinc-900/80 border-l-4 border-yellow-500 text-zinc-300">
+            Because of its highly compressed 1B parameter footprint, MahenOCR achieves commercial-grade accuracy while maintaining edge-device deployability. It processes complex tabular data, receipts, and handwritten notes locally, ensuring total data privacy without reliance on cloud-based vision APIs.
+          </p>
+        </article>
       </div>
 
-      <article className="prose prose-invert prose-teal max-w-none text-zinc-300 leading-relaxed space-y-6">
-        {summaryText.split('\n\n').map((paragraph, idx) => {
-          if (!paragraph.trim()) return null;
-          if (paragraph.length < 60 && !paragraph.endsWith('.')) {
-            return <h2 key={idx} className="text-2xl font-semibold text-zinc-100 mt-8 mb-4">{paragraph}</h2>;
-          }
-          return <p key={idx}>{paragraph}</p>;
-        })}
-      </article>
+      {/* Tailwind custom animation definition needed for the laser */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes scan {
+          0% { top: 0; opacity: 0; }
+          10% { opacity: 1; }
+          90% { opacity: 1; }
+          100% { top: 100%; opacity: 0; }
+        }
+      `}} />
     </div>
   );
 }
-
-const summaryText = `
-{/ --- PROJECT LINKS --- /}
-
-  
-    Artifacts Available:
-  
-  
-    View Code
-  
-  
-    HuggingFace Collection
-  
-
-
-1. Introduction
-
-Modern Optical Character Recognition (OCR) has evolved far beyond simple text extraction. Today's applications require handling complex document parsing, information extraction (IE), and text-centric visual question answering (VQA).
-
-Traditional OCR systems typically rely on cascaded pipelines—stringing together separate modules for text detection, recognition, and layout analysis. While modular, these pipelines suffer from error propagation, where a failure in detection cascades through the entire system, and high maintenance complexity.
-
-
-  
-  
-    Figure 1: Performance Comparison. MahenOCR (1B) achieves competitive or superior performance across multiple benchmarks compared to traditional pipelines and larger VLMs.
-  
-
-
-2. Architecture
-
-MahenOCR represents a shift to a pure end-to-end Vision-Language Model (VLM) architecture. By unifying diverse tasks into a single framework, we eliminate the need for intermediate pre-processing modules like layout analysis.
-
-MahenOCR achieves high efficiency with a compact 1B parameter footprint, making it suitable for edge and low-latency applications. The architecture consists of three core components:
-
-1.  Native Resolution Visual Encoder: Built on SigLIP-v2-400M, using an adaptive patching mechanism to preserve aspect ratio.
-2.  Adaptive MLP Connector: A learnable bridge compressing visual tokens to reduce redundancy.
-3.  Lightweight Language Model: Based on the Metanthropic-0.5B model, utilizing XD-RoPE for robust spatial reasoning.
-
-
-  
-  
-    Figure 2: Model Architecture. The end-to-end flow from high-resolution visual encoding to auto-regressive text generation.
-  
-
-
-3. Methodology & Pipeline
-
-Our approach streamlines the traditional multi-stage pipeline into a unified differentiable flow. This allows the model to leverage the reasoning capabilities of Large Language Models (LLMs) for superior performance on cognitive-intensive tasks.
-
-
-  
-  
-    Figure 3: Pipeline Comparison. Contrasting the MahenOCR end-to-end approach with traditional cascaded OCR systems.
-  
-
-
-Data Pipeline & RLVR
-A key innovation is the application of Reinforcement Learning with Verifiable Rewards (RLVR). We employ Group Relative Policy Optimization (GRPO) to fine-tune the model on objective metrics:
-* Spotting: Intersection over Union (IoU) rewards.
-* Parsing: Structural integrity rewards (HTML/LaTeX validity).
-
-
-  
-  
-    Figure 4: Data Construction & Training Pipeline. From raw document sourcing to RL-based fine-tuning.
-  
-
-
-4. Unified Capabilities
-
-MahenOCR consolidates a wide range of capabilities into a single model, demonstrating robust performance across diverse document intelligence tasks.
-
-4.1 Text Spotting
-Jointly detecting and recognizing text with precise coordinate outputs.
-
-
-  
-  Figure 5: Multi-oriented text spotting samples.
-
-
-4.2 Document Parsing
-End-to-end conversion of documents into structured Markdown, with tables in HTML and formulas in LaTeX.
-
-
-  
-  Figure 6: Complex layout parsing results.
-
-
-4.3 Translation & Information Extraction
-Direct image-to-text translation and structured JSON extraction from receipts and IDs.
-
-
-  
-    
-    Figure 7: End-to-End Translation
-  
-  
-    
-    Figure 8: Key Information Extraction
-  
-
-
-5. Conclusion
-
-MahenOCR demonstrates that a well-designed, data-driven 1B parameter model can rival the performance of significantly larger models and commercial APIs. By combining a streamlined end-to-end architecture with targeted reinforcement learning, we provide a robust, open-source foundation for the next generation of industrial OCR applications.
-`;

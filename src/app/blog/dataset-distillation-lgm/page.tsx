@@ -1,100 +1,58 @@
 import Link from 'next/link';
 
-export default function ResearchDeepSummary() {
+export default function DatasetDistillation() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <div className="mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-800 pb-6">
-        <Link href="/blog" className="text-sm text-zinc-400 hover:text-zinc-100 flex items-center gap-2 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to Research Library
-        </Link>
-        <a
-          href="https://metanthropic.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500/10 text-teal-400 hover:bg-teal-500/20 hover:text-teal-300 rounded-lg text-sm font-medium transition-all border border-teal-500/20 shadow-lg shadow-teal-500/5"
-        >
-          Read Full Official Paper on Metanthropic <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-        </a>
-      </div>
+    <div className="min-h-screen bg-zinc-950 text-zinc-300 relative overflow-hidden font-sans">
 
-      <article className="prose prose-invert prose-teal max-w-none text-zinc-300 leading-relaxed space-y-6">
-        {summaryText.split('\n\n').map((paragraph, idx) => {
-          if (!paragraph.trim()) return null;
-          if (paragraph.length < 60 && !paragraph.endsWith('.')) {
-            return <h2 key={idx} className="text-2xl font-semibold text-zinc-100 mt-8 mb-4">{paragraph}</h2>;
-          }
-          return <p key={idx}>{paragraph}</p>;
-        })}
-      </article>
+      {/* Distillation/Filtration Background Pattern */}
+      <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #10b981 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+      <div className="absolute top-0 inset-x-0 h-[40vh] bg-gradient-to-b from-emerald-900/20 to-transparent pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto py-20 px-6 relative z-10">
+
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16 pb-6 border-b border-emerald-900/30">
+          <Link href="/blog" className="text-sm text-emerald-500/70 hover:text-emerald-400 flex items-center gap-2 transition-colors uppercase tracking-widest font-mono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Research Data Hub
+          </Link>
+          <a href="https://metanthropic.com" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-emerald-950/40 text-emerald-300 hover:bg-emerald-900/60 rounded border border-emerald-700/50 text-sm font-medium transition-all backdrop-blur-md flex items-center gap-2">
+            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+            Download LGM Paper
+          </a>
+        </div>
+
+        <header className="mb-16">
+          <div className="flex items-center gap-2 mb-6 text-emerald-400 font-mono text-sm border border-emerald-500/20 bg-emerald-500/10 w-fit px-3 py-1 rounded-full">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            Data Efficiency
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-6">
+            Dataset Distillation via <span className="text-emerald-400">LGM</span>
+          </h1>
+          <p className="text-xl text-zinc-400 font-light max-w-2xl leading-relaxed">
+            Compressing petabytes of noisy internet data into pure, high-signal training manifolds using Latent Gradient Matching.
+          </p>
+        </header>
+
+        <article className="space-y-8 font-sans text-lg leading-relaxed text-zinc-300">
+          <p>
+            The current paradigm of LLM pre-training relies on the "data scaling law"—the assumption that feeding models exponentially larger datasets inevitably leads to better reasoning. However, internet-scale datasets are saturated with noise, redundancy, and low-quality heuristics. This brute-force approach results in catastrophic computational waste.
+          </p>
+
+          <div className="my-12 p-1 bg-gradient-to-r from-emerald-500/20 to-transparent rounded-xl">
+            <div className="bg-zinc-950 p-8 rounded-lg border border-emerald-900/30">
+              <h2 className="text-2xl font-semibold text-white mb-4">Latent Gradient Matching (LGM)</h2>
+              <p className="text-zinc-400 text-base">
+                Our Dataset Distillation framework operates on the principle of LGM. Instead of randomly sampling data, LGM computes the gradient trajectory a model takes when learning a "perfect" concept from high-quality proprietary data. It then searches the raw, noisy dataset for token sequences that, when compressed, perfectly match that idealized gradient trajectory.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            The result is a distilled dataset that is orders of magnitude smaller but contains the exact cognitive "signal" required for reasoning. By training on LGM-distilled data, we achieve GPT-4 class reasoning on models a fraction of the size, significantly lowering the barrier to entry for training advanced foundation models.
+          </p>
+        </article>
+      </div>
     </div>
   );
 }
-
-const summaryText = `
-{/ --- PROJECT LINKS --- /}
-
-  
-    Artifacts Available:
-  
-  
-    View Code
-  
-  
-    Project Website
-  
-
-
-The Platonic Representation Hypothesis
-
-Motivated by the Platonic Representation Hypothesis—which suggests that diverse foundation models converge toward shared representations of reality—we explore whether synthetic data optimized for one architecture can train another.
-
-We demonstrate that a single synthetic image per class is sufficient to train linear probes that not only achieve competitive performance across a diverse array of vision backbones (CLIP, DINO-v2, EVA-02) but consistently outperform baselines constructed from real images.
-
-Method: Linear Gradient Matching
-
-Our approach departs from traditional distillation which targets full network training. Instead, we target the regime of linear probing—training lightweight classifiers atop frozen, pre-trained feature extractors.
-
-The core insight relies on two principles:
-1.  For a linear probe, matching the gradient of the loss with respect to the weights is sufficient to align training trajectories.
-2.  By minimizing the angular distance between gradients induced by real and synthetic data, we force synthetic images to encode features that point the optimization in the correct direction.
-
-
-
-
-Figure 2: Linear Gradient Matching. We optimize synthetic pixels such that they induce the same gradient updates on a linear classifier as a batch of real data.
-
-
-
-Why Synthetic Beats Real
-
-A surprising finding in our research is that synthetic data often outperforms representative real data (such as class centroids). Why?
-
-We hypothesize that gradient matching drives synthetic prototypes to the "boundary" of the class distribution to maximize discriminative power. As visualized below in the PCA projection:
-* Real images (dots) cluster around the mean.
-* Distilled images (stars) consistently locate themselves at the periphery, effectively acting as support vectors.
-
-
-
-
-Figure 3: PCA Visualization. Real images (dots) cluster around the mean, while our distilled images (stars) push to the decision boundaries.
-
-
-
-Diagnosing Model Biases
-
-Beyond efficiency, these distilled datasets serve as potent diagnostic tools. They allow us to "see" what a model prioritizes. In our experiments with the "Spawrious" dataset (containing correlations like dogs on specific backgrounds), we found:
-
-* DINO-v2: The distilled image retains the object (dog), showing robustness to background noise.
-* MoCo-v3: The distilled image focuses almost entirely on the background. This explains why MoCo fails on the test set—it was looking at the wrong features.
-
-
-
-
-Figure 4: Visualizing Spurious Correlations. The synthetic images expose the underlying biases of the models.
-
-
-
-Conclusion
-
-Linear Gradient Matching adapts dataset distillation to the pre-training era. By treating alignment as a quantifiable property of the gradient space, we have shown that it is possible to compress massive datasets into compact, transferable representations that not only train models efficiently but also illuminate the internal physics of their representations.
-`;

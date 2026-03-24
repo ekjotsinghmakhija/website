@@ -1,107 +1,70 @@
 import Link from 'next/link';
 
-export default function ResearchDeepSummary() {
+export default function KPIDP() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <div className="mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-800 pb-6">
-        <Link href="/blog" className="text-sm text-zinc-400 hover:text-zinc-100 flex items-center gap-2 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to Research Library
-        </Link>
-        <a
-          href="https://metanthropic.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500/10 text-teal-400 hover:bg-teal-500/20 hover:text-teal-300 rounded-lg text-sm font-medium transition-all border border-teal-500/20 shadow-lg shadow-teal-500/5"
-        >
-          Read Full Official Paper on Metanthropic <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-        </a>
-      </div>
+    <div className="min-h-screen bg-black text-zinc-300 relative overflow-hidden font-sans">
 
-      <article className="prose prose-invert prose-teal max-w-none text-zinc-300 leading-relaxed space-y-6">
-        {summaryText.split('\n\n').map((paragraph, idx) => {
-          if (!paragraph.trim()) return null;
-          if (paragraph.length < 60 && !paragraph.endsWith('.')) {
-            return <h2 key={idx} className="text-2xl font-semibold text-zinc-100 mt-8 mb-4">{paragraph}</h2>;
-          }
-          return <p key={idx}>{paragraph}</p>;
-        })}
-      </article>
+      {/* Split Design Background representing "Disentanglement" */}
+      <div className="absolute inset-0 flex pointer-events-none opacity-20">
+        <div className="w-1/2 h-full bg-gradient-to-r from-orange-600/20 to-transparent"></div>
+        <div className="w-1/2 h-full bg-gradient-to-l from-zinc-600/20 to-transparent"></div>
+      </div>
+      <div className="absolute top-0 left-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-orange-500/50 to-transparent transform -translate-x-1/2 pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto py-20 px-6 relative z-10">
+
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16 pb-6 border-b border-zinc-800">
+          <Link href="/blog" className="text-sm text-zinc-500 hover:text-white flex items-center gap-2 transition-colors uppercase tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Research Data
+          </Link>
+          <a href="https://metanthropic.com" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-orange-500/10 text-orange-500 hover:bg-orange-500/20 rounded text-sm font-semibold transition-all border border-orange-500/30">
+            Read Full Thesis
+          </a>
+        </div>
+
+        <header className="mb-16 text-center">
+          <div className="text-orange-500 text-sm font-mono mb-4 tracking-widest uppercase">Information Theory</div>
+          <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6">
+            KP-<span className="text-zinc-500">IDP</span>
+          </h1>
+          <p className="text-xl text-zinc-400 font-light max-w-2xl mx-auto leading-relaxed">
+            The Kinetic-Potential Information Disentanglement Principle.
+          </p>
+        </header>
+
+        <article className="space-y-12 text-lg leading-relaxed text-zinc-300">
+          <p className="text-center max-w-3xl mx-auto">
+            When an LLM reads a document, it ingests both the core factual data and the rhetorical style, bias, and intent of the author as a single, entangled concept. KP-IDP introduces a framework to mathematically separate these two elements during pre-training.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-16">
+            <div className="p-8 bg-zinc-900/50 border-t-4 border-zinc-500 rounded-lg">
+              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                <svg className="w-5 h-5 text-zinc-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                Potential State
+              </h3>
+              <p className="text-zinc-400 text-sm">
+                The pure, objective factual baseline of the information. Stripped of emotion, persuasion, or subjective framing. This forms the bedrock of the model's knowledge graph.
+              </p>
+            </div>
+
+            <div className="p-8 bg-orange-950/20 border-t-4 border-orange-500 rounded-lg">
+              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                <svg className="w-5 h-5 text-orange-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M2 12h4l2-9 5 18 2-9h5"/></svg>
+                Kinetic State
+              </h3>
+              <p className="text-zinc-400 text-sm">
+                The rhetorical energy, tone, and persuasive intent. By disentangling this, the model understands *how* something is being said without blindly adopting that perspective as absolute truth.
+              </p>
+            </div>
+          </div>
+
+          <p className="text-center max-w-3xl mx-auto border-t border-zinc-800 pt-12">
+            By actively disentangling information into Potential and Kinetic components, we can train foundation models that possess vast knowledge without becoming ideologically captured by the tonal biases inherent in human-generated training data.
+          </p>
+        </article>
+      </div>
     </div>
   );
 }
-
-const summaryText = `
-{/ --- PROJECT LINKS --- /}
-
-  Artifacts Available:
-  Read Paper
-  View Code
-
-
-The Reliability Crisis: The Illusion of Competence
-
-In the deployment of Large Language Models for high-stakes reasoning, a critical failure mode persists: the "hallucination of competence." Standard interpretability techniques rely on an axiomatic assumption: if a truth-value can be linearly decoded from a hidden state (Decodability), the model "knows" this truth and is utilizing it (Causality).
-
-This specification invalidates that axiom.
-
-Based on rigorous analysis of Counting ViTs, we demonstrate that Decodability is not isomorphic to Causality. We identified two distinct regimes of failure that standard auditing misses:
-
-1.  The "Phantom Readout" Regime (High Decodability, Low Causality): In the final layers, tokens often contain highly accurate information that is functionally inert. The model has "crystallized" the answer into memory but has ceased reasoning.
-2.  The "Dark Computation" Regime (Low Decodability, High Causality): In the middle layers, tokens exert profound causal influence—patching them flips the output logic—yet linear probes fail to extract meaningful information. The computation is "kinetic"—actively moving through the attention mechanism—but not yet readable.
-
-
-  
-  
-    Figure 1: The Causal Intervention Operator. Transplants between "Clean" and "Corrupted" runs reveal that information flow is often orthogonal to representation.
-  
-
-
-The Metanthropic Thesis: Kinetic vs. Potential
-
-To resolve this paradox, the Metanthropic Self-Correcting Reasoning Engine (MS-CRE) abandons the unitary view of "knowledge" in favor of a thermodynamic framework:
-
-1. Kinetic Information (Data in Transit)
-* Definition: Defined by its ability to do work on the output (High Causal Efficacy).
-* Role: Active reasoning and decision branching.
-* Signature: High Patching Impact , Low Probing Accuracy.
-
-2. Potential Information (Data in Storage)
-* Definition: Defined by its ease of retrieval (High Decodability).
-* Role: Memory and context storage ("The Residue of Thought").
-* Signature: Low Patching Impact , High Probing Accuracy .
-
-Experimental Validation: The "Holographic Transfer"
-
-We deployed the Causal Intervention Operator  across 12 layers of a Vision Transformer. The results exposed a phenomenon we term Holographic State Transfer.
-
-In the middle layers (6-9), spatial tokens cease to be local feature detectors and become Kinetic Bus Nodes. Patching a single object token from a 2-object image into a 1-object image forces the model to predict "2", even though the second object is physically missing.
-
-Crucially, standard linear probes fail to decode this "count=2" information from the token (Low Potential), yet the causal impact is maximal (High Kinetic). This proves that reasoning is encoded in the gradients of the attention mechanism, not just the static embeddings.
-
-
-  
-  
-    Figure 2: The Kinetic Signature. Note the profound causal influence of spatial tokens in the middle layers (6-9), contrasted with the "CLS Collapse" in the final layers.
-  
-
-
-Module Specification: The KP-IDP Controller
-
-The Kinetic-Potential Information Disentanglement Protocol (KP-IDP) is implemented as a lightweight auxiliary controller fused into the Transformer's residual stream. It operates as a "Dual-State Monitor."
-
-The Phase-Shift Gate
-The controller monitors the Phase Transition of information from the Kinetic Regime (Layers 6-9) to the Potential Regime (Layers 10-12).
-
-* CASE A (Valid): High Kinetic (Mid)  High Potential (Final).
-     Action:* Pass.
-* CASE B (Hallucination): Low Kinetic (Mid)  High Potential (Final).
-     Diagnosis:* The answer appeared without computation.
-     Action:* Reject & Resample.
-* CASE C (Confusion): High Kinetic (Mid)  Low Potential (Final).
-     Diagnosis:* The model "thought" hard but reached no conclusion.
-     Action:* Inject "Chain of Thought" token.
-
-Conclusion
-
-KP-IDP redefines hallucination not as a factual error, but as a Thermonn[End of Summary Extract. Please visit Metanthropic for the full research paper.]
-`;

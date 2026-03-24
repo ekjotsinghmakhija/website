@@ -1,117 +1,90 @@
 import Link from 'next/link';
 
-export default function ResearchDeepSummary() {
+export default function Arvi20BRelease() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <div className="mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-800 pb-6">
-        <Link href="/blog" className="text-sm text-zinc-400 hover:text-zinc-100 flex items-center gap-2 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to Research Library
-        </Link>
-        <a
-          href="https://metanthropic.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500/10 text-teal-400 hover:bg-teal-500/20 hover:text-teal-300 rounded-lg text-sm font-medium transition-all border border-teal-500/20 shadow-lg shadow-teal-500/5"
-        >
-          Read Full Official Paper on Metanthropic <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-        </a>
-      </div>
+    <div className="min-h-screen bg-[#030014] text-zinc-300 relative overflow-hidden font-sans selection:bg-indigo-500/30">
 
-      <article className="prose prose-invert prose-teal max-w-none text-zinc-300 leading-relaxed space-y-6">
-        {summaryText.split('\n\n').map((paragraph, idx) => {
-          if (!paragraph.trim()) return null;
-          if (paragraph.length < 60 && !paragraph.endsWith('.')) {
-            return <h2 key={idx} className="text-2xl font-semibold text-zinc-100 mt-8 mb-4">{paragraph}</h2>;
-          }
-          return <p key={idx}>{paragraph}</p>;
-        })}
-      </article>
+      {/* Cyber Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f46e510_1px,transparent_1px),linear-gradient(to_bottom,#4f46e510_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+      {/* Neon Flares */}
+      <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] mix-blend-screen pointer-events-none"></div>
+      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-violet-600/20 rounded-full blur-[100px] mix-blend-screen pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto py-20 px-6 relative z-10">
+
+        {/* Navigation */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16 pb-6 border-b border-indigo-900/30">
+          <Link href="/blog" className="text-sm text-indigo-200/60 hover:text-indigo-300 flex items-center gap-2 transition-colors uppercase tracking-widest font-mono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Return to Index
+          </Link>
+          <a
+            href="https://metanthropic.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-2 px-5 py-2 bg-indigo-950/30 text-indigo-300 rounded text-sm font-mono transition-all border border-indigo-500/30 hover:border-indigo-400 hover:bg-indigo-900/50 shadow-[0_0_15px_rgba(79,70,229,0.15)]"
+          >
+            [ Fetch Full Paper ]
+          </a>
+        </div>
+
+        {/* Hero Header */}
+        <header className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="px-2 py-1 bg-indigo-500/10 text-indigo-400 text-xs font-mono border border-indigo-500/20 rounded">v1.0.0</span>
+            <span className="px-2 py-1 bg-violet-500/10 text-violet-400 text-xs font-mono border border-violet-500/20 rounded">Architecture / MoE</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-white tracking-tighter mb-6">
+            ARVI-<span className="text-transparent bg-clip-text bg-gradient-to-br from-indigo-400 to-violet-400">20B</span>
+          </h1>
+          <p className="text-xl text-indigo-100/70 font-light max-w-2xl leading-relaxed">
+            A Highly Efficient Mixture-of-Experts Model designed to bring commercial-grade reasoning to consumer hardware.
+          </p>
+        </header>
+
+        {/* Tech Specs Panel */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+          {[
+            { label: 'Parameters', value: '20 Billion' },
+            { label: 'Active Experts', value: '4 per token' },
+            { label: 'Total Experts', value: '16' },
+            { label: 'Architecture', value: 'Sparse MoE' },
+          ].map((stat, i) => (
+            <div key={i} className="p-4 bg-indigo-950/20 border border-indigo-900/50 rounded-lg backdrop-blur-sm">
+              <div className="text-indigo-300/50 text-xs font-mono mb-1 uppercase tracking-wider">{stat.label}</div>
+              <div className="text-indigo-100 font-semibold text-lg">{stat.value}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Content */}
+        <article className="space-y-8 font-serif text-lg text-zinc-300 leading-relaxed">
+          <p>
+            The pursuit of Artificial General Intelligence (AGI) has often equated larger parameter counts with superior reasoning capabilities. However, this brute-force scaling presents severe limitations regarding deployment, inference latency, and environmental impact. ARVI-20B challenges this paradigm by leveraging a highly optimized Mixture-of-Experts (MoE) architecture.
+          </p>
+
+          <h2 className="text-2xl font-sans font-bold text-white mt-12 mb-4 flex items-center gap-3">
+            <span className="w-8 h-[1px] bg-indigo-500"></span>
+            Sparse Activation & Efficiency
+          </h2>
+          <p>
+            With 20 billion total parameters, ARVI achieves performance competitive with much larger dense models. The core innovation lies in its routing mechanism. Instead of activating the entire network for every token, ARVI dynamically selects only 4 out of 16 specialized "expert" sub-networks per token. This sparse activation ensures high cognitive fidelity while dramatically reducing the computational overhead during inference.
+          </p>
+
+          <blockquote className="p-6 border-l-4 border-violet-500 bg-violet-950/10 italic text-violet-200 font-light my-10">
+            "ARVI-20B demonstrates that commercial-grade capabilities can be achieved without requiring industrial-grade data centers. This is a crucial step towards democratizing access to advanced AI reasoning."
+          </blockquote>
+
+          <h2 className="text-2xl font-sans font-bold text-white mt-12 mb-4 flex items-center gap-3">
+            <span className="w-8 h-[1px] bg-indigo-500"></span>
+            Hardware Democratization
+          </h2>
+          <p>
+            By drastically lowering the memory bandwidth and compute requirements through its MoE design, ARVI-20B is specifically engineered to run efficiently on high-end consumer GPUs or small server clusters. This opens new avenues for independent researchers, developers, and small organizations to deploy state-of-the-art models locally, enhancing privacy and reducing reliance on cloud APIs.
+          </p>
+        </article>
+      </div>
     </div>
   );
 }
-
-const summaryText = `
-{/ --- PROJECT LINKS --- /}
-
-  
-    Artifacts Available:
-  
-  
-    HuggingFace Weights
-  
-  
-    View Code
-  
-
-
-Introduction
-
-The current frontier of AI is defined by "reasoning models"—systems that can "think" before they speak, dynamically allocating compute to solve complex problems. However, these capabilities have largely been locked behind proprietary APIs.
-
-Today, we release Arvi 20B, an open-weight reasoning model designed to bring these agentic capabilities to everyone. Built as a Mixture-of-Experts (MoE) transformer, Arvi 20B offers a powerful balance of performance and efficiency: while it has 20.9B total parameters, it uses only 3.6B active parameters per token.
-
-This allows it to run on consumer-grade hardware (requiring as little as 16GB VRAM with quantization) while delivering performance that competes with models like OpenAI's o3-mini and our own o4-mini.
-
-Architecture: Efficiency by Design
-
-Arvi 20B is built on a sparse Mixture-of-Experts (MoE) architecture. Unlike dense models that activate every neuron for every token, Arvi selectively activates only the most relevant "experts."
-
-* Total Parameters: 20.91 Billion
-* Active Parameters: 3.61 Billion (per forward pass)
-* Experts: 32 Experts (Top-4 routing)
-* Context Window: 131,072 tokens (via YaRN)
-
-To further democratize access, we post-trained the model using MXFP4 quantization, compressing the MoE weights (which make up 90%+ of the model) to just 4.25 bits. This drastic reduction in memory footprint enables high-end reasoning on single-GPU setups.
-
-
-  
-  
-    Figure 1: Main Capabilities. Comparison of Arvi 20B (High Reasoning) against closed frontier models. It surpasses o3-mini on AIME and approaches o4-mini accuracy.
-  
-
-
-Variable Effort Reasoning
-
-A key feature of Arvi is its ability to adjust its "thinking" depth. We trained the model to support three distinct reasoning levels—Low, Medium, and High—configured via the system prompt.
-
-As shown in the scaling laws below, increasing the reasoning level (and thus the length of the Chain-of-Thought) yields log-linear improvements in accuracy across hard tasks like AIME (Math) and GPQA (Graduate-Level Science).
-
-
-  
-  
-    Figure 2: Test-Time Scaling. Accuracy increases smoothly as the model allocates more tokens to its internal Chain-of-Thought (CoT).
-  
-
-
-Agentic Capabilities & The Harmony Format
-
-Reasoning is only half the equation; action is the other. Arvi 20B is trained using our custom Harmony Chat Format, which structures interactions into a hierarchy: 'System > Developer > User > Assistant > Tool'.
-
-This format allows the model to:
-1.  Interleave Thoughts and Actions: The model can "think" about a problem, decide to call a tool (like a Python interpreter or Web Search), analyze the result, and then continue reasoning.
-2.  Strict Instruction Adherence: By distinguishing between System and Developer messages, Arvi follows a robust priority hierarchy, reducing the risk of prompt injections.
-
-
-  
-  
-    Figure 3: The Harmony Format. An example showing the model interleaving Chain-of-Thought (CoT) with tool execution.
-  
-
-
-Coding and Tool Use Results
-
-These architectural choices translate to exceptional performance in agentic domains. On Codeforces (competitive programming) and SWE-bench Verified (real-world software engineering), Arvi 20B performs competitively with significantly larger models.
-
-
-  
-  
-    Figure 4: Coding & Agents. Arvi 20B demonstrates strong developer capabilities, excelling in environment-based coding tasks.
-  
-
-
-Safety & Health Intelligence
-
-Open weights present unique safety challenges. We conducted extensive "red-teaming" and adversarial fine-tuning to ensure Arvi 20B does not pose significant risks in critical areas like Cybersecurity or Biorisk.
-
-Interestingly, the model shows remarkable utility in positive domains. On HealthBench, a dataset evaluating realistic health conversations, Arvi 20B (High Reasoning) outperforms GPT-4o and o1-preview, offering a powerful tool for global hnn[End of Summary Extract. Please visit Metanthropic for the full research paper.]
-`;

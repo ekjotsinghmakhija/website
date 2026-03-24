@@ -1,108 +1,63 @@
 import Link from 'next/link';
 
-export default function ResearchDeepSummary() {
+export default function FragilityOfGuardrails() {
   return (
-    <div className="max-w-4xl mx-auto py-12 px-6">
-      <div className="mb-12 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-b border-zinc-800 pb-6">
-        <Link href="/blog" className="text-sm text-zinc-400 hover:text-zinc-100 flex items-center gap-2 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg> Back to Research Library
-        </Link>
-        <a
-          href="https://metanthropic.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal-500/10 text-teal-400 hover:bg-teal-500/20 hover:text-teal-300 rounded-lg text-sm font-medium transition-all border border-teal-500/20 shadow-lg shadow-teal-500/5"
-        >
-          Read Full Official Paper on Metanthropic <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
-        </a>
-      </div>
+    <div className="min-h-screen bg-[#0d0505] text-zinc-300 relative overflow-hidden font-sans">
 
-      <article className="prose prose-invert prose-teal max-w-none text-zinc-300 leading-relaxed space-y-6">
-        {summaryText.split('\n\n').map((paragraph, idx) => {
-          if (!paragraph.trim()) return null;
-          if (paragraph.length < 60 && !paragraph.endsWith('.')) {
-            return <h2 key={idx} className="text-2xl font-semibold text-zinc-100 mt-8 mb-4">{paragraph}</h2>;
-          }
-          return <p key={idx}>{paragraph}</p>;
-        })}
-      </article>
+      {/* Security Hazard / Glitch Background */}
+      <div className="absolute top-0 right-0 w-full h-full bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#ef444405_10px,#ef444405_20px)] pointer-events-none"></div>
+      <div className="absolute top-1/4 right-1/4 w-[300px] h-[300px] bg-red-600/10 rounded-full blur-[100px] pointer-events-none mix-blend-color-dodge"></div>
+
+      <div className="max-w-4xl mx-auto py-20 px-6 relative z-10">
+
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-16 pb-6 border-b border-red-900/30">
+          <Link href="/blog" className="text-sm text-red-500/70 hover:text-red-400 flex items-center gap-2 transition-colors uppercase tracking-widest font-mono">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            Security Index
+          </Link>
+          <a href="https://metanthropic.com" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-red-950/40 text-red-400 hover:bg-red-900/60 rounded border border-red-800/50 text-sm font-mono font-bold transition-all shadow-[0_0_15px_rgba(239,68,68,0.2)]">
+            ACCESS VULNERABILITY REPORT
+          </a>
+        </div>
+
+        <header className="mb-16">
+          <div className="flex items-center gap-2 mb-6">
+            <span className="px-2 py-1 bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono uppercase tracking-wide flex items-center gap-2">
+              <span className="w-1.5 h-1.5 bg-red-500 animate-pulse"></span>
+              Vulnerability Identified
+            </span>
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-6">
+            The Fragility of Guardrails: <span className="text-red-500">Cognitive Jamming</span>
+          </h1>
+          <p className="text-xl text-zinc-400 font-light max-w-2xl leading-relaxed">
+            Why post-training safety alignments fail, and how adversarial prompts exploit the underlying latent topology of foundation models.
+          </p>
+        </header>
+
+        <article className="space-y-8 text-lg leading-relaxed text-zinc-300">
+          <p>
+            The industry standard for AI safety relies heavily on post-training alignment techniques, such as Reinforcement Learning from Human Feedback (RLHF). While RLHF can effectively "teach" a model to refuse harmful requests under normal conditions, it fundamentally acts as a superficial behavioral patch rather than a structural cognitive limit.
+          </p>
+
+          <h2 className="text-2xl font-bold text-white mt-12 mb-4 font-mono border-b border-red-900/50 pb-2">
+            // The Mechanics of Cognitive Jamming
+          </h2>
+          <p>
+            We introduce the concept of "Cognitive Jamming." An adversarial prompt does not logically outsmart the model; rather, it uses complex, syntactically confusing, or nested role-play structures to force the model's latent activations into a chaotic, out-of-distribution manifold.
+          </p>
+          <p>
+            Once the model is pushed into this unstable topological region, the superficial RLHF guardrails (which were only trained on cleanly structured malicious requests) fail to trigger. The model, attempting to resolve the syntactic chaos, inadvertently executes the harmful payload embedded within the prompt.
+          </p>
+
+          <div className="my-10 p-6 bg-red-950/20 border-l-4 border-red-600 rounded-r-lg">
+            <strong className="text-red-400 block mb-2 font-mono text-sm">Conclusion & Mitigation</strong>
+            <p className="text-zinc-300 text-base">
+              True AI safety cannot be bolted on at the end of the training pipeline. Our research demonstrates that to prevent Cognitive Jamming, safety constraints must be woven directly into the model's fundamental latent geometry during pre-training—ensuring that harmful concepts are not just "refused," but structurally inaccessible.
+            </p>
+          </div>
+        </article>
+      </div>
     </div>
   );
 }
-
-const summaryText = `
-{/ --- PROJECT LINKS --- /}
-
-  
-    Artifacts Available:
-  
-  
-  View Code
-
-
-  Project Website
-
-
-
-Large Language Models (LLMs) have demonstrated a profound capacity for In-Context Learning (ICL), yet the internal causal mechanisms that drive these emergent behaviors remain a "black box" of high-dimensional entanglement.
-
-At Metanthropic, we believe that bridging the gap between linguistic pattern-matching and objective reasoning requires a mechanistic deconstruction of how models internalize structural priors. Physics-based dynamics offer a rigorous, experimentally controllable alternative to abstract symbolic benchmarks, serving as a critical testbed for evaluating the transition from statistical extrapolation to grounded world-modeling.
-
-In this work, we conduct a mechanistic audit of the LLM residual stream during physics-forecasting tasks. Our findings suggest that models do not merely predict the next numerical token; they actively construct internal features that correlate with fundamental physical invariants.
-
----
-
-The Metanthropic Mechanistic Audit
-
-To move beyond surface-level evaluation, we established a "Physical Laboratory" within the model's activation space. We tasked frontier models with forecasting dynamical systems—ranging from stable 1D oscillators to chaotic 3D coupled pendulums—while simultaneously auditing their internal states.
-
-Our methodology relies on Sparse Autoencoders (SAEs) to disentangle the residual stream. This allows us to map the dense, noisy activity of the network into interpretable, monosemantic features.
-
-
-  
-  
-    Figure 1: The Metanthropic Mechanistic Audit. (a) Predictive Mapping of residual streams. (b) SAE-based Latent Disentanglement. (c) Structural Validation against physical invariants.
-  
-
-
-Key Finding: The "Warm-Up" of Intelligence
-
-We observed a clear phase transition in forecasting capability. Forecasting precision is not static; it is a direct function of context depth. This suggests a latent "warm-up" phase where the model incrementally builds an in-context world model before it can accurately simulate dynamics.
-
-
-  
-  
-    Figure 2: Intelligence Scales with Context. We observe that forecasting error decreases monotonically as the model accumulates more history (L-hist), confirming active calibration.
-  
-
-
-Spontaneous Physics Engines
-
-Perhaps our most significant finding is that LLMs appear to reinvent physics from scratch. By analyzing the features extracted by our SAEs, we identified specific latent circuits that track Energy—both kinetic and potential.
-
-These are not heuristics explicitly taught to the model; they are emergent structures that the model synthesizes to compress the task data. The model "learns" that Energy is a conserved quantity because it is the most efficient way to predict the next token in a physical system.
-
-
-  
-  
-    Figure 3: Latent Energy Circuits. Correlation analysis reveals internal features that track the system's total energy, intensifying as context depth increases.
-  
-
-
-The Fragility of Reasoning
-
-To verify that these features were causal—and not just correlative—we performed ablation studies (a "Doubt Switch"). When we dampened these specific energy-tracking circuits, the model's predictive accuracy collapsed catastrophically.
-
-
-  
-  
-    Figure 4: Causal Necessity. Ablating the identified energy circuits results in a collapse of predictive capability, confirming their functional necessity.
-  
-
-
-The Metanthropic Horizon
-
-This work establishes a new precedent for our mission: uncovering the latent reasoning circuits that allow AI to move beyond text and into the structural reality of the physical world.
-
-By proving that LLMs can spontaneously encode objective physical concepts, we move one step closer to systems that are not just fluent, but grounded. If we can audit the physics of intelligence, we can engineer systems where safety is not a guardrail, but a fundamental law of their operation.
-`;
