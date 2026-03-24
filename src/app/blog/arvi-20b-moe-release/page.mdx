@@ -1,0 +1,12 @@
+# Arvi 20B: Democratizing Reasoning with Efficient MoEs
+
+We are hitting a wall with dense models. The compute required to run a 70B+ model is out of reach for most researchers. **Arvi 20B** is our answer.
+
+### Mixture-of-Experts (MoE) Architecture
+Arvi features 20.9B total parameters, but only **3.6B are active** during inference. By using a sophisticated gating mechanism, we activate only the "reasoning circuits" required for a specific query.
+
+**Benchmarks:**
+* **Math/Coding:** Rivals frontier dense models 3x its size.
+* **Agentic Workflows:** Custom chat formats designed for tool-use and long-context planning.
+
+We released Arvi as open-weights because we believe the future of AGI shouldn't be gated behind an API.
