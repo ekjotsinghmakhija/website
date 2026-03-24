@@ -38,4 +38,23 @@ describe('Project & Blog Integrity', () => {
        }
     });
   });
+
+  it('ensures no orphaned, junk, or case-mismatched folders exist in the blog directory', () => {
+    const blogDir = path.join(process.cwd(), 'src/app/blog');
+    const physicalItems = fs.readdirSync(blogDir);
+
+    // Get all valid slugs from your registry
+    const validSlugs = new Set(BLOG_POSTS.map(post => post.slug));
+
+    physicalItems.forEach(item => {
+      const itemPath = path.join(blogDir, item);
+
+      // We only care about directories, ignore files like page.tsx
+      if (fs.statSync(itemPath).isDirectory()) {
+        if (!validSlugs.has(item)) {
+          throw new Error(`CRITICAL: Rogue folder found! "${item}" is not a registered blog slug in src/lib/blog.ts. Please delete this folder or fix its casing.`);
+        }
+      }
+    });
+  });
 });
