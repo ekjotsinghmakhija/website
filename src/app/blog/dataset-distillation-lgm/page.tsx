@@ -1,0 +1,1 @@
+'use client'; import NotebookLayout from '@/components/layout/NotebookLayout'; export default function Post() { return <NotebookLayout meta={{ title: "dataset-distillation-lgm", date: "2026", readTime: "5 min", tag: "General" }}> <p>Architectural deep-dive for dataset-distillation-lgm is being deployed.</p> </NotebookLayout>; }
