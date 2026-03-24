@@ -1,0 +1,85 @@
+---
+title: "The Kinetic-Potential Information Disentanglement Protocol (KP-IDP)"
+date: "February 7, 2026"
+publishedAt: "2026-02-07"
+summary: "Standard interpretability relies on a dangerous conflation: that Decodability equals Causality. We introduce KP-IDP to distinguish between 'Dark Computation' (Kinetic) and 'Phantom Readouts' (Potential), solving the intervention-reversal paradox."
+authors: ["ekjot-singh", "metanthropic"]
+image: "/images/research/kp-idp/thumbnail.png"
+paperUrl: "/papers/kp-idp.pdf"
+imageCaption: "Figure 1: The Activation Patching Topology. Differentiating between where information 'lives' (Representation) and where it 'works' (Causality)."
+tags: ["Causal Inference", "Model Steering", "Mechanistic Interpretability", "Safety", "Activation Patching"]
+---
+
+{/* --- PROJECT LINKS --- */}
+<div className="flex flex-wrap gap-4 mb-12 not-prose items-center">
+  <span className="text-xs text-gray-500 font-mono uppercase tracking-widest ml-2 hidden sm:block">Artifacts Available:</span>
+  <MDXButton href="/papers/kp-idp.pdf">Read Paper</MDXButton>
+  <MDXButton href="https://github.com/metanthropic/kp-idp">View Code</MDXButton>
+</div>
+
+## The Reliability Crisis: The Illusion of Competence
+
+In the deployment of Large Language Models for high-stakes reasoning, a critical failure mode persists: the "hallucination of competence." Standard interpretability techniques rely on an axiomatic assumption: if a truth-value can be linearly decoded from a hidden state (**Decodability**), the model "knows" this truth and is utilizing it (**Causality**).
+
+**This specification invalidates that axiom.**
+
+Based on rigorous analysis of Counting ViTs, we demonstrate that Decodability is not isomorphic to Causality. We identified two distinct regimes of failure that standard auditing misses:
+
+1.  **The "Phantom Readout" Regime (High Decodability, Low Causality):** In the final layers, tokens often contain highly accurate information that is functionally inert. The model has "crystallized" the answer into memory but has ceased reasoning.
+2.  **The "Dark Computation" Regime (Low Decodability, High Causality):** In the middle layers, tokens exert profound causal influence—patching them flips the output logic—yet linear probes fail to extract meaningful information. The computation is "kinetic"—actively moving through the attention mechanism—but not yet readable.
+
+<figure className="my-12">
+  <img src="/images/research/kp-idp/activation_patching.jpg" alt="Activation Patching Visualized" className="rounded-lg border border-white/10 w-full" />
+  <figcaption className="mt-4 text-sm text-gray-400 text-center">
+    <strong>Figure 1: The Causal Intervention Operator.</strong> Transplants between "Clean" and "Corrupted" runs reveal that information flow is often orthogonal to representation.
+  </figcaption>
+</figure>
+
+## The Metanthropic Thesis: Kinetic vs. Potential
+
+To resolve this paradox, the **Metanthropic Self-Correcting Reasoning Engine (MS-CRE)** abandons the unitary view of "knowledge" in favor of a thermodynamic framework:
+
+### 1. Kinetic Information (Data in Transit)
+* **Definition:** Defined by its ability to do work on the output (High Causal Efficacy).
+* **Role:** Active reasoning and decision branching.
+* **Signature:** High Patching Impact <Latex formula="(\xi \to \text{High})" />, Low Probing Accuracy.
+
+### 2. Potential Information (Data in Storage)
+* **Definition:** Defined by its ease of retrieval (High Decodability).
+* **Role:** Memory and context storage ("The Residue of Thought").
+* **Signature:** Low Patching Impact <Latex formula="(\xi \to 0)" />, High Probing Accuracy <Latex formula="(\rho \to 1)" />.
+
+## Experimental Validation: The "Holographic Transfer"
+
+We deployed the **Causal Intervention Operator** <Latex formula="\Psi" /> across 12 layers of a Vision Transformer. The results exposed a phenomenon we term **Holographic State Transfer**.
+
+In the middle layers (6-9), spatial tokens cease to be local feature detectors and become **Kinetic Bus Nodes**. Patching a single object token from a 2-object image into a 1-object image forces the model to predict "2", even though the second object is physically missing.
+
+Crucially, standard linear probes fail to decode this "count=2" information from the token (Low Potential), yet the causal impact is maximal (High Kinetic). This proves that reasoning is encoded in the *gradients of the attention mechanism*, not just the static embeddings.
+
+<figure className="my-12">
+  <img src="/images/research/kp-idp/results.png" alt="Experimental Results Matrix" className="rounded-lg border border-white/10 w-full" />
+  <figcaption className="mt-4 text-sm text-gray-400 text-center">
+    <strong>Figure 2: The Kinetic Signature.</strong> Note the profound causal influence of spatial tokens in the middle layers (6-9), contrasted with the "CLS Collapse" in the final layers.
+  </figcaption>
+</figure>
+
+## Module Specification: The KP-IDP Controller
+
+The **Kinetic-Potential Information Disentanglement Protocol (KP-IDP)** is implemented as a lightweight auxiliary controller fused into the Transformer's residual stream. It operates as a "Dual-State Monitor."
+
+### The Phase-Shift Gate
+The controller monitors the *Phase Transition* of information from the Kinetic Regime (Layers 6-9) to the Potential Regime (Layers 10-12).
+
+* **CASE A (Valid):** High Kinetic (Mid) <Latex formula="\to" /> High Potential (Final).
+    * *Action:* Pass.
+* **CASE B (Hallucination):** Low Kinetic (Mid) <Latex formula="\to" /> High Potential (Final).
+    * *Diagnosis:* The answer appeared without computation.
+    * *Action:* **Reject & Resample.**
+* **CASE C (Confusion):** High Kinetic (Mid) <Latex formula="\to" /> Low Potential (Final).
+    * *Diagnosis:* The model "thought" hard but reached no conclusion.
+    * *Action:* **Inject "Chain of Thought" token.**
+
+## Conclusion
+
+KP-IDP redefines hallucination not as a factual error, but as a **Thermodynamic Violation** (Potential Energy <Latex formula="\gg" /> Kinetic Work). This allows us to detect ungrounded outputs without needing an external source of truth, simply by verifying the physics of the model's own thought process.

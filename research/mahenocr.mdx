@@ -1,0 +1,147 @@
+---
+title: "MahenOCR: Commercial-Grade OCR with a 1B Parameter VLM"
+date: "January 30, 2026"
+publishedAt: "2026-01-30"
+summary: "We introduce MahenOCR, a 1B parameter vision-language model that achieves state-of-the-art performance in OCR tasks through a unified end-to-end architecture and novel reinforcement learning strategies."
+authors: ["metanthropic", "ekjot-singh"]
+image: "/images/research/mahenocr/thumbnail.png"
+paperUrl: "/papers/mahenocr.pdf"
+imageCaption: "Figure 1: MahenOCR Architecture Overview, integrating a Native Resolution Visual Encoder with a Lightweight LLM."
+tags: ["OCR", "Vision-Language Models", "Reinforcement Learning", "Efficient AI"]
+---
+
+{/* --- PROJECT LINKS --- */}
+<div className="flex flex-wrap gap-4 mb-12 not-prose items-center">
+  <span className="text-xs text-gray-500 font-mono uppercase tracking-widest ml-2 hidden sm:block">
+    Artifacts Available:
+  </span>
+  <MDXButton href="https://github.com/metanthropic/MahenOCR-1B">
+    View Code
+  </MDXButton>
+  <MDXButton href="https://huggingface.co/metanthropic/MahenOCR-1B">
+    HuggingFace Collection
+  </MDXButton>
+</div>
+
+## 1. Introduction
+
+Modern Optical Character Recognition (OCR) has evolved far beyond simple text extraction. Today's applications require handling complex document parsing, information extraction (IE), and text-centric visual question answering (VQA).
+
+Traditional OCR systems typically rely on cascaded pipelines—stringing together separate modules for text detection, recognition, and layout analysis. While modular, these pipelines suffer from **error propagation**, where a failure in detection cascades through the entire system, and high maintenance complexity.
+
+<figure className="my-12">
+  <img
+    src="/images/research/mahenocr/fig1.png"
+    alt="Performance Radar Chart"
+    className="rounded-lg border border-white/10 w-full bg-[#0A0A0A] p-4"
+  />
+  <figcaption className="mt-4 text-sm text-gray-400 text-center">
+    <strong>Figure 1: Performance Comparison.</strong> MahenOCR (1B) achieves competitive or superior performance across multiple benchmarks compared to traditional pipelines and larger VLMs.
+  </figcaption>
+</figure>
+
+## 2. Architecture
+
+**MahenOCR** represents a shift to a pure **end-to-end Vision-Language Model (VLM)** architecture. By unifying diverse tasks into a single framework, we eliminate the need for intermediate pre-processing modules like layout analysis.
+
+MahenOCR achieves high efficiency with a compact **1B parameter** footprint, making it suitable for edge and low-latency applications. The architecture consists of three core components:
+
+1.  **Native Resolution Visual Encoder:** Built on SigLIP-v2-400M, using an adaptive patching mechanism to preserve aspect ratio.
+2.  **Adaptive MLP Connector:** A learnable bridge compressing visual tokens to reduce redundancy.
+3.  **Lightweight Language Model:** Based on the Metanthropic-0.5B model, utilizing **XD-RoPE** for robust spatial reasoning.
+
+<figure className="my-12">
+  <img
+    src="/images/research/mahenocr/fig2.png"
+    alt="MahenOCR Architecture"
+    className="rounded-lg border border-white/10 w-full"
+  />
+  <figcaption className="mt-4 text-sm text-gray-400 text-center">
+    <strong>Figure 2: Model Architecture.</strong> The end-to-end flow from high-resolution visual encoding to auto-regressive text generation.
+  </figcaption>
+</figure>
+
+## 3. Methodology & Pipeline
+
+Our approach streamlines the traditional multi-stage pipeline into a unified differentiable flow. This allows the model to leverage the reasoning capabilities of Large Language Models (LLMs) for superior performance on cognitive-intensive tasks.
+
+<figure className="my-12">
+  <img
+    src="/images/research/mahenocr/pipeline_cropped_v2.png"
+    alt="End-to-End Pipeline"
+    className="rounded-lg border border-white/10 w-full"
+  />
+  <figcaption className="mt-4 text-sm text-gray-400 text-center">
+    <strong>Figure 3: Pipeline Comparison.</strong> Contrasting the MahenOCR end-to-end approach with traditional cascaded OCR systems.
+  </figcaption>
+</figure>
+
+### Data Pipeline & RLVR
+A key innovation is the application of **Reinforcement Learning with Verifiable Rewards (RLVR)**. We employ **Group Relative Policy Optimization (GRPO)** to fine-tune the model on objective metrics:
+* **Spotting:** Intersection over Union (IoU) rewards.
+* **Parsing:** Structural integrity rewards (HTML/LaTeX validity).
+
+<figure className="my-12">
+  <img
+    src="/images/research/mahenocr/data_pipeline.png"
+    alt="Data Processing Pipeline"
+    className="rounded-lg border border-white/10 w-full"
+  />
+  <figcaption className="mt-4 text-sm text-gray-400 text-center">
+    <strong>Figure 4: Data Construction & Training Pipeline.</strong> From raw document sourcing to RL-based fine-tuning.
+  </figcaption>
+</figure>
+
+## 4. Unified Capabilities
+
+MahenOCR consolidates a wide range of capabilities into a single model, demonstrating robust performance across diverse document intelligence tasks.
+
+### 4.1 Text Spotting
+Jointly detecting and recognizing text with precise coordinate outputs.
+
+<figure className="my-8">
+  <img
+    src="/images/research/mahenocr/spotting.png"
+    alt="Text Spotting Visualization"
+    className="rounded-lg border border-white/10 w-full"
+  />
+  <figcaption className="mt-2 text-xs text-gray-500 text-center">Figure 5: Multi-oriented text spotting samples.</figcaption>
+</figure>
+
+### 4.2 Document Parsing
+End-to-end conversion of documents into structured Markdown, with tables in HTML and formulas in LaTeX.
+
+<figure className="my-8">
+  <img
+    src="/images/research/mahenocr/appendix/parsing/parsing_fig.png"
+    alt="Document Parsing Example"
+    className="rounded-lg border border-white/10 w-full"
+  />
+  <figcaption className="mt-2 text-xs text-gray-500 text-center">Figure 6: Complex layout parsing results.</figcaption>
+</figure>
+
+### 4.3 Translation & Information Extraction
+Direct image-to-text translation and structured JSON extraction from receipts and IDs.
+
+<div className="grid md:grid-cols-2 gap-6 my-8">
+  <figure>
+    <img
+      src="/images/research/mahenocr/appendix/translation/translation2.png"
+      alt="Document Translation"
+      className="rounded-lg border border-white/10 w-full h-full object-cover"
+    />
+    <figcaption className="mt-2 text-xs text-gray-500 text-center">Figure 7: End-to-End Translation</figcaption>
+  </figure>
+  <figure>
+    <img
+      src="/images/research/mahenocr/appendix/IE_VQA/ie2.jpg"
+      alt="Information Extraction"
+      className="rounded-lg border border-white/10 w-full h-full object-cover"
+    />
+    <figcaption className="mt-2 text-xs text-gray-500 text-center">Figure 8: Key Information Extraction</figcaption>
+  </figure>
+</div>
+
+## 5. Conclusion
+
+MahenOCR demonstrates that a well-designed, data-driven 1B parameter model can rival the performance of significantly larger models and commercial APIs. By combining a streamlined end-to-end architecture with targeted reinforcement learning, we provide a robust, open-source foundation for the next generation of industrial OCR applications.
