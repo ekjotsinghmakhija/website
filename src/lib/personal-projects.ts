@@ -77,7 +77,7 @@ export const PERSONAL_PROJECTS: Project[] = [
     visibility: 'Public',
     aiSummary: 'Advanced AI research implementing Linear Gradient Matching for cross-model generalization in dataset distillation.',
     techStack: ['Python', 'PyTorch'],
-    url: 'https://github.com/metanthropic/DDPTECMGLGM',
+    url: 'https://metanthropic.vercel.app/',
     featured: true
   },
   {
@@ -88,7 +88,7 @@ export const PERSONAL_PROJECTS: Project[] = [
     visibility: 'Public',
     aiSummary: 'Essential Python wrappers allowing developers to run massive Meta Llama models on standard hardware efficiently.',
     techStack: ['Python', 'C++'],
-    url: 'https://github.com/metanthropic/llama-cpp-python',
+    url: 'https://metanthropic.vercel.app/',
     featured: false
   },
   {
@@ -191,7 +191,7 @@ export const PERSONAL_PROJECTS: Project[] = [
     visibility: 'Public',
     aiSummary: 'A robust user management server handling JWT issuance, Row Level Security, and Magic Link authentication.',
     techStack: ['Go', 'PostgreSQL', 'JWT'],
-    url: 'https://github.com/tealbase/auth',
+    url: 'https://github.com/tealbase/tealbase',
     featured: false
   },
   {

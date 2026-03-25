@@ -17,8 +17,8 @@ export const EXPERIENCE: Experience[] = [
     date: '2025 - Present',
     description: 'Engineering an open-source Firebase alternative utilizing PostgreSQL. Architecting the core database engine, real-time WebSocket broadcasting (realtime-js), and secure JWT-based auth systems with Row Level Security. Managing open-source community contributions and infrastructure scaling.',
     techStack: ['TypeScript', 'PostgreSQL', 'Go', 'Elixir'],
-    link: 'https://tealbase.com',
-    logo: '/tealbase-logo.svg' // Pulling from your public folder
+    link: 'https://github.com/tealbase/tealbase',
+    logo: '/tealbase-logo.svg'
   },
   {
     id: 'metanthropic',
@@ -28,6 +28,6 @@ export const EXPERIENCE: Experience[] = [
     description: 'Architecting a frontier research institution dedicated to building verifiable, interpretable, and safe Artificial General Intelligence. Leading development on cross-model generalization methodologies like Linear Gradient Matching for dataset distillation.',
     techStack: ['Python', 'PyTorch', 'C++', 'Next.js'],
     link: 'https://metanthropic.vercel.app',
-    logo: '/metanthropic-logo.svg' // Pulling from your public folder
+    logo: '/metanthropic-logo.svg'
   }
 ];

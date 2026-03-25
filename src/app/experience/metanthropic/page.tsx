@@ -10,7 +10,6 @@ export default function MetanthropicPage() {
     <div className="min-h-screen bg-[#030304] text-gray-200 font-sans selection:bg-[#3B82F6] selection:text-white overflow-hidden relative">
       <Navbar />
 
-      {/* --- BACKGROUND MONOGRAM CANVAS --- */}
       <div
         className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
         style={{
@@ -30,11 +29,8 @@ export default function MetanthropicPage() {
           <ArrowLeft size={16} /> Back to Timeline
         </Link>
 
-        {/* HEADER */}
         <div className="border-b border-white/10 pb-12 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-
-            {/* CLEAN TITLE */}
             <h1 className="text-5xl md:text-8xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-purple-400 tracking-tight">
                 Metanthropic.
             </h1>
@@ -50,23 +46,20 @@ export default function MetanthropicPage() {
           </div>
 
           <div className="flex flex-wrap gap-4 mt-8">
-            <a href="https://metanthropic.vercel.app/research" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-mono text-[#3B82F6] hover:text-white transition-colors border border-[#3B82F6]/20 bg-[#3B82F6]/10 px-4 py-2 rounded-sm">
+            <a href="https://metanthropic.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-mono text-[#3B82F6] hover:text-white transition-colors border border-[#3B82F6]/20 bg-[#3B82F6]/10 px-4 py-2 rounded-sm">
               <FileText size={16} /> READ RESEARCH
             </a>
-            <a href="https://metanthropic.vercel.app/charter" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-sm">
+            <a href="https://metanthropic.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-sm">
               <ArrowRight size={16} /> THE CHARTER
             </a>
           </div>
         </div>
 
-        {/* CONTENT: THE STORY */}
         <div className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-normal prose-headings:text-[#3B82F6] prose-p:text-gray-200 prose-p:leading-loose prose-li:text-gray-200 prose-strong:text-blue-400">
-
           <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">The Event Horizon</h2>
           <p className="mb-4">By late 2025, the silence in the room was deafening. We were watching loss curves plummet and capabilities skyrocket, yet our understanding of <em>why</em> it worked remained stagnant. We were building gods in black boxes, hoping they would be benevolent.</p>
           <p className="mb-4">That uncertainty kept me up at night. I realized that the "Alignment Problem" wasn't an engineering bug to be patched with more RLHF. It was a fundamental crisis of physics.</p>
 
-          {/* CENTERED THESIS */}
           <div className="not-prose my-12 py-8 border-y border-white/5 text-center backdrop-blur-sm bg-black/20">
             <span className="block font-mono text-xs text-blue-500 tracking-widest uppercase mb-4">The Founding Axiom</span>
             <h3 className="text-2xl md:text-4xl font-serif text-white leading-tight m-0">
@@ -119,7 +112,7 @@ export default function MetanthropicPage() {
           <p className="mb-4">We publish our findings openly. Our work on <strong>Dataset Distillation</strong> and <strong>Sub-Quadratic Attention</strong> is not a trade secret; it is a contribution to the species.</p>
 
           <div className="not-prose mt-12">
-            <a href="https://metanthropic.vercel.app/research" target="_blank" rel="noopener noreferrer" className="block mt-8 no-underline group">
+            <a href="https://metanthropic.vercel.app/" target="_blank" rel="noopener noreferrer" className="block mt-8 no-underline group">
                 <div className="p-8 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm group-hover:border-[#3B82F6]/50 transition-colors">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center gap-2 text-[#3B82F6]">
@@ -134,7 +127,6 @@ export default function MetanthropicPage() {
                 </div>
             </a>
           </div>
-
         </div>
       </main>
 

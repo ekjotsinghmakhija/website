@@ -11,7 +11,6 @@ export default function TealbasePage() {
     <div className="min-h-screen bg-[#030304] text-gray-200 font-sans selection:bg-teal-400 selection:text-black overflow-hidden relative">
       <Navbar />
 
-      {/* --- BACKGROUND MONOGRAM CANVAS --- */}
       <div
         className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
         style={{
@@ -31,11 +30,8 @@ export default function TealbasePage() {
           <ArrowLeft size={16} /> Back to Timeline
         </Link>
 
-        {/* HEADER */}
         <div className="border-b border-white/10 pb-12 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-
-             {/* LOGO & TITLE */}
              <div className="flex items-center gap-6">
                 <div className="relative w-20 h-20 bg-white/5 rounded-2xl border border-white/10 p-4 flex items-center justify-center shrink-0">
                     <Image
@@ -70,15 +66,12 @@ export default function TealbasePage() {
           </div>
         </div>
 
-        {/* CONTENT */}
         <div className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-normal prose-headings:text-teal-400 prose-p:text-gray-200 prose-p:leading-loose prose-li:text-gray-200 prose-strong:text-teal-300">
-
           <h2 className="text-3xl font-serif text-teal-400 mt-12 mb-6">The Breaking Point</h2>
           <p className="mb-4">It was 3 AM on a Sunday. Our app had just hit #1 on Product Hunt. Champagne was popped. Then the alerts started.</p>
           <p className="mb-4">We weren't fighting traffic; we were fighting our own infrastructure. The NoSQL database, once our best friend for rapid prototyping, had become a prison. We couldn't query our own data. We couldn't ensure consistency. We were bleeding money on opaque read/write costs.</p>
           <p className="mb-4">I realized then that the "Modern Data Stack" was a lie. It forced a binary choice: move fast and break later, or move slow and survive.</p>
 
-          {/* CENTERED AXIOM */}
           <div className="not-prose my-12 py-8 border-y border-white/5 text-center backdrop-blur-sm bg-black/20">
             <span className="block font-mono text-xs text-teal-500 tracking-widest uppercase mb-4">The Founding Axiom</span>
             <h3 className="text-2xl md:text-4xl font-serif text-white leading-tight m-0">
@@ -89,9 +82,7 @@ export default function TealbasePage() {
           <h2 className="text-3xl font-serif text-teal-400 mt-12 mb-6">A Cathedral, Not a Container</h2>
           <p className="mb-4">We founded Tealbase to end the fundamental compromise developers are forced to make every single day: <strong>the choice between speed and power.</strong></p>
           <p className="mb-4">Tealbase is the open-source backend for developers who refuse to choose. We provide the instant, Firebase-like developer experience—Authentication, auto-generated APIs, and Realtime subscriptions—built directly on a true <strong>PostgreSQL</strong> foundation.</p>
-          <p className="mb-4">This means you ship your product in a weekend, with the absolute confidence that you have the full, unconstrained power of a relational database as you scale to millions.</p>
 
-          {/* Feature Grid */}
           <div className="grid md:grid-cols-2 gap-4 my-12 not-prose">
             <div className="p-6 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm hover:border-teal-500/30 transition-colors">
                 <div className="flex items-center gap-3 mb-2 text-teal-400">
@@ -132,10 +123,10 @@ export default function TealbasePage() {
           </div>
 
           <h2 className="text-3xl font-serif text-teal-400 mt-12 mb-6">Technical Architecture</h2>
-          <p className="mb-4">Tealbase is written in <strong>Go</strong> for high-throughput concurrency. It connects to <strong>PostgreSQL</strong> and uses logical replication slots (WAL) to listen for changes, broadcasting them via WebSockets to subscribed clients. It bridges the gap between the developer experience of 2025 and the reliability of 1995.</p>
+          <p className="mb-4">Tealbase is written in <strong>Go</strong> for high-throughput concurrency. It connects to <strong>PostgreSQL</strong> and uses logical replication slots (WAL) to listen for changes, broadcasting them via WebSockets to subscribed clients.</p>
 
           <h2 className="text-3xl font-serif text-teal-400 mt-12 mb-6">Impact</h2>
-          <p className="mb-4">Tealbase is currently running in production for 3 indie projects. It has reduced backend boilerplate by <strong>90%</strong>, allowing us to handle <strong>10k concurrent connections</strong> on a standard 5 USD DigitalOcean droplet.</p>
+          <p className="mb-4">Tealbase is currently running in production for 3 indie projects. It has reduced backend boilerplate by <strong>90%</strong>, allowing us to handle <strong>10k concurrent connections</strong> on a standard droplet.</p>
 
           <div className="not-prose mt-12">
             <a href="https://github.com/tealbase/tealbase" target="_blank" className="block mt-8 no-underline group">
@@ -153,7 +144,6 @@ export default function TealbasePage() {
                 </div>
             </a>
           </div>
-
         </div>
       </main>
 
