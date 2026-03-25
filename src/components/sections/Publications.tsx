@@ -1,16 +1,30 @@
 /* FILE: src/components/sections/Publications.tsx */
 'use client';
 import Link from 'next/link';
-import { ArrowUpRight, FileText } from 'lucide-react';
+import { ArrowUpRight, FileText, ArrowRight } from 'lucide-react';
 import { PUBLICATIONS } from '@/lib/publications';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Publications() {
+  // Sort by date (latest first) and take only the first 4
+  const latestPublications = [...PUBLICATIONS]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 4);
+
   return (
     <section className="mb-32">
-      <SectionHeading number="05">Publications</SectionHeading>
+      <div className="flex justify-between items-end mb-12">
+        <SectionHeading number="05">Publications</SectionHeading>
+        <Link
+          href="/publications"
+          className="hidden md:flex items-center gap-2 text-sm font-mono text-gray-500 hover:text-[#3B82F6] transition-colors mb-4 uppercase tracking-widest"
+        >
+          View Archive <ArrowRight size={14} />
+        </Link>
+      </div>
+
       <div className="grid gap-6">
-        {PUBLICATIONS.map((pub, index) => (
+        {latestPublications.map((pub, index) => (
           <Link
             key={index}
             href={pub.link}
@@ -20,7 +34,6 @@ export default function Publications() {
             <div className="flex justify-between items-start mb-4">
                <div className="flex items-center gap-3 text-[#3B82F6] mb-2">
                   <FileText size={20} />
-                  {/* FIXED: Changed pub.date to pub.year and pub.conference */}
                   <span className="text-xs font-mono uppercase tracking-widest">
                     {pub.conference} • {pub.year}
                   </span>
@@ -37,6 +50,14 @@ export default function Publications() {
           </Link>
         ))}
       </div>
+
+      {/* Mobile-only "View Archive" link */}
+      <Link
+        href="/publications"
+        className="md:hidden flex items-center justify-center gap-2 mt-8 text-sm font-mono text-gray-500 hover:text-[#3B82F6] transition-colors uppercase tracking-widest"
+      >
+        View Full Archive <ArrowRight size={14} />
+      </Link>
     </section>
   );
 }
