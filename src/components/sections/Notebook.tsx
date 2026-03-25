@@ -5,8 +5,10 @@ import { BLOG_POSTS } from '@/lib/blog';
 import SectionHeading from '../ui/SectionHeading';
 
 export default function Notebook() {
-  // Take only the first 3 posts
-  const latestPosts = BLOG_POSTS.slice(0, 3);
+  // Sort and then take only the 3 most recent posts
+  const latestPosts = [...BLOG_POSTS]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
   return (
     <section id="notebook" className="mb-32">
