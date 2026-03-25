@@ -70,7 +70,7 @@ export const PERSONAL_PROJECTS: Project[] = [
 
   // --- AI & MACHINE LEARNING ---
   {
-    id: 'ddptecmglgm',
+    id: 'dataset-distillation-lgm',
     title: 'Dataset Distillation (DDPTECMGLGM)',
     repo: 'metanthropic/DDPTECMGLGM',
     role: 'Contributor',
