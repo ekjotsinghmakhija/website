@@ -1,23 +1,31 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+"use client";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
-const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+const letters =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
 
-export default function DecryptedText({ text, className = '' }: { text: string, className?: string }) {
-  const [displayText, setDisplayText] = useState('');
+export default function DecryptedText({
+  text,
+  className = "",
+}: {
+  text: string;
+  className?: string;
+}) {
+  const [displayText, setDisplayText] = useState("");
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     let iteration = 0;
     const interval = setInterval(() => {
-      setDisplayText(text
-        .split('')
-        .map((letter, index) => {
-          if (index < iteration) return text[index];
-          return letters[Math.floor(Math.random() * 26)];
-        })
-        .join('')
+      setDisplayText(
+        text
+          .split("")
+          .map((letter, index) => {
+            if (index < iteration) return text[index];
+            return letters[Math.floor(Math.random() * 26)];
+          })
+          .join(""),
       );
       if (iteration >= text.length) clearInterval(interval);
       iteration += 1 / 3;

@@ -10,7 +10,8 @@ export default function Footer() {
         <div className="w-12 h-[2px] bg-teal-500/50 rounded-full"></div>
 
         <p className="text-sm text-zinc-500 leading-relaxed">
-          © 2025 - 2026 Ekjot Singh. All rights reserved.<br />
+          © 2025 - 2026 Ekjot Singh. All rights reserved.
+          <br />
           Constructed with Next.js, Tailwind, and excessive amounts of caffeine.
         </p>
       </div>

@@ -1,8 +1,8 @@
-'use client';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
-import { EXPERIENCE } from '@/lib/experience';
-import SectionHeading from '@/components/ui/SectionHeading';
+"use client";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { EXPERIENCE } from "@/lib/experience";
+import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Experience() {
   return (
@@ -23,8 +23,13 @@ export default function Experience() {
                 <div className="text-gray-400 font-medium">{job.role}</div>
               </div>
               <div className="flex items-center gap-3">
-                <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">{job.date}</span>
-                <ArrowUpRight size={18} className="text-[#3B82F6] opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all" />
+                <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">
+                  {job.date}
+                </span>
+                <ArrowUpRight
+                  size={18}
+                  className="text-[#3B82F6] opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all"
+                />
               </div>
             </div>
             <p className="text-gray-400 text-sm max-w-3xl leading-relaxed line-clamp-2">

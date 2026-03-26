@@ -1,9 +1,9 @@
 /* FILE: src/app/error.tsx */
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import { AlertTriangle, RefreshCcw, Terminal } from 'lucide-react';
-import Link from 'next/link';
+import { useEffect } from "react";
+import { AlertTriangle, RefreshCcw, Terminal } from "lucide-react";
+import Link from "next/link";
 
 export default function Error({
   error,
@@ -19,12 +19,10 @@ export default function Error({
 
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center bg-[#030304] text-white relative overflow-hidden font-mono selection:bg-amber-500/30">
-
       {/* Background Decor */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-rose-900/10 via-black to-black opacity-40 pointer-events-none" />
 
       <div className="z-10 flex flex-col items-center max-w-lg text-center px-6">
-
         {/* Warning Icon */}
         <div className="mb-6 text-amber-500 animate-pulse">
           <AlertTriangle size={48} />
@@ -45,8 +43,13 @@ export default function Error({
             <span>stack_trace.log</span>
           </div>
           <div className="font-mono text-xs text-gray-400 space-y-1 break-all">
-             <p><span className="text-rose-500">Error:</span> {error.message || "Unknown system error occurred."}</p>
-             {error.digest && <p className="text-gray-600">Digest: {error.digest}</p>}
+            <p>
+              <span className="text-rose-500">Error:</span>{" "}
+              {error.message || "Unknown system error occurred."}
+            </p>
+            {error.digest && (
+              <p className="text-gray-600">Digest: {error.digest}</p>
+            )}
           </div>
         </div>
 
@@ -66,7 +69,6 @@ export default function Error({
             <span>Return Home</span>
           </Link>
         </div>
-
       </div>
     </div>
   );

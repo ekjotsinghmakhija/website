@@ -1,11 +1,11 @@
 /* FILE: src/components/layout/ExperienceLayout.tsx */
-'use client';
+"use client";
 
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/sections/Footer';
-import BrandPattern from '@/components/ui/BrandPattern';
-import { ArrowLeft } from 'lucide-react';
-import Link from 'next/link';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/sections/Footer";
+import BrandPattern from "@/components/ui/BrandPattern";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 interface ExperienceLayoutProps {
   children: React.ReactNode;
@@ -16,7 +16,7 @@ interface ExperienceLayoutProps {
 export default function ExperienceLayout({
   children,
   logo,
-  opacity = 0.07
+  opacity = 0.07,
 }: ExperienceLayoutProps) {
   return (
     <div className="min-h-screen bg-[#030304] text-gray-200 font-sans selection:bg-teal-400 selection:text-black overflow-hidden relative">
@@ -24,7 +24,12 @@ export default function ExperienceLayout({
 
       {/* The LV-Style Background Pattern */}
       {/* Make sure 'tealbase-logo.svg' exists in your public folder! */}
-      <BrandPattern imageUrl={logo} opacity={opacity} size={120} imageSize={80} />
+      <BrandPattern
+        imageUrl={logo}
+        opacity={opacity}
+        size={120}
+        imageSize={80}
+      />
 
       <main className="relative z-10 max-w-4xl mx-auto px-6 pt-32 pb-24">
         {/* Shared Back Button */}

@@ -1,1 +1,19 @@
-'use client'; import NotebookLayout from '@/components/layout/NotebookLayout'; export default function Post() { return <NotebookLayout meta={{ title: "buttery-auth-security", date: "2026", readTime: "5 min", tag: "General" }}> <p>Architectural deep-dive for buttery-auth-security is being deployed.</p> </NotebookLayout>; }
+"use client";
+import NotebookLayout from "@/components/layout/NotebookLayout";
+export default function Post() {
+  return (
+    <NotebookLayout
+      meta={{
+        title: "buttery-auth-security",
+        date: "2026",
+        readTime: "5 min",
+        tag: "General",
+      }}
+    >
+      {" "}
+      <p>
+        Architectural deep-dive for buttery-auth-security is being deployed.
+      </p>{" "}
+    </NotebookLayout>
+  );
+}

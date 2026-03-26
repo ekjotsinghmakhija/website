@@ -1,11 +1,18 @@
 /* FILE: src/components/ui/ProjectCard.tsx */
-import Link from 'next/link';
-import { Project } from '@/lib/personal-projects';
+import Link from "next/link";
+import { Project } from "@/lib/personal-projects";
 
-export default function ProjectCard({ project, className = '' }: { project: Project, className?: string }) {
+export default function ProjectCard({
+  project,
+  className = "",
+}: {
+  project: Project;
+  className?: string;
+}) {
   return (
-    <div className={`group relative flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:bg-zinc-800/80 hover:border-zinc-700 ${className}`}>
-
+    <div
+      className={`group relative flex flex-col justify-between rounded-2xl border border-zinc-800 bg-zinc-900/50 p-6 transition-all hover:bg-zinc-800/80 hover:border-zinc-700 ${className}`}
+    >
       {/* Header */}
       <div className="mb-4 flex items-start justify-between">
         <div>
@@ -32,7 +39,10 @@ export default function ProjectCard({ project, className = '' }: { project: Proj
       <div className="mt-auto pt-6 border-t border-white/5">
         <div className="flex flex-wrap gap-2 mb-4">
           {project.techStack?.map((t) => (
-            <span key={t} className="px-2 py-1 text-[10px] font-mono rounded bg-white/5 text-zinc-400 border border-white/5">
+            <span
+              key={t}
+              className="px-2 py-1 text-[10px] font-mono rounded bg-white/5 text-zinc-400 border border-white/5"
+            >
               {t}
             </span>
           ))}

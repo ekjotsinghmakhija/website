@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface BrandPatternProps {
   imageUrl: string;
@@ -13,24 +13,24 @@ export default function BrandPattern({
   imageUrl,
   opacity = 0.07,
   size = 120,
-  imageSize = 80
+  imageSize = 80,
 }: BrandPatternProps) {
-  const [imageSrc, setImageSrc] = useState<string>('');
+  const [imageSrc, setImageSrc] = useState<string>("");
   const offset = (size - imageSize) / 2;
 
   useEffect(() => {
     // Convert the image to a data URL for embedding
     fetch(imageUrl)
-      .then(res => res.blob())
-      .then(blob => {
+      .then((res) => res.blob())
+      .then((blob) => {
         const reader = new FileReader();
         reader.onloadend = () => {
           setImageSrc(reader.result as string);
         };
         reader.readAsDataURL(blob);
       })
-      .catch(err => {
-        console.error('Failed to load image:', err);
+      .catch((err) => {
+        console.error("Failed to load image:", err);
         // Fallback: try using the URL directly
         setImageSrc(imageUrl);
       });
@@ -65,8 +65,8 @@ export default function BrandPattern({
               width={imageSize}
               height={imageSize}
               style={{
-                filter: 'brightness(0) invert(1)',
-                opacity: 1
+                filter: "brightness(0) invert(1)",
+                opacity: 1,
               }}
             />
           </pattern>

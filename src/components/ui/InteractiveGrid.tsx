@@ -1,14 +1,18 @@
-'use client';
-import { useEffect, useRef } from 'react';
+"use client";
+import { useEffect, useRef } from "react";
 
-export default function InteractiveGrid({ className = '' }: { className?: string }) {
+export default function InteractiveGrid({
+  className = "",
+}: {
+  className?: string;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -50,7 +54,7 @@ export default function InteractiveGrid({ className = '' }: { className?: string
           let opacity = baseOpacity;
           if (distance < glowRadius) {
             const glowFactor = 1 - distance / glowRadius;
-             opacity = baseOpacity + glowFactor * (maxOpacity - baseOpacity);
+            opacity = baseOpacity + glowFactor * (maxOpacity - baseOpacity);
           }
 
           ctx.strokeStyle = `rgba(59, 130, 246, ${opacity})`;
@@ -64,18 +68,23 @@ export default function InteractiveGrid({ className = '' }: { className?: string
     };
 
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener("mousemove", handleMouseMove);
     targetX = window.innerWidth / 2;
     targetY = window.innerHeight / 2;
     drawGrid();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
-  return <canvas ref={canvasRef} className={`fixed inset-0 z-0 pointer-events-none ${className}`} />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className={`fixed inset-0 z-0 pointer-events-none ${className}`}
+    />
+  );
 }

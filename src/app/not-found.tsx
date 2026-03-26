@@ -1,16 +1,16 @@
 /* FILE: src/app/not-found.tsx */
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { MoveLeft, SearchX } from 'lucide-react';
-import DecryptedText from '@/components/ui/DecryptedText';
-import { useState, useEffect } from 'react';
+import Link from "next/link";
+import { MoveLeft, SearchX } from "lucide-react";
+import DecryptedText from "@/components/ui/DecryptedText";
+import { useState, useEffect } from "react";
 
 const ERROR_MESSAGES = [
   "The vector you are tracing points to a null reference. This coordinate does not exist in the current latent space.",
   "Segmentation Fault: The simulation attempted to access memory that does not exist.",
   "This route was pruned during the optimization step. The weights have decayed to zero.",
-  "The pointer is dangling. You are staring into the uninitialized void."
+  "The pointer is dangling. You are staring into the uninitialized void.",
 ];
 
 function MessageCycler() {
@@ -27,7 +27,6 @@ function MessageCycler() {
         setIndex((prev) => (prev + 1) % ERROR_MESSAGES.length);
         setOpacity(1);
       }, 500); // 500ms matches the duration-500 class
-
     }, 4000); // Change message every 4 seconds
 
     return () => clearInterval(interval);
@@ -46,13 +45,11 @@ function MessageCycler() {
 export default function NotFound() {
   return (
     <div className="h-screen w-full flex flex-col items-center justify-center bg-[#030304] text-white relative overflow-hidden font-mono selection:bg-rose-500/30">
-
       {/* Background Decor: Grid & Glow */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
 
       <div className="z-10 flex flex-col items-center max-w-xl text-center px-6">
-
         {/* Icon Glitch */}
         <div className="mb-8 p-4 rounded-full bg-rose-500/5 border border-rose-500/20 shadow-[0_0_30px_rgba(225,29,72,0.1)]">
           <SearchX className="w-12 h-12 text-rose-500 opacity-80" />
@@ -80,7 +77,9 @@ export default function NotFound() {
             <div className="w-2 h-2 rounded-full bg-green-500/50" />
           </div>
           <p>&gt; initiating_search(target);</p>
-          <p>&gt; <span className="text-rose-500">error: target_not_found</span></p>
+          <p>
+            &gt; <span className="text-rose-500">error: target_not_found</span>
+          </p>
           <p>&gt; status: void</p>
           <p>&gt; trace: end_of_line</p>
         </div>
@@ -89,8 +88,13 @@ export default function NotFound() {
           href="/"
           className="group relative inline-flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-rose-500/50 hover:bg-rose-500/10 rounded-full transition-all duration-300"
         >
-          <MoveLeft size={16} className="text-gray-400 group-hover:text-rose-400 transition-colors group-hover:-translate-x-1" />
-          <span className="text-sm font-medium text-gray-300 group-hover:text-white">Return to Origin</span>
+          <MoveLeft
+            size={16}
+            className="text-gray-400 group-hover:text-rose-400 transition-colors group-hover:-translate-x-1"
+          />
+          <span className="text-sm font-medium text-gray-300 group-hover:text-white">
+            Return to Origin
+          </span>
         </Link>
       </div>
     </div>

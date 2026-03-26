@@ -1,9 +1,18 @@
-'use client';
+"use client";
 
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/sections/Footer';
-import { ArrowLeft, ArrowRight, FileText, Globe, ShieldCheck, Zap, Lock, ExternalLink } from 'lucide-react';
-import Link from 'next/link';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/sections/Footer";
+import {
+  ArrowLeft,
+  ArrowRight,
+  FileText,
+  Globe,
+  ShieldCheck,
+  Zap,
+  Lock,
+  ExternalLink,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function MetanthropicPage() {
   return (
@@ -13,11 +22,11 @@ export default function MetanthropicPage() {
       <div
         className="fixed inset-0 z-0 pointer-events-none mix-blend-screen"
         style={{
-            backgroundImage: "url('/metanthropic_canvas.png')",
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            opacity: 0.05
+          backgroundImage: "url('/metanthropic_canvas.png')",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.05,
         }}
       />
 
@@ -32,99 +41,192 @@ export default function MetanthropicPage() {
         <div className="border-b border-white/10 pb-12 mb-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
             <h1 className="text-5xl md:text-8xl font-serif text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-300 to-purple-400 tracking-tight">
-                Metanthropic.
+              Metanthropic.
             </h1>
 
             <div className="flex flex-col items-end pb-2">
-              <span className="text-[#3B82F6] font-mono text-sm tracking-widest uppercase mb-1">Founder & Lead Architect</span>
-              <span className="text-gray-400 font-mono text-xs">2025 — PRESENT</span>
+              <span className="text-[#3B82F6] font-mono text-sm tracking-widest uppercase mb-1">
+                Founder & Lead Architect
+              </span>
+              <span className="text-gray-400 font-mono text-xs">
+                2025 — PRESENT
+              </span>
             </div>
           </div>
 
           <div className="text-2xl text-gray-200 font-light leading-relaxed max-w-3xl">
-            An independent research lab parsing the <span className="text-[#3B82F6] border-b border-[#3B82F6]/50">thermodynamics of intelligence</span>.
+            An independent research lab parsing the{" "}
+            <span className="text-[#3B82F6] border-b border-[#3B82F6]/50">
+              thermodynamics of intelligence
+            </span>
+            .
           </div>
 
           <div className="flex flex-wrap gap-4 mt-8">
-            <a href="https://metanthropic.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-mono text-[#3B82F6] hover:text-white transition-colors border border-[#3B82F6]/20 bg-[#3B82F6]/10 px-4 py-2 rounded-sm">
+            <a
+              href="https://metanthropic.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-mono text-[#3B82F6] hover:text-white transition-colors border border-[#3B82F6]/20 bg-[#3B82F6]/10 px-4 py-2 rounded-sm"
+            >
               <FileText size={16} /> READ RESEARCH
             </a>
-            <a href="https://metanthropic.vercel.app/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-sm">
+            <a
+              href="https://metanthropic.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm font-mono text-gray-400 hover:text-white transition-colors border border-white/10 px-4 py-2 rounded-sm"
+            >
               <ArrowRight size={16} /> THE CHARTER
             </a>
           </div>
         </div>
 
         <div className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-normal prose-headings:text-[#3B82F6] prose-p:text-gray-200 prose-p:leading-loose prose-li:text-gray-200 prose-strong:text-blue-400">
-          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">The Event Horizon</h2>
-          <p className="mb-4">By late 2025, the silence in the room was deafening. We were watching loss curves plummet and capabilities skyrocket, yet our understanding of <em>why</em> it worked remained stagnant. We were building gods in black boxes, hoping they would be benevolent.</p>
-          <p className="mb-4">That uncertainty kept me up at night. I realized that the "Alignment Problem" wasn't an engineering bug to be patched with more RLHF. It was a fundamental crisis of physics.</p>
+          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">
+            The Event Horizon
+          </h2>
+          <p className="mb-4">
+            By late 2025, the silence in the room was deafening. We were
+            watching loss curves plummet and capabilities skyrocket, yet our
+            understanding of <em>why</em> it worked remained stagnant. We were
+            building gods in black boxes, hoping they would be benevolent.
+          </p>
+          <p className="mb-4">
+            That uncertainty kept me up at night. I realized that the "Alignment
+            Problem" wasn't an engineering bug to be patched with more RLHF. It
+            was a fundamental crisis of physics.
+          </p>
 
           <div className="not-prose my-12 py-8 border-y border-white/5 text-center backdrop-blur-sm bg-black/20">
-            <span className="block font-mono text-xs text-blue-500 tracking-widest uppercase mb-4">The Founding Axiom</span>
+            <span className="block font-mono text-xs text-blue-500 tracking-widest uppercase mb-4">
+              The Founding Axiom
+            </span>
             <h3 className="text-2xl md:text-4xl font-serif text-white leading-tight m-0">
               "To trust a mind, you must be able to read its thoughts."
             </h3>
           </div>
 
-          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">A Cathedral, Not a Factory</h2>
-          <p className="mb-4">We chose to operate differently. In an industry obsessed with speed, we chose depth. We aren't racing to train the largest model; we are racing to understand the smallest circuit.</p>
-          <p className="mb-4">This philosophy drove us to move beyond the probabilistic guessing games of standard transformers. We started asking dangerous questions: <em>Can we mathematically prove a model is safe before it speaks its first word?</em></p>
-          <p className="mb-4">This is why we focus on <strong>Mechanistic Interpretability</strong>. Just as biologists mapped the human genome to cure disease, we are mapping the "connectome" of AI to cure deception.</p>
+          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">
+            A Cathedral, Not a Factory
+          </h2>
+          <p className="mb-4">
+            We chose to operate differently. In an industry obsessed with speed,
+            we chose depth. We aren't racing to train the largest model; we are
+            racing to understand the smallest circuit.
+          </p>
+          <p className="mb-4">
+            This philosophy drove us to move beyond the probabilistic guessing
+            games of standard transformers. We started asking dangerous
+            questions:{" "}
+            <em>
+              Can we mathematically prove a model is safe before it speaks its
+              first word?
+            </em>
+          </p>
+          <p className="mb-4">
+            This is why we focus on{" "}
+            <strong>Mechanistic Interpretability</strong>. Just as biologists
+            mapped the human genome to cure disease, we are mapping the
+            "connectome" of AI to cure deception.
+          </p>
 
           <hr className="border-white/10 my-12" />
 
-          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">The Charter</h2>
-          <p className="mb-4">Before we wrote a single line of CUDA, we wrote our <strong>Charter</strong>. It is our constitution. It binds us to a simple promise: if we ever feel our work endangers humanity, we stop.</p>
+          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">
+            The Charter
+          </h2>
+          <p className="mb-4">
+            Before we wrote a single line of CUDA, we wrote our{" "}
+            <strong>Charter</strong>. It is our constitution. It binds us to a
+            simple promise: if we ever feel our work endangers humanity, we
+            stop.
+          </p>
 
           <div className="grid md:grid-cols-2 gap-4 my-12 not-prose">
             <div className="p-6 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm">
-                <div className="flex items-center gap-3 mb-2 text-blue-400">
-                    <Globe size={18} />
-                    <h4 className="font-serif text-lg text-blue-400 m-0">Distributed Benefits</h4>
-                </div>
-                <p className="text-sm text-gray-400 m-0 leading-relaxed">We serve humanity, not shareholders. We avoid concentrating power.</p>
+              <div className="flex items-center gap-3 mb-2 text-blue-400">
+                <Globe size={18} />
+                <h4 className="font-serif text-lg text-blue-400 m-0">
+                  Distributed Benefits
+                </h4>
+              </div>
+              <p className="text-sm text-gray-400 m-0 leading-relaxed">
+                We serve humanity, not shareholders. We avoid concentrating
+                power.
+              </p>
             </div>
             <div className="p-6 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm">
-                <div className="flex items-center gap-3 mb-2 text-blue-400">
-                    <ShieldCheck size={18} />
-                    <h4 className="font-serif text-lg text-blue-400 m-0">Stop Button</h4>
-                </div>
-                <p className="text-sm text-gray-400 m-0 leading-relaxed">If a competitor is safer, we stop competing and help them.</p>
+              <div className="flex items-center gap-3 mb-2 text-blue-400">
+                <ShieldCheck size={18} />
+                <h4 className="font-serif text-lg text-blue-400 m-0">
+                  Stop Button
+                </h4>
+              </div>
+              <p className="text-sm text-gray-400 m-0 leading-relaxed">
+                If a competitor is safer, we stop competing and help them.
+              </p>
             </div>
             <div className="p-6 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm">
-                <div className="flex items-center gap-3 mb-2 text-blue-400">
-                    <Zap size={18} />
-                    <h4 className="font-serif text-lg text-blue-400 m-0">Technical Edge</h4>
-                </div>
-                <p className="text-sm text-gray-400 m-0 leading-relaxed">Policy without code is noise. We lead by building.</p>
+              <div className="flex items-center gap-3 mb-2 text-blue-400">
+                <Zap size={18} />
+                <h4 className="font-serif text-lg text-blue-400 m-0">
+                  Technical Edge
+                </h4>
+              </div>
+              <p className="text-sm text-gray-400 m-0 leading-relaxed">
+                Policy without code is noise. We lead by building.
+              </p>
             </div>
             <div className="p-6 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm">
-                <div className="flex items-center gap-3 mb-2 text-blue-400">
-                    <Lock size={18} />
-                    <h4 className="font-serif text-lg text-blue-400 m-0">Open Safety</h4>
-                </div>
-                <p className="text-sm text-gray-400 m-0 leading-relaxed">Safety is not a moat. We publish our interpretability research.</p>
+              <div className="flex items-center gap-3 mb-2 text-blue-400">
+                <Lock size={18} />
+                <h4 className="font-serif text-lg text-blue-400 m-0">
+                  Open Safety
+                </h4>
+              </div>
+              <p className="text-sm text-gray-400 m-0 leading-relaxed">
+                Safety is not a moat. We publish our interpretability research.
+              </p>
             </div>
           </div>
 
-          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">Our Contributions</h2>
-          <p className="mb-4">We publish our findings openly. Our work on <strong>Dataset Distillation</strong> and <strong>Sub-Quadratic Attention</strong> is not a trade secret; it is a contribution to the species.</p>
+          <h2 className="text-3xl font-serif text-[#3B82F6] mt-12 mb-6">
+            Our Contributions
+          </h2>
+          <p className="mb-4">
+            We publish our findings openly. Our work on{" "}
+            <strong>Dataset Distillation</strong> and{" "}
+            <strong>Sub-Quadratic Attention</strong> is not a trade secret; it
+            is a contribution to the species.
+          </p>
 
           <div className="not-prose mt-12">
-            <a href="https://metanthropic.vercel.app/" target="_blank" rel="noopener noreferrer" className="block mt-8 no-underline group">
-                <div className="p-8 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm group-hover:border-[#3B82F6]/50 transition-colors">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="flex items-center gap-2 text-[#3B82F6]">
-                            <FileText size={20} />
-                            <span className="font-mono text-sm tracking-widest uppercase">Visit Research Lab</span>
-                        </div>
-                        <ExternalLink size={20} className="text-gray-400 group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="text-gray-300 group-hover:text-gray-100 transition-colors">
-                        Explore our papers, including <em>"The Thermodynamics of Intelligence"</em> and <em>"Dataset Distillation for the Pre-Training Era"</em>.
-                    </div>
+            <a
+              href="https://metanthropic.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block mt-8 no-underline group"
+            >
+              <div className="p-8 bg-[#0A0A0A]/80 backdrop-blur-md border border-white/10 rounded-sm group-hover:border-[#3B82F6]/50 transition-colors">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2 text-[#3B82F6]">
+                    <FileText size={20} />
+                    <span className="font-mono text-sm tracking-widest uppercase">
+                      Visit Research Lab
+                    </span>
+                  </div>
+                  <ExternalLink
+                    size={20}
+                    className="text-gray-400 group-hover:text-white transition-colors"
+                  />
                 </div>
+                <div className="text-gray-300 group-hover:text-gray-100 transition-colors">
+                  Explore our papers, including{" "}
+                  <em>"The Thermodynamics of Intelligence"</em> and{" "}
+                  <em>"Dataset Distillation for the Pre-Training Era"</em>.
+                </div>
+              </div>
             </a>
           </div>
         </div>

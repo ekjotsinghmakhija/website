@@ -1,21 +1,23 @@
-'use client';
+"use client";
 
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/sections/Footer';
-import { STACK } from '@/lib/stack';
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/sections/Footer";
+import { STACK } from "@/lib/stack";
 
 export default function StackPage() {
   return (
     <>
       <Navbar />
       <main className="min-h-screen max-w-5xl mx-auto px-6 py-24">
-
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-4xl font-bold mb-4 tracking-tight text-white">Technical Arsenal</h1>
+          <h1 className="text-4xl font-bold mb-4 tracking-tight text-white">
+            Technical Arsenal
+          </h1>
           <p className="text-zinc-400 max-w-2xl text-lg">
-            I select tools based on system constraints, performance requirements, and scalability.
-            Here is the core stack I use to architect databases, AI infrastructure, and high-scale applications.
+            I select tools based on system constraints, performance
+            requirements, and scalability. Here is the core stack I use to
+            architect databases, AI infrastructure, and high-scale applications.
           </p>
         </div>
 
@@ -46,7 +48,6 @@ export default function StackPage() {
             </div>
           ))}
         </div>
-
       </main>
       <Footer />
     </>

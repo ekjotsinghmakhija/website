@@ -1,1 +1,19 @@
-'use client'; import NotebookLayout from '@/components/layout/NotebookLayout'; export default function Post() { return <NotebookLayout meta={{ title: "http-from-scratch-go", date: "2026", readTime: "5 min", tag: "General" }}> <p>Architectural deep-dive for http-from-scratch-go is being deployed.</p> </NotebookLayout>; }
+"use client";
+import NotebookLayout from "@/components/layout/NotebookLayout";
+export default function Post() {
+  return (
+    <NotebookLayout
+      meta={{
+        title: "http-from-scratch-go",
+        date: "2026",
+        readTime: "5 min",
+        tag: "General",
+      }}
+    >
+      {" "}
+      <p>
+        Architectural deep-dive for http-from-scratch-go is being deployed.
+      </p>{" "}
+    </NotebookLayout>
+  );
+}

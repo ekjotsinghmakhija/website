@@ -4,31 +4,33 @@ A high-performance, interactive personal portfolio website built with **Next.js 
 
 ## ⚡️ Tech Stack
 
-* **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
-* **Language:** TypeScript
-* **Styling:** Tailwind CSS
-* **Animations:** Framer Motion
-* **Icons:** Lucide React
-* **Content:** MDX (@next/mdx) for blog posts and case studies
-* **Font:** Geist (Vercel's sans-serif font)
+- **Framework:** [Next.js 16 (App Router)](https://nextjs.org/)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Content:** MDX (@next/mdx) for blog posts and case studies
+- **Font:** Geist (Vercel's sans-serif font)
 
 ## 🚀 Features
 
-* **Interactive UI:** Custom interactive grid background and hover effects.
-* **MDX Support:** Write blog posts (`/blog`) and project case studies (`/experience`) using Markdown.
-* **Responsive Design:** Fully optimized for mobile, tablet, and desktop.
-* **Dynamic Data:** Content is managed via structured data files in `src/lib/`, making it easy to update without touching UI code.
-* **Performance:** Optimized with Next.js font optimization and static site generation.
+- **Interactive UI:** Custom interactive grid background and hover effects.
+- **MDX Support:** Write blog posts (`/blog`) and project case studies (`/experience`) using Markdown.
+- **Responsive Design:** Fully optimized for mobile, tablet, and desktop.
+- **Dynamic Data:** Content is managed via structured data files in `src/lib/`, making it easy to update without touching UI code.
+- **Performance:** Optimized with Next.js font optimization and static site generation.
 
 ## 🛠️ Getting Started
 
 1.  **Clone the repository:**
+
     ```bash
     git clone [https://github.com/yourusername/ekjotsingh-website.git](https://github.com/yourusername/ekjotsingh-website.git)
     cd ekjotsingh-website
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     # or
@@ -36,6 +38,7 @@ A high-performance, interactive personal portfolio website built with **Next.js 
     ```
 
 3.  **Run the development server:**
+
     ```bash
     npm run dev
     ```
@@ -67,10 +70,10 @@ src/
 
 You can update the website content by modifying the TypeScript files in `src/lib/`:
 
-* **Projects:** Edit `src/lib/personal-projects.ts` to add or remove portfolio items.
-* **Experience:** Edit `src/lib/experience.ts` to update your work history.
-* **Blog:** Add entries to `src/lib/blog.ts` and create corresponding MDX files if needed.
-* **Social Links:** Update `src/lib/socials.ts` to change your social media handles.
+- **Projects:** Edit `src/lib/personal-projects.ts` to add or remove portfolio items.
+- **Experience:** Edit `src/lib/experience.ts` to update your work history.
+- **Blog:** Add entries to `src/lib/blog.ts` and create corresponding MDX files if needed.
+- **Social Links:** Update `src/lib/socials.ts` to change your social media handles.
 
 ## 🚢 Deployment
 

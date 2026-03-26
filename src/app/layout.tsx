@@ -22,7 +22,8 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: "Ekjot Singh",
-  description: "Founder & Lead Architect at Metanthropic. Researching the physics of intelligence and building interpretable AGI.",
+  description:
+    "Founder & Lead Architect at Metanthropic. Researching the physics of intelligence and building interpretable AGI.",
   icons: {
     icon: "/avatar.jpg",
   },
