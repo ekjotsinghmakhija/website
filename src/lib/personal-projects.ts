@@ -11,7 +11,18 @@ export interface Project {
 }
 
 export const PERSONAL_PROJECTS: Project[] = [
-  // --- FEATURED SYSTEMS & INFRASTRUCTURE ---
+  // --- FEATURED PROJECTS (Top 2 will show on Homepage) ---
+  {
+    id: 'wibes-check',
+    title: 'Wibes Check',
+    repo: 'ekjotsinghmakhija/wibes-check',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A comprehensive web intelligence engine designed for Open Source Intelligence gathering and website security analysis.',
+    techStack: ['Next.js 15', 'Tailwind CSS'],
+    url: 'https://github.com/ekjotsinghmakhija/wibes-check',
+    featured: true
+  },
   {
     id: 'chromabase',
     title: 'Chromabase',
@@ -23,6 +34,41 @@ export const PERSONAL_PROJECTS: Project[] = [
     url: 'https://github.com/ekjotsinghmakhija/chromabase',
     featured: true
   },
+
+  // --- SYSTEMS & INFRASTRUCTURE ---
+  {
+    id: 'vostsql',
+    title: 'VostSQL',
+    repo: 'ekjotsinghmakhija/vostsql',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'An advanced object-relational database engine from scratch, featuring strict query parsing, execution pipelines, and optimized disk I/O.',
+    techStack: ['C', 'C++'],
+    url: 'https://github.com/ekjotsinghmakhija/vostsql',
+    featured: true
+  },
+  {
+    id: 'httpfromtcp',
+    title: 'httpfromtcp',
+    repo: 'ekjotsinghmakhija/httpfromtcp',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'A low-level HTTP/1.1 server engineered entirely from scratch over raw TCP sockets with manual protocol parsing.',
+    techStack: ['Go', 'TCP Sockets'],
+    url: 'https://github.com/ekjotsinghmakhija/httpfromtcp',
+    featured: true
+  },
+  {
+    id: 'pg-listen',
+    title: 'pg_listen',
+    repo: 'ekjotsinghmakhija/pg_listen',
+    role: 'Owner',
+    visibility: 'Public',
+    aiSummary: 'An event-driven C library leveraging libpq to process asynchronous PostgreSQL NOTIFY signals with near-zero overhead.',
+    techStack: ['C', 'PostgreSQL', 'libpq'],
+    url: 'https://github.com/ekjotsinghmakhija/pg_listen',
+    featured: true
+  },
   {
     id: 'sim8086',
     title: 'SIM8086',
@@ -32,39 +78,6 @@ export const PERSONAL_PROJECTS: Project[] = [
     aiSummary: 'A modular cross-platform hardware emulator and assembler for the Intel 8086 microprocessor.',
     techStack: ['C++', 'Qt 6'],
     url: 'https://github.com/ekjotsinghmakhija/sim8086',
-    featured: true
-  },
-  {
-    id: 'pg-listen',
-    title: 'pg_listen',
-    repo: 'ekjotsinghmakhija/pg_listen',
-    role: 'Owner',
-    visibility: 'Public',
-    aiSummary: 'A hyper-fast C library utilizing libpq to trigger shell commands directly from PostgreSQL NOTIFY events.',
-    techStack: ['C', 'PostgreSQL', 'libpq'],
-    url: 'https://github.com/ekjotsinghmakhija/pg_listen',
-    featured: true
-  },
-  {
-    id: 'httpfromtcp',
-    title: 'httpfromtcp',
-    repo: 'ekjotsinghmakhija/httpfromtcp',
-    role: 'Owner',
-    visibility: 'Public',
-    aiSummary: 'A custom-built, low-level HTTP 1.1 server engineered entirely from scratch over raw TCP sockets.',
-    techStack: ['Go'],
-    url: 'https://github.com/ekjotsinghmakhija/httpfromtcp',
-    featured: true
-  },
-  {
-    id: 'vostsql',
-    title: 'VostSQL',
-    repo: 'ekjotsinghmakhija/vostsql',
-    role: 'Owner',
-    visibility: 'Public',
-    aiSummary: 'An advanced object-relational database engine re-engineered for modern workloads with optimized instruction frames.',
-    techStack: ['C', 'C++'],
-    url: 'https://github.com/ekjotsinghmakhija/vostsql',
     featured: true
   },
 
@@ -203,17 +216,6 @@ export const PERSONAL_PROJECTS: Project[] = [
     aiSummary: 'A cutting-edge 3D user interface inspired by city-building games to visualize and manage developer productivity.',
     techStack: ['Next.js', 'Convex', 'Bun', 'TypeScript'],
     url: 'https://github.com/ekjotsinghmakhija/mohenjo',
-    featured: false
-  },
-  {
-    id: 'wibes-check',
-    title: 'Wibes Check',
-    repo: 'ekjotsinghmakhija/wibes-check',
-    role: 'Owner',
-    visibility: 'Public',
-    aiSummary: 'A comprehensive web intelligence engine designed for Open Source Intelligence gathering and website security analysis.',
-    techStack: ['Next.js 15', 'Tailwind CSS'],
-    url: 'https://github.com/ekjotsinghmakhija/wibes-check',
     featured: false
   }
 ];
