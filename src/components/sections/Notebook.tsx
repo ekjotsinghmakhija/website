@@ -11,12 +11,12 @@ export default function Notebook() {
     .slice(0, 3);
 
   return (
-    <section id="notebook" className="mb-32">
-      <SectionHeading number="04">The Notebook</SectionHeading>
+    <section id="engineering-log" className="mb-32">
+      <SectionHeading number="04">Technical Blog</SectionHeading>
       <div className="grid md:grid-cols-2 gap-12">
         <div className="prose prose-invert">
           <p className="text-lg text-gray-300 leading-relaxed">
-            "The Notebook" is a collection of rough thoughts, research notes, and architectural decisions. It serves as a public log of my attempt to reverse-engineer intelligence.
+            A collection of technical write-ups, architecture decisions, and research notes focused on database internals, systems programming, and reasoning models.
           </p>
           <Link href="/blog" className="text-[#3B82F6] font-bold uppercase tracking-widest text-sm hover:text-white transition-colors mt-6 inline-block">
             View All Entries →

@@ -7,12 +7,11 @@ import SectionHeading from '@/components/ui/SectionHeading';
 export default function Experience() {
   return (
     <section className="mb-32">
-      <SectionHeading number="04">Experience</SectionHeading>
+      <SectionHeading number="01">EXPERIENCE</SectionHeading>
       <div className="space-y-6">
         {EXPERIENCE.map((job) => (
           <Link
             key={job.id}
-            // FIXED: Changed job.slug to job.id to match the new model
             href={`/experience/${job.id}`}
             className="block group relative p-8 border border-white/10 bg-[#050505] hover:bg-[#0A0A0A] transition-all hover:border-l-4 hover:border-l-[#3B82F6]"
           >
@@ -24,7 +23,6 @@ export default function Experience() {
                 <div className="text-gray-400 font-medium">{job.role}</div>
               </div>
               <div className="flex items-center gap-3">
-                {/* FIXED: Changed job.period to job.date to match the new model */}
                 <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">{job.date}</span>
                 <ArrowUpRight size={18} className="text-[#3B82F6] opacity-0 group-hover:opacity-100 -translate-y-2 group-hover:translate-y-0 transition-all" />
               </div>
