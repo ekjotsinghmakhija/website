@@ -24,29 +24,29 @@
 
 % --- Distinguished Engineer Section Formatting ---
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large\bfseries
+\vspace{-4pt}\scshape\raggedright\large\bfseries
 }{}{0em}{}[\titlerule \vspace{-5pt}]
 
 % --- Custom Commands for Resume Elements ---
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+\item\small{
+{#1 \vspace{-2pt}}
+}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+\vspace{-2pt}\item
+\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \textbf{#1} & \textbf{\small #2} \\
+  \textit{\small#3} & \textit{\small #4} \\
+\end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+\vspace{-2pt}\item
+\begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+  \small#1 & \textbf{\small #2} \\
+\end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
@@ -57,15 +57,15 @@
 \begin{document}
 
 %----------HEADING----------
-% Executive contact block - links inherit default 'urlcolor=blue'
 \begin{center}
-    {\Huge \scshape Ekjot Singh} \\ \vspace{2pt}
-    \small 
-    \href{mailto:ekjotmakhija@gmail.com}{ekjotmakhija@gmail.com} $|$ 
-    \href{https://linkedin.com/in/ekjot-singh-thefirst}{linkedin.com/in/ekjot-singh-thefirst} $|$
-    \href{https://github.com/ekjotsinghmakhija}{github.com/ekjotsinghmakhija} $|$
-    \href{https://ekjot.me}{ekjot.me} \\ \vspace{2pt}
-    Ludhiana, India (Open to Remote)
+{\Huge \scshape Ekjot Singh} \\ \vspace{2pt}
+\small
+\href{mailto:ekjotmakhija@gmail.com}{ekjotmakhija@gmail.com} $|$ 
+\href{https://linkedin.com/in/ekjot-singh-thefirst}{linkedin.com/in/ekjot-singh-thefirst} $|$
+\href{https://github.com/ekjotsinghmakhija}{github.com/ekjotsinghmakhija} \\
+
+\href{https://huggingface.co/ekjotsingh}{huggingface.co/ekjotsingh} $|$
+\href{https://ekjot.me}{ekjot.me}
 \end{center}
 
 % Switch all subsequent URLs to black for clean, professional reading
@@ -73,94 +73,94 @@
 
 %-----------EDUCATION-----------
 \section{Academic Background}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Vellore Institute of Technology (VIT)}{Bhopal, India}
-      {B.S. Computer Science}{2024 -- 2028}
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListStart
+\resumeSubheading
+  {Vellore Institute of Technology (VIT)}{Bhopal, India}
+  {B.S. Computer Science}{2024 -- 2028}
+\resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{EXPERIENCE}
-  \resumeSubHeadingListStart
+\resumeSubHeadingListStart
 
-    \resumeSubheading
-      {Metanthropic Lab}{Remote}
-      {Founder \& Chief Executive Officer}{2025 -- Present}
-      \resumeItemListStart
-        \resumeItem{Established an independent AI research organization, architecting the overarching software ecosystem including scalable Next.js backend infrastructure and cross-platform native interfaces.}
-        \resumeItem{Directed the training, specification, and deployment of large-scale mathematical and vision-language models, utilizing PyTorch and C++ to optimize local inference and agentic reasoning architectures.}
-      \resumeItemListEnd
+\resumeSubheading
+  {Metanthropic Lab}{Remote}
+  {Founder \& Chief Executive Officer}{2025 -- Present}
+  \resumeItemListStart
+    \resumeItem{Established an independent AI research organization, architecting the overarching software ecosystem including scalable Next.js backend infrastructure and cross-platform native interfaces.}
+    \resumeItem{Directed the training, specification, and deployment of large-scale mathematical and vision-language models, utilizing PyTorch and C++ to optimize local inference and agentic reasoning architectures.}
+  \resumeItemListEnd
 
-    \resumeSubheading
-      {TealBase}{Remote}
-      {Founder \& Chief Technology Officer}{2025 -- Present}
-      \resumeItemListStart
-        \resumeItem{Architected an open-source Backend-as-a-Service (BaaS) utilizing PostgreSQL and Go, engineering concurrent real-time multi-tenant data synchronization architectures capable of bypassing standard polling.}
-        \resumeItem{Designed and implemented a custom Change Data Capture (CDC) pipeline and WebSocket layer (\texttt{realtime-js}), achieving sub-50ms event propagation across distributed clients.}
-        \resumeItem{Enforced zero-trust security protocols by integrating secure JWT-based authentication directly with PostgreSQL Row Level Security (RLS) for fine-grained data isolation.}
-      \resumeItemListEnd
+\resumeSubheading
+  {TealBase}{Remote}
+  {Founder \& Chief Technology Officer}{2025 -- Present}
+  \resumeItemListStart
+    \resumeItem{Architected an open-source Backend-as-a-Service (BaaS) utilizing PostgreSQL and Go, engineering concurrent real-time multi-tenant data synchronization architectures capable of bypassing standard polling.}
+    \resumeItem{Designed and implemented a custom Change Data Capture (CDC) pipeline and WebSocket layer (\texttt{realtime-js}), achieving sub-50ms event propagation across distributed clients.}
+    \resumeItem{Enforced zero-trust security protocols by integrating secure JWT-based authentication directly with PostgreSQL Row Level Security (RLS) for fine-grained data isolation.}
+  \resumeItemListEnd
 
-  \resumeSubHeadingListEnd
+\resumeSubHeadingListEnd
 
 %-----------RESEARCH-----------
 \section{RESEARCH}
-  \resumeSubHeadingListStart
-    \resumeProjectHeading
-      {\href{https://metanthropic.vercel.app/research/m-naar}{\textbf{SPECIFICATION: Neural Ablation via Attention Refraction (M-NAAR)}}}{2026}
-      \resumeItemListStart
-        \resumeItem{Formulated an ablation protocol refracting attention from high-entropy tokens to execute robust knowledge deletion while preserving core model reasoning and targeting zero hallucination rates.}
-      \resumeItemListEnd
+\resumeSubHeadingListStart
+\resumeProjectHeading
+  {\href{https://metanthropic.vercel.app/research/m-naar}{\textbf{SPECIFICATION: Neural Ablation via Attention Refraction (M-NAAR)}}}{2026}
+  \resumeItemListStart
+    \resumeItem{Formulated an ablation protocol refracting attention from high-entropy tokens to execute robust knowledge deletion while preserving core model reasoning and targeting zero hallucination rates.}
+  \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\href{https://metanthropic.vercel.app/research/latent-logic-topology}{\textbf{Specification for Latent Logic Topology \& Soundness-Aware Calibration}}}{2026}
-      \resumeItemListStart
-        \resumeItem{Operationalized LLMs as engines of Latent Causal Chains to resolve RLVR convergence constraints, introducing the Soundness-Aware Level (SAL) metric to predict post-alignment reasoning outcomes.}
-      \resumeItemListEnd
+\resumeProjectHeading
+  {\href{https://metanthropic.vercel.app/research/latent-logic-topology}{\textbf{Specification for Latent Logic Topology \& Soundness-Aware Calibration}}}{2026}
+  \resumeItemListStart
+    \resumeItem{Operationalized LLMs as engines of Latent Causal Chains to resolve RLVR convergence constraints, introducing the Soundness-Aware Level (SAL) metric to predict post-alignment reasoning outcomes.}
+  \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\href{https://metanthropic.vercel.app/research/arvi-20b}{\textbf{Arvi 20B: Democratizing Reasoning with Efficient MoEs}}}{2026}
-      \resumeItemListStart
-        \resumeItem{Architected an open-weight Mixture-of-Experts reasoning model utilizing sparse routing to approach frontier-level performance on quantitative benchmarks while activating only 3.6B parameters per inference.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\resumeProjectHeading
+  {\href{https://metanthropic.vercel.app/research/arvi-20b}{\textbf{Arvi 20B: Democratizing Reasoning with Efficient MoEs}}}{2026}
+  \resumeItemListStart
+    \resumeItem{Architected an open-weight Mixture-of-Experts reasoning model utilizing sparse routing to approach frontier-level performance on quantitative benchmarks while activating only 3.6B parameters per inference.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------
 \section{PROJECTS}
-  \resumeSubHeadingListStart
-    \resumeProjectHeading
-      {\href{https://github.com/ekjotsinghmakhija/httpfromtcp}{\textbf{httpfromtcp}} $|$ \emph{Go, TCP Sockets}}{}
-      \resumeItemListStart
-        \resumeItem{Built a low-level HTTP/1.1 server entirely over raw TCP sockets, implementing manual protocol parsing, raw memory management, and custom concurrent request handling.}
-      \resumeItemListEnd
+\resumeSubHeadingListStart
+\resumeProjectHeading
+  {\href{https://github.com/ekjotsinghmakhija/httpfromtcp}{\textbf{httpfromtcp}} $|$ \emph{Go, TCP Sockets}}{}
+  \resumeItemListStart
+    \resumeItem{Built a low-level HTTP/1.1 server entirely over raw TCP sockets, implementing manual protocol parsing, raw memory management, and custom concurrent request handling.}
+  \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\href{https://github.com/ekjotsinghmakhija/vostsql}{\textbf{VostSQL}} $|$ \emph{C, C++}}{}
-      \resumeItemListStart
-        \resumeItem{Developed a custom object-relational database engine from scratch, implementing strict query parsing, a full execution pipeline, and hardware-optimized disk I/O handling.}
-      \resumeItemListEnd
+\resumeProjectHeading
+  {\href{https://github.com/ekjotsinghmakhija/vostsql}{\textbf{VostSQL}} $|$ \emph{C, C++}}{}
+  \resumeItemListStart
+    \resumeItem{Developed a custom object-relational database engine from scratch, implementing strict query parsing, a full execution pipeline, and hardware-optimized disk I/O handling.}
+  \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\textbf{Metanthropic CPU Inference Engine} $|$ \emph{C++, SIMD, Llama.cpp}}{}
-      \resumeItemListStart
-        \resumeItem{Optimized tensor operations and memory layout for CPU-bound inference in C++, improving token generation throughput and processing latency for local LLM architectures.}
-      \resumeItemListEnd
+\resumeProjectHeading
+  {\textbf{Metanthropic CPU Inference Engine} $|$ \emph{C++, SIMD, Llama.cpp}}{}
+  \resumeItemListStart
+    \resumeItem{Optimized tensor operations and memory layout for CPU-bound inference in C++, improving token generation throughput and processing latency for local LLM architectures.}
+  \resumeItemListEnd
 
-    \resumeProjectHeading
-      {\href{https://github.com/ekjotsinghmakhija/pg_listen}{\textbf{pg\_listen}} $|$ \emph{C, PostgreSQL, libpq}}{}
-      \resumeItemListStart
-        \resumeItem{Authored an event-driven C library leveraging \texttt{libpq} to process asynchronous PostgreSQL \texttt{NOTIFY} signals and trigger shell executions with near-zero overhead.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
+\resumeProjectHeading
+  {\href{https://github.com/ekjotsinghmakhija/pg_listen}{\textbf{pg\_listen}} $|$ \emph{C, PostgreSQL, libpq}}{}
+  \resumeItemListStart
+    \resumeItem{Authored an event-driven C library leveraging \texttt{libpq} to process asynchronous PostgreSQL \texttt{NOTIFY} signals and trigger shell executions with near-zero overhead.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{TECHNICAL SKILLS}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Rust, C, C++, Go, Python, TypeScript, SQL, Assembly} \\
-     \textbf{AI Architecture}{: PyTorch, MoE Routing, Vision-Language Models, RLVR, Sparse Autoencoders, Tensor Ops} \\
-     \textbf{Systems \& Infra}{: PostgreSQL Internals (RLS, libpq), TCP Sockets, Linux Kernel, WebSockets, Docker}
-    }}
- \end{itemize}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+ \textbf{Languages}{: Rust, C, C++, Go, Python, TypeScript, SQL, Assembly} \\
+ \textbf{AI Architecture}{: PyTorch, MoE Routing, Vision-Language Models, RLVR, Sparse Autoencoders, Tensor Ops} \\
+ \textbf{Systems \& Infra}{: PostgreSQL Internals (RLS, libpq), TCP Sockets, Linux Kernel, WebSockets, Docker}
+}}
+\end{itemize}
 
 \end{document}
 
