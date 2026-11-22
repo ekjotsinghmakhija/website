@@ -54,24 +54,24 @@ export default function BentoHero() {
         </div>
       </div>
 
-      {/* Main Grid: Increased Photo Column area (5 cols Photo : 7 cols Text) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 items-start">
-        {/* Photo Column - significantly larger display area */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-start">
-          <div className="relative aspect-[4/5] w-full max-w-[420px] rounded-lg overflow-hidden border border-zinc-700 bg-zinc-950 shadow-xl">
+      {/* Main Grid: Seamless length alignment between Image and Bio Narrative */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pt-8 items-stretch">
+        {/* Photo Column - fills height naturally to align with text height */}
+        <div className="lg:col-span-5 flex flex-col">
+          <div className="relative w-full h-[480px] sm:h-[540px] lg:h-full min-h-[460px] rounded-lg overflow-hidden border border-zinc-700 bg-zinc-950 shadow-xl">
             <Image
               src="/images/avatar.jpg"
               alt="Ekjot Singh"
               fill
               priority
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
         </div>
 
-        {/* Bio Narrative Column - refined editorial typography */}
-        <div className="lg:col-span-7 flex flex-col justify-between">
-          <div className="space-y-5 text-zinc-200 text-base sm:text-[17px] leading-[1.8] font-light">
+        {/* Bio Narrative Column - balanced typography and comfortable reading rhythm */}
+        <div className="lg:col-span-7 flex flex-col justify-between py-1">
+          <div className="space-y-5 text-zinc-200 text-base sm:text-[17px] leading-[1.85] font-light">
             <p className="text-zinc-100">
               <strong className="text-white font-semibold">Ekjot Singh</strong> is an AI researcher and systems architect working at the intersection of <u>foundational model pre-training</u>, <u>intrinsic AI safety</u>, and <u>high-performance distributed systems</u>. He serves as the <strong>Co-Founder & Chief Technology Officer</strong> at <strong>RadonHarbor</strong> and the <strong>Founder & Chief Scientist</strong> at <strong>Metanthropic AI</strong>.
             </p>
