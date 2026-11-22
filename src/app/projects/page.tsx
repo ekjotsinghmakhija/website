@@ -141,11 +141,11 @@ export default function ProjectsPage() {
                     <div className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
                       <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400">
-                        Pipeline • Active Incubation
+                        In Progress • Research & Systems
                       </span>
                     </div>
                     <h3 className="text-xl font-bold text-white mt-1.5">
-                      More Systems Underway
+                      More Coming Soon
                     </h3>
                   </div>
                   <div className="p-1.5 rounded bg-zinc-900 text-cyan-400 border border-zinc-800">
@@ -153,17 +153,17 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-light">
-                  Currently architecting high-concurrency multi-agent execution primitives, low-latency database engines, and intrinsic model safety specifications. Code will be open-sourced upon verification.
+                <p className="text-xs text-zinc-300 leading-relaxed mb-6 font-light">
+                  Actively engineering autonomous multi-agent operating systems, foundational reasoning architectures, and verifiable database internals. New repositories and papers are made public following formal verification and benchmarking.
                 </p>
               </div>
 
               <div>
                 <div className="pt-4 border-t border-dashed border-zinc-800/80 flex flex-wrap gap-1.5 mb-4 font-mono text-[10px] text-zinc-400">
-                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Rust</span>
-                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">PyTorch</span>
-                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">WASM</span>
-                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Distributed Systems</span>
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Autonomous Agents</span>
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Model Pre-Training</span>
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Database Internals</span>
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Intrinsic Safety</span>
                 </div>
 
                 <a
