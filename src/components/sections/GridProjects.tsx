@@ -59,12 +59,12 @@ const HIGHLIGHTED_PROJECTS: FeaturedProject[] = [
 
 export default function GridProjects() {
   return (
-    <section id="featured-work" className="py-14 border-b border-dashed border-zinc-800/80">
-      <SectionHeading number="02" badge="Systems, Databases & Tools">
-        Key Projects & Systems
+    <section id="featured-work" className="py-14 border-b border-dashed border-zinc-700/80">
+      <SectionHeading badge="Databases, Engines & Developer Platforms">
+        Flagship Systems & Infrastructure
       </SectionHeading>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-800/80 border border-dashed border-zinc-800/80 rounded overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-700/80 border border-dashed border-zinc-700/80 rounded overflow-hidden">
         {HIGHLIGHTED_PROJECTS.map((proj) => (
           <div
             key={proj.title}
@@ -113,7 +113,7 @@ export default function GridProjects() {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-dashed border-zinc-850 flex flex-wrap gap-1.5">
+            <div className="pt-4 border-t border-dashed border-zinc-800 flex flex-wrap gap-1.5">
               {proj.tags.map((tag) => (
                 <span
                   key={tag}
@@ -127,13 +127,14 @@ export default function GridProjects() {
         ))}
       </div>
 
-      <div className="mt-4 flex justify-end">
+      {/* Boxed View All Button */}
+      <div className="mt-6 flex justify-end">
         <Link
           href="/projects"
-          className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-cyan-400 transition-colors uppercase tracking-wider"
+          className="group inline-flex items-center gap-2.5 px-4 py-2.5 rounded border border-zinc-700 bg-zinc-950/90 text-xs font-mono font-medium text-zinc-200 hover:text-white hover:border-cyan-500/80 hover:bg-zinc-900 transition-all shadow-sm"
         >
-          <span>View All 20+ Systems & Open Source Repositories</span>
-          <ArrowUpRight size={14} />
+          <span>View All Systems & Open Source Repositories</span>
+          <ArrowUpRight size={14} className="text-cyan-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
         </Link>
       </div>
     </section>

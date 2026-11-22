@@ -17,21 +17,21 @@ export default function GridExperience() {
   };
 
   return (
-    <section className="py-14 border-b border-dashed border-zinc-800/80">
-      <SectionHeading number="01" badge="Executive Roles & Research Labs">
-        Experience & Leadership
+    <section className="py-14 border-b border-dashed border-zinc-700/80">
+      <SectionHeading badge="Leadership & Founding Roles">
+        Executive Experience & Lab Direction
       </SectionHeading>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-dashed divide-zinc-800/80 border border-dashed border-zinc-800/80 rounded">
+      <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-dashed divide-zinc-700/80 border border-dashed border-zinc-700/80 rounded bg-zinc-950/40">
         {EXPERIENCE.map((exp) => (
           <div
             key={exp.id}
-            className="flex flex-col justify-between p-6 bg-zinc-950/40 hover:bg-zinc-900/30 transition-colors"
+            className="flex flex-col justify-between p-6 hover:bg-zinc-900/30 transition-colors"
           >
             <div>
               <div className="flex items-center justify-between gap-2 mb-4">
                 <div className="flex items-center gap-2">
-                  <div className="p-1 rounded bg-zinc-900 border border-zinc-800">
+                  <div className="p-1.5 rounded bg-zinc-900 border border-zinc-800">
                     {getIcon(exp.id)}
                   </div>
                   <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">
@@ -43,7 +43,7 @@ export default function GridExperience() {
                     href={exp.link}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-zinc-400 hover:text-white transition-colors"
+                    className="p-1 rounded text-zinc-400 hover:text-white transition-colors"
                     title="Open link"
                   >
                     <ArrowUpRight size={15} />
@@ -63,7 +63,7 @@ export default function GridExperience() {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-dashed border-zinc-850 flex flex-wrap gap-1.5">
+            <div className="pt-4 border-t border-dashed border-zinc-800 flex flex-wrap gap-1.5">
               {exp.techStack.map((tech) => (
                 <span
                   key={tech}

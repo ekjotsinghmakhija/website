@@ -7,12 +7,12 @@ import { GraduationCap, Award, ExternalLink } from "lucide-react";
 
 export default function GridStackAndEducation() {
   return (
-    <section className="py-14 border-b border-dashed border-zinc-800/80">
+    <section className="py-14 border-b border-dashed border-zinc-700/80">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Left: Technical Skills Matrix (8 cols) */}
+        {/* Left: Core Engineering Matrix (8 cols) */}
         <div className="lg:col-span-8">
-          <SectionHeading number="04" badge="Core Engineering Matrix">
-            Technical Stack
+          <SectionHeading badge="Engineering Capabilities">
+            Technology
           </SectionHeading>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -21,7 +21,7 @@ export default function GridStackAndEducation() {
               return (
                 <div
                   key={group.category}
-                  className="p-5 rounded bg-zinc-950/60 border border-dashed border-zinc-800/80"
+                  className="p-5 rounded bg-zinc-950/60 border border-dashed border-zinc-700/80"
                 >
                   <div className="flex items-center gap-2 mb-3">
                     <Icon size={15} className={group.color} />
@@ -46,18 +46,18 @@ export default function GridStackAndEducation() {
           </div>
         </div>
 
-        {/* Right: Academic Background & Stanford Credentials (4 cols) */}
+        {/* Right: Academic Background & Verified Credentials (4 cols) */}
         <div className="lg:col-span-4 flex flex-col justify-between">
           <div>
-            <SectionHeading number="05" badge="Credentials">
-              Background
+            <SectionHeading badge="Academic Accreditations">
+              Background & Credentials
             </SectionHeading>
 
-            {/* University - Clean, No GPA */}
+            {/* University */}
             {EDUCATION.map((edu, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded bg-zinc-950/60 border border-dashed border-zinc-800/80 mb-4"
+                className="p-5 rounded bg-zinc-950/60 border border-dashed border-zinc-700/80 mb-4"
               >
                 <div className="flex items-center gap-2 mb-2 text-cyan-400">
                   <GraduationCap size={17} />
@@ -78,11 +78,11 @@ export default function GridStackAndEducation() {
             ))}
 
             {/* Specializations & Certifications */}
-            <div className="p-5 rounded bg-zinc-950/60 border border-dashed border-zinc-800/80">
+            <div className="p-5 rounded bg-zinc-950/60 border border-dashed border-zinc-700/80">
               <div className="flex items-center gap-2 mb-3 text-purple-400">
                 <Award size={17} />
                 <span className="text-[11px] font-mono uppercase tracking-wider text-zinc-400">
-                  Select Certifications
+                  Select Accreditations
                 </span>
               </div>
 
