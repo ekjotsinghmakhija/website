@@ -42,7 +42,6 @@ export default function Navbar() {
                         href="/"
                         className="flex items-center gap-2 text-white font-serif font-bold tracking-tight hover:text-cyan-400 transition-colors z-50"
                     >
-                        <Terminal size={18} className="text-cyan-400" />
                         EKJOT SINGH.
                     </Link>
 

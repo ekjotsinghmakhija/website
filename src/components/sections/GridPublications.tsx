@@ -15,7 +15,7 @@ export default function GridPublications() {
 
   return (
     <section className="py-14 border-b border-dashed border-zinc-700/80">
-      <SectionHeading badge="Frontier AI & Intrinsic Safety">
+      <SectionHeading badge="Frontier AI & Research">
         Research 
       </SectionHeading>
 

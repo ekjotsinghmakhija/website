@@ -12,7 +12,7 @@ export default function GridNotebook() {
 
   return (
     <section className="py-14">
-      <SectionHeading badge="Deep Dives & Systems Architecture">
+      <SectionHeading badge="Deep Dives & Personal Thoughts">
         Blogs
       </SectionHeading>
 
