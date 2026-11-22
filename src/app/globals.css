@@ -7,6 +7,17 @@
   --foreground: #ededed;
 }
 
+/* Enhancing border-dashed to be clearly visible, crisper, and larger ascii-style dash pattern */
+.border-dashed {
+  border-style: dashed !important;
+}
+
+@layer utilities {
+  .border-dashed {
+    border-color: rgba(212, 212, 216, 0.28);
+  }
+}
+
 body {
   /* CHANGE: Deep dark base with a vibrant top glow */
   background-color: #030304;
