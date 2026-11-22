@@ -4,7 +4,6 @@ export const EDUCATION = [
     location: "Bhopal, India",
     degree: "B.Tech. in Computer Science and Engineering",
     period: "2024 – 2028",
-    cgpa: "8.45 / 10",
     description:
       "Core focus on Systems Engineering, Foundational AI Models, High-Concurrency Architectures, and Database Internals.",
     logo: "/images/vit-logo.png",

@@ -2,9 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { ArrowUpRight, ExternalLink, Database, Layers, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
-import { PERSONAL_PROJECTS } from "@/lib/personal-projects";
 
 interface FeaturedProject {
   title: string;
@@ -60,16 +59,16 @@ const HIGHLIGHTED_PROJECTS: FeaturedProject[] = [
 
 export default function GridProjects() {
   return (
-    <section id="featured-work" className="mb-14">
+    <section id="featured-work" className="py-14 border-b border-dashed border-zinc-800/80">
       <SectionHeading number="02" badge="Systems, Databases & Tools">
         Key Projects & Systems
       </SectionHeading>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-800/80 border border-dashed border-zinc-800/80 rounded overflow-hidden">
         {HIGHLIGHTED_PROJECTS.map((proj) => (
           <div
             key={proj.title}
-            className="group relative flex flex-col justify-between p-6 rounded-2xl bg-zinc-950/80 border border-zinc-800 hover:border-zinc-700 transition-all hover:bg-zinc-900/40"
+            className="flex flex-col justify-between p-6 bg-zinc-950 hover:bg-zinc-900/40 transition-colors"
           >
             <div>
               <div className="flex items-start justify-between gap-3 mb-3">
@@ -77,7 +76,7 @@ export default function GridProjects() {
                   <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 bg-cyan-950/60 border border-cyan-800/50 px-2 py-0.5 rounded">
                     {proj.category}
                   </span>
-                  <h3 className="text-xl font-bold text-white mt-2 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white mt-2">
                     {proj.title}
                   </h3>
                   <p className="text-xs font-mono text-zinc-400 mt-0.5">
@@ -89,10 +88,10 @@ export default function GridProjects() {
                   {proj.featuredSlug && (
                     <Link
                       href={`/blog/${proj.featuredSlug}`}
-                      className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition-colors"
+                      className="p-1.5 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition-colors"
                       title="Read Architecture Post"
                     >
-                      <ArrowUpRight size={15} />
+                      <ArrowUpRight size={14} />
                     </Link>
                   )}
                   {proj.github && (
@@ -100,25 +99,25 @@ export default function GridProjects() {
                       href={proj.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="p-1.5 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition-colors"
+                      className="p-1.5 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition-colors"
                       title="View GitHub"
                     >
-                      <GithubIcon size={15} />
+                      <GithubIcon size={14} />
                     </a>
                   )}
                 </div>
               </div>
 
-              <p className="text-xs text-zinc-400 leading-relaxed mb-6">
+              <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-light">
                 {proj.description}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-zinc-850 flex flex-wrap gap-1.5">
+            <div className="pt-4 border-t border-dashed border-zinc-850 flex flex-wrap gap-1.5">
               {proj.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 border border-zinc-800 text-zinc-400"
+                  className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 border border-zinc-800/80 text-zinc-400"
                 >
                   {tag}
                 </span>
@@ -128,7 +127,6 @@ export default function GridProjects() {
         ))}
       </div>
 
-      {/* View full projects catalog */}
       <div className="mt-4 flex justify-end">
         <Link
           href="/projects"
