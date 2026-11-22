@@ -1,10 +1,12 @@
 export const EDUCATION = [
   {
-    institution: "Vellore Institute of Technology",
-    degree: "Bachelor of Technology - BTech, Computer Science",
-    period: "Sep 2024 - Sep 2028",
+    institution: "Vellore Institute of Technology (VIT)",
+    location: "Bhopal, India",
+    degree: "B.Tech. in Computer Science and Engineering",
+    period: "2024 – 2028",
+    cgpa: "8.45 / 10",
     description:
-      "Specialized in Artificial Intelligence and Systems Engineering.",
+      "Core focus on Systems Engineering, Foundational AI Models, High-Concurrency Architectures, and Database Internals.",
     logo: "/images/vit-logo.png",
   },
 ];

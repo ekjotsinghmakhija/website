@@ -84,25 +84,25 @@ export const PUBLICATIONS: Publication[] = [
   },
   {
     id: "arvi-20b",
-    title: "Arvi 20B: Democratizing Reasoning with Efficient MoEs",
+    title: "Arvi 20B: Open-Weight Sparse MoE Reasoning Model",
     conference: "Metanthropic Research",
     year: "2026",
     date: "January 31, 2026",
     link: "https://metanthropic.vercel.app/research/arvi-20b",
     description:
-      "An open-weight Mixture-of-Experts reasoning model. With 20.9B total parameters and only 3.6B active parameters, it rivals frontier models on math, coding, and agentic benchmarks through variable effort reasoning.",
-    tags: ["Mixture-of-Experts", "Reasoning", "Open Weights"],
+      "Pre-trained a 20B sparse MoE (3.6B active params/token) with native tool execution and CoT reasoning—achieving 10,000+ downloads and matching gpt-oss-20b performance at < 10× GPU compute. Engineered distributed training pipelines using PyTorch FSDP and FlashAttention-3; implemented 4-bit AWQ quantization to enable sub-50ms token generation on 16GB consumer GPUs.",
+    tags: ["Sparse MoE", "Pre-Training", "Distributed PyTorch", "Quantization"],
   },
   {
     id: "mahenocr",
-    title: "MahenOCR: Commercial-Grade OCR with a 1B Parameter VLM",
-    conference: "Metanthropic Research",
+    title: "MahenOCR: Soundness-Aware 1B Vision-Language Model",
+    conference: "ICDAR 2025 DIMT / Metanthropic",
     year: "2026",
     date: "January 30, 2026",
     link: "https://metanthropic.vercel.app/research/mahenocr",
     description:
-      "A 1B parameter vision-language model achieving state-of-the-art OCR through a unified end-to-end architecture. Utilizes Reinforcement Learning with Verifiable Rewards (RLVR) to eliminate cascaded module error propagation.",
-    tags: ["OCR", "Vision-Language Models", "Reinforcement Learning"],
+      "Engineered a 1B VLM using Identity-Dissonance Fine-Tuning (IDFT)—achieving SOTA on OCRBench (< 3B class), #2 Place in ICDAR 2025 DIMT Challenge, and 8,000+ downloads.",
+    tags: ["Vision-Language Models", "OCRBench SOTA", "ICDAR Award", "Fine-Tuning"],
   },
   {
     id: "fragility-of-guardrails",

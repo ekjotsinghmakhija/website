@@ -11,25 +11,35 @@ export interface Experience {
 
 export const EXPERIENCE: Experience[] = [
   {
-    id: "tealbase",
-    role: "Lead Developer & Open Source Maintainer",
-    company: "TealBase",
-    date: "2025 - Present",
+    id: "radonharbor",
+    role: "Co-Founder & Chief Technology Officer (CTO)",
+    company: "RadonHarbor (Stealth AI Startup)",
+    date: "Jul 2026 – Present",
     description:
-      "Engineering an open-source Firebase alternative utilizing PostgreSQL. Architecting the core database engine, real-time WebSocket broadcasting (realtime-js), and secure JWT-based auth systems with Row Level Security. Managing open-source community contributions and infrastructure scaling.",
-    techStack: ["TypeScript", "PostgreSQL", "Go", "Elixir"],
-    link: "https://github.com/tealbase/tealbase",
-    logo: "/tealbase-logo.svg",
+      "Architected AEGIS, an autonomous multi-agent OS in Rust/Python with WASM sandboxing and high-concurrency orchestration primitives—achieving 95%+ task completion accuracy across enterprise workflows. Engineered zero-trust security layers and real-time telemetry pipelines to enforce sub-second multi-agent decision execution.",
+    techStack: ["Rust", "Python", "WASM", "Multi-Agent Systems", "Zero-Trust", "Telemetry"],
+    link: "https://github.com/ekjotsinghmakhija",
   },
   {
     id: "metanthropic",
-    role: "Founding Engineer & AI Researcher",
-    company: "Metanthropic Lab",
-    date: "2025 - Present",
+    role: "Founder & Chief Scientist",
+    company: "Metanthropic AI (Stealth AI Research Lab)",
+    date: "Nov 2025 – Present",
     description:
-      "Architecting a frontier research institution dedicated to building verifiable, interpretable, and safe Artificial General Intelligence. Leading development on cross-model generalization methodologies like Linear Gradient Matching for dataset distillation.",
-    techStack: ["Python", "PyTorch", "C++", "Next.js"],
+      "Founded an independent frontier research lab; pre-trained open-weight foundational models (Arvi 20B MoE) deployed and adopted by 1,000+ AI researchers and engineers. Pioneered intrinsic alignment & safety pipelines in PyTorch/C++ by integrating attention refraction (M-NAAR), interpretability, and deterministic unlearning protocols.",
+    techStack: ["PyTorch", "C++", "MoE Pre-training", "M-NAAR", "Interpretability", "SAEs"],
     link: "https://metanthropic.vercel.app",
     logo: "/metanthropic-logo.svg",
+  },
+  {
+    id: "tealbase",
+    role: "Lead Systems Architect & Core Author",
+    company: "Tealbase (Open Source)",
+    date: "2025 – 2026",
+    description:
+      "Architected an open-source Postgres BaaS in Go with auto-generated REST APIs, native Row Level Security (RLS), and a Change Data Capture (CDC) engine—empowering 10+ SMBs while enforcing sub-50ms WebSocket event propagation.",
+    techStack: ["Go", "TypeScript", "PostgreSQL Internals", "CDC", "WebSockets", "BaaS"],
+    link: "https://github.com/tealbase/tealbase",
+    logo: "/tealbase-logo.svg",
   },
 ];

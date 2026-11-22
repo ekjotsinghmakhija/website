@@ -1,57 +1,41 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/sections/Footer";
 import InteractiveGrid from "@/components/ui/InteractiveGrid";
-import Hero from "@/components/sections/Hero";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-
-import Artifacts from "@/components/sections/Artifacts";
-import Experience from "@/components/sections/Experience";
-import Publications from "@/components/sections/Publications";
-import Notebook from "@/components/sections/Notebook";
-
-// MOVED OUTSIDE: This prevents the "Cannot create components during render" error
-const SectionLink = ({ href, text }: { href: string; text: string }) => (
-  <div className="flex justify-end mt-4 mb-24 relative z-20">
-    <Link
-      href={href}
-      className="group inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase text-gray-400 hover:text-[#3B82F6] transition-colors"
-    >
-      <span>{text}</span>
-      <ArrowRight
-        size={16}
-        className="group-hover:translate-x-1 transition-transform"
-      />
-    </Link>
-  </div>
-);
+import BentoHero from "@/components/sections/BentoHero";
+import GridExperience from "@/components/sections/GridExperience";
+import GridProjects from "@/components/sections/GridProjects";
+import GridPublications from "@/components/sections/GridPublications";
+import GridStackAndEducation from "@/components/sections/GridStackAndEducation";
+import GridNotebook from "@/components/sections/GridNotebook";
 
 export default function PersonalHome() {
   return (
-    <div className="min-h-screen font-sans selection:bg-[#3B82F6] selection:text-white overflow-x-hidden bg-[#030304]">
+    <div className="min-h-screen font-sans selection:bg-cyan-500 selection:text-black overflow-x-hidden bg-[#030304] text-zinc-100">
       <Navbar />
 
-      <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
+      {/* Subtle modern background grid */}
+      <div className="fixed inset-0 z-0 opacity-15 pointer-events-none">
         <InteractiveGrid />
       </div>
 
-      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pb-24">
-        <Hero />
+      <main className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pb-20">
+        {/* Bento Hero & Stat Metric Boxes */}
+        <BentoHero />
 
-        {/* 01: Experience */}
-        <Experience />
-        <SectionLink href="/experience" text="View Full Career Profile" />
+        {/* 01: High-Impact Experience (RadonHarbor, Metanthropic AI, Tealbase) */}
+        <GridExperience />
 
-        {/* 02: Systems & Projects */}
-        <Artifacts />
-        <SectionLink href="/projects" text="View All Systems & Open Source" />
+        {/* 02: Systems & AI Projects (Tealbase, ParachuteDB, ImgUPAI, VostSQL) */}
+        <GridProjects />
 
-        {/* 03: Research */}
-        <Publications />
-        <SectionLink href="/publications" text="View Full Research Archive" />
+        {/* 03: Frontier Research & Specifications (Arvi 20B, MahenOCR, M-NAAR, Latent Logic) */}
+        <GridPublications />
 
-        {/* 04: Engineering Log */}
-        <Notebook />
+        {/* 04 & 05: Technical Stack Matrix & Academic/Credentials */}
+        <GridStackAndEducation />
+
+        {/* 06: Engineering Log & Deep Dives */}
+        <GridNotebook />
       </main>
 
       <Footer />
