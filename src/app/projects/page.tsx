@@ -4,8 +4,9 @@ import { useState, useMemo } from "react";
 import { PERSONAL_PROJECTS } from "@/lib/personal-projects";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/sections/Footer";
-import { ArrowUpRight, ExternalLink, Code2 } from "lucide-react";
+import { ArrowUpRight, Code2, Sparkles, Send } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
+import { SOCIALS } from "@/lib/socials";
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -130,6 +131,52 @@ export default function ProjectsPage() {
               </div>
             </div>
           ))}
+
+          {/* Conditional Slot when filtered list has an odd number of items */}
+          {filteredProjects.length % 2 !== 0 && (
+            <div className="flex flex-col justify-between p-6 bg-zinc-950/80 hover:bg-zinc-900/40 transition-colors border-t md:border-t-0">
+              <div>
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-cyan-400">
+                        Pipeline • Active Incubation
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mt-1.5">
+                      More Systems Underway
+                    </h3>
+                  </div>
+                  <div className="p-1.5 rounded bg-zinc-900 text-cyan-400 border border-zinc-800">
+                    <Sparkles size={14} />
+                  </div>
+                </div>
+
+                <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-light">
+                  Currently architecting high-concurrency multi-agent execution primitives, low-latency database engines, and intrinsic model safety specifications. Code will be open-sourced upon verification.
+                </p>
+              </div>
+
+              <div>
+                <div className="pt-4 border-t border-dashed border-zinc-800/80 flex flex-wrap gap-1.5 mb-4 font-mono text-[10px] text-zinc-400">
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Rust</span>
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">PyTorch</span>
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">WASM</span>
+                  <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800">Distributed Systems</span>
+                </div>
+
+                <a
+                  href={SOCIALS.email}
+                  className="inline-flex items-center gap-2 text-xs font-mono text-cyan-400 hover:text-white transition-colors font-medium"
+                >
+                  <Send size={12} />
+                  <span>Have an ambitious idea? Let&apos;s talk</span>
+                  <ArrowUpRight size={13} />
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       </main>
 
