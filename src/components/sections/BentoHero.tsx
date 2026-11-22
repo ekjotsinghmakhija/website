@@ -54,11 +54,11 @@ export default function BentoHero() {
         </div>
       </div>
 
-      {/* Main Grid: 1:2 ratio (Photo 1 part, Bio narrative 2 parts) */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pt-8 items-start">
-        {/* Photo Column (4 cols = 1/3 with +10% enlarged photo container) */}
-        <div className="md:col-span-4 flex justify-center md:justify-start">
-          <div className="relative aspect-[4/5] w-full max-w-[340px] rounded-lg overflow-hidden border border-zinc-700 bg-zinc-950 shadow-md">
+      {/* Main Grid: Increased Photo Column area (5 cols Photo : 7 cols Text) */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 items-start">
+        {/* Photo Column - significantly larger display area */}
+        <div className="lg:col-span-5 flex justify-center lg:justify-start">
+          <div className="relative aspect-[4/5] w-full max-w-[420px] rounded-lg overflow-hidden border border-zinc-700 bg-zinc-950 shadow-xl">
             <Image
               src="/images/avatar.jpg"
               alt="Ekjot Singh"
@@ -69,10 +69,10 @@ export default function BentoHero() {
           </div>
         </div>
 
-        {/* Bio Narrative Column (8 cols = 2/3) - No colorful highlights, pure typography with underline & bold */}
-        <div className="md:col-span-8 flex flex-col justify-between">
-          <div className="space-y-4 text-zinc-300 text-sm sm:text-base leading-relaxed font-light">
-            <p className="text-zinc-200 leading-relaxed">
+        {/* Bio Narrative Column - refined editorial typography */}
+        <div className="lg:col-span-7 flex flex-col justify-between">
+          <div className="space-y-5 text-zinc-200 text-base sm:text-[17px] leading-[1.8] font-light">
+            <p className="text-zinc-100">
               <strong className="text-white font-semibold">Ekjot Singh</strong> is an AI researcher and systems architect working at the intersection of <u>foundational model pre-training</u>, <u>intrinsic AI safety</u>, and <u>high-performance distributed systems</u>. He serves as the <strong>Co-Founder & Chief Technology Officer</strong> at <strong>RadonHarbor</strong> and the <strong>Founder & Chief Scientist</strong> at <strong>Metanthropic AI</strong>.
             </p>
 
@@ -87,38 +87,53 @@ export default function BentoHero() {
         </div>
       </div>
 
-      {/* Core Technical Focus - Full Width with clean typography */}
-      <div className="mt-10 pt-8 border-t border-dashed border-zinc-700/80">
+      {/* Core Technical Focus - enriched with project references & systems */}
+      <div className="mt-12 pt-8 border-t border-dashed border-zinc-700/80">
         <h3 className="text-xs font-mono uppercase tracking-wider text-zinc-400 mb-5">
-          Core Technical Focus
+          Core Technical Focus & Research Vector
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 font-mono text-xs">
-          <div className="p-5 rounded bg-zinc-950/60 border border-zinc-800">
-            <h4 className="text-sm font-semibold text-white mb-2 underline decoration-zinc-600 underline-offset-4">
-              AI Research & Safety
-            </h4>
-            <p className="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Large-Scale Pre-Training, Sparse MoE Routing, Vision-Language Models (VLMs), Mechanistic Interpretability, Sparse Autoencoders (SAEs), Intrinsic Alignment (M-NAAR), RLVR.
-            </p>
+          <div className="p-5 rounded bg-zinc-950/60 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-2 underline decoration-zinc-600 underline-offset-4">
+                AI Research & Safety
+              </h4>
+              <p className="text-xs text-zinc-300 leading-relaxed font-sans mt-2">
+                Large-Scale Pre-Training, Sparse MoE Routing, Vision-Language Models (VLMs), Mechanistic Interpretability, Sparse Autoencoders (SAEs), Intrinsic Alignment (M-NAAR), RLVR.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-dashed border-zinc-850 text-[11px] text-zinc-500 font-mono">
+              Refs: Arvi 20B, MahenOCR, DDPTECMGLGM, CFG Protocol
+            </div>
           </div>
 
-          <div className="p-5 rounded bg-zinc-950/60 border border-zinc-800">
-            <h4 className="text-sm font-semibold text-white mb-2 underline decoration-zinc-600 underline-offset-4">
-              Systems & Infrastructure
-            </h4>
-            <p className="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Autonomous Multi-Agent OS, WASM Sandboxing, Graph-Vector DBs, PostgreSQL Internals (RLS, CDC), Distributed Systems, High-Concurrency Architectures.
-            </p>
+          <div className="p-5 rounded bg-zinc-950/60 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-2 underline decoration-zinc-600 underline-offset-4">
+                Systems & Infrastructure
+              </h4>
+              <p className="text-xs text-zinc-300 leading-relaxed font-sans mt-2">
+                Autonomous Multi-Agent OS, WASM Sandboxing, Graph-Vector DBs, PostgreSQL Internals (RLS, CDC), Distributed Systems, High-Concurrency Architectures.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-dashed border-zinc-850 text-[11px] text-zinc-500 font-mono">
+              Refs: AEGIS, Tealbase, ParachuteDB, VostSQL, TiDB, Linux Kernel
+            </div>
           </div>
 
-          <div className="p-5 rounded bg-zinc-950/60 border border-zinc-800">
-            <h4 className="text-sm font-semibold text-white mb-2 underline decoration-zinc-600 underline-offset-4">
-              Languages & Core Stack
-            </h4>
-            <p className="text-xs text-zinc-400 leading-relaxed font-sans mt-2">
-              Rust, C/C++, Go, Python, TypeScript, PyTorch, ONNX Runtime, CUDA, vLLM, FlashAttention-3, Linux Systems.
-            </p>
+          <div className="p-5 rounded bg-zinc-950/60 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <h4 className="text-sm font-semibold text-white mb-2 underline decoration-zinc-600 underline-offset-4">
+                Languages & Core Stack
+              </h4>
+              <p className="text-xs text-zinc-300 leading-relaxed font-sans mt-2">
+                Rust, C/C++, Go, Python, TypeScript, PyTorch, ONNX Runtime, CUDA, vLLM, FlashAttention-3, Linux Systems Administration, x86 Assembly.
+              </p>
+            </div>
+            <div className="mt-4 pt-3 border-t border-dashed border-zinc-850 text-[11px] text-zinc-500 font-mono">
+              Refs: Chromabase, pg_listen, httpfromtcp, SIM8086, Buttery Auth
+            </div>
           </div>
         </div>
       </div>

@@ -1,134 +1,128 @@
-/* FILE: src/app/publications/page.tsx */
 import type { Metadata } from "next";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/sections/Footer";
-import InteractiveGrid from "@/components/ui/InteractiveGrid";
 import { PUBLICATIONS } from "@/lib/publications";
-import {
-  FileText,
-  ArrowUpRight,
-  BookOpen,
-  FlaskConical,
-  ArrowRight,
-} from "lucide-react";
+import { FileCode2, ArrowUpRight, BookOpen, FlaskConical } from "lucide-react";
 import Link from "next/link";
-import TechBadge from "@/components/ui/TechBadge";
 
 export const metadata: Metadata = {
-  title: "Publications | Ekjot Singh",
+  title: "Research & Specifications | Ekjot Singh",
   description:
-    "Research papers, preprints, and technical notes on the thermodynamics of intelligence.",
+    "Pre-training architectures, Sparse Mixture-of-Experts, intrinsic AI safety, and mechanistic interpretability specifications.",
 };
 
 export default function PublicationsPage() {
   return (
-    <div className="min-h-screen font-sans selection:bg-blue-300 selection:text-black">
+    <div className="min-h-screen font-sans selection:bg-cyan-500 selection:text-black bg-[#030304] text-zinc-100">
       <Navbar />
 
-      {/* Background Grid */}
-      <div className="fixed inset-0 z-0 opacity-20 pointer-events-none">
-        <InteractiveGrid />
-      </div>
-
-      <main className="relative z-10 pt-32 pb-24 max-w-5xl mx-auto px-4 sm:px-6">
-        {/* Responsive Header */}
-        <header className="mb-12 md:mb-16 border-b border-white/10 pb-12">
-          <div className="inline-flex items-center gap-2 text-blue-400 font-mono text-xs uppercase tracking-widest mb-4">
-            <BookOpen size={14} />
-            <span>Research & Writing</span>
+      <main className="min-h-screen max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-20">
+        {/* Header with dashed separation */}
+        <header className="pb-8 mb-8 border-b border-dashed border-zinc-700/80">
+          <div className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-cyan-400 mb-2">
+            <FlaskConical size={15} />
+            <span>Frontier AI Research & Pre-Training</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">
-            Publications.
+          <h1 className="text-4xl sm:text-5xl font-serif text-white tracking-tight mb-3">
+            Research & Specifications
           </h1>
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed">
-            Selected preprints, conference papers, and technical notes on the
-            thermodynamics of intelligence and mechanistic interpretability.
+          <p className="text-sm sm:text-base text-zinc-400 max-w-2xl font-light leading-relaxed">
+            Preprints, architectural specifications, and foundational research papers focusing on Sparse MoE routing, vision-language models, and intrinsic safety (M-NAAR).
           </p>
         </header>
 
-        {/* Metanthropic Lab Banner */}
-        <div className="mb-16 p-8 md:p-10 rounded-sm border border-blue-500/20 bg-gradient-to-r from-blue-900/10 via-[#050505] to-purple-900/10 relative overflow-hidden group">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent opacity-50" />
-
-          <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
-            <div>
-              <div className="flex items-center gap-3 mb-3 text-blue-400">
-                <FlaskConical size={20} />
-                <span className="font-mono text-xs uppercase tracking-widest">
-                  Primary Affiliation
-                </span>
-              </div>
-              <h3 className="text-2xl font-serif text-white mb-2">
-                Metanthropic Research
-              </h3>
-              <p className="text-gray-400 max-w-xl leading-relaxed">
-                I publish the majority of my formal research under the
-                Metanthropic charter. Access our full archives, including safety
-                evaluations and interpretability logs.
-              </p>
+        {/* Metanthropic Banner */}
+        <div className="mb-10 p-6 rounded bg-zinc-950/80 border border-dashed border-zinc-700/80 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div>
+            <div className="text-xs font-mono text-cyan-400 uppercase tracking-wider mb-1 flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+              Primary Research Lab
             </div>
-
-            <a
-              href="https://metanthropic.vercel.app/research"
-              target="_blank"
-              className="flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-bold rounded-sm hover:bg-blue-500 transition-colors shrink-0"
-            >
-              Visit Lab Archives <ArrowRight size={18} />
-            </a>
+            <h3 className="text-xl font-bold text-white mb-1">
+              Metanthropic AI
+            </h3>
+            <p className="text-xs text-zinc-400 max-w-xl leading-relaxed font-light">
+              Advancing foundational model pre-training and eliminating post-training safety patches by embedding alignment directly into latent representations.
+            </p>
           </div>
+
+          <a
+            href="https://metanthropic.vercel.app/research"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded border border-zinc-700 bg-zinc-900 text-xs font-mono text-zinc-200 hover:text-white hover:border-cyan-500 transition-colors shrink-0"
+          >
+            <span>Visit Lab Archives</span>
+            <ArrowUpRight size={14} />
+          </a>
         </div>
 
-        {/* Publications Grid */}
-        <div className="grid gap-8">
+        {/* Research Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-700/80 border border-dashed border-zinc-700/80 rounded overflow-hidden">
           {PUBLICATIONS.map((pub, index) => (
-            <Link
-              key={index}
-              href={pub.link}
-              target="_blank"
-              className="group block p-6 md:p-10 border border-white/10 bg-[#050505] hover:bg-[#0A0A0A] hover:border-blue-500/50 transition-all duration-300 relative overflow-hidden"
+            <div
+              key={pub.id || index}
+              className="flex flex-col justify-between p-6 bg-zinc-950 hover:bg-zinc-900/40 transition-colors"
             >
-              {/* Blue Glow on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-
-              <div className="relative z-10 flex flex-col md:flex-row gap-6 md:items-start justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 text-blue-400 mb-4">
-                    <FileText size={18} />
-                    <span className="text-xs font-mono uppercase tracking-widest bg-blue-500/10 px-2 py-1 rounded-sm">
-                      {pub.conference}
-                    </span>
-                    <span className="text-xs font-mono text-gray-500">
-                      {pub.year}
+              <div>
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <div className="flex items-center gap-2">
+                    <FileCode2 size={15} className="text-cyan-400" />
+                    <span className="text-[11px] font-mono text-zinc-400 uppercase tracking-wider">
+                      {pub.conference} • {pub.year}
                     </span>
                   </div>
-
-                  <h2 className="text-2xl md:text-3xl font-serif text-white mb-4 group-hover:text-blue-400 transition-colors leading-tight">
-                    {pub.title}
-                  </h2>
-
-                  <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl mb-6">
-                    {pub.description}
-                  </p>
-
-                  {/* FIXED: Tags are now passed as children between the TechBadge tags */}
-                  <div className="flex flex-wrap gap-2">
-                    {pub.tags?.map((tag) => (
-                      <TechBadge key={tag}>{tag}</TechBadge>
-                    ))}
-                  </div>
+                  {pub.link && (
+                    <a
+                      href={pub.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition-colors"
+                      title="Read Paper"
+                    >
+                      <ArrowUpRight size={14} />
+                    </a>
+                  )}
                 </div>
 
-                {/* Arrow Icon */}
-                <div className="md:pt-4">
-                  <div className="p-4 rounded-full border border-white/10 text-gray-500 group-hover:text-white group-hover:border-blue-500 group-hover:bg-blue-500 transition-all w-fit shadow-xl">
-                    <ArrowUpRight size={24} />
-                  </div>
-                </div>
+                <h3 className="text-base font-bold text-white mb-2 leading-snug">
+                  {pub.title}
+                </h3>
+
+                <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-light">
+                  {pub.description}
+                </p>
               </div>
-            </Link>
+
+              <div>
+                <div className="pt-4 border-t border-dashed border-zinc-850 flex flex-wrap gap-1.5 mb-3">
+                  {pub.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 border border-zinc-800 text-zinc-400"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {pub.link && (
+                  <a
+                    href={pub.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400/90 hover:text-white transition-colors"
+                  >
+                    <span>Read Paper Specification</span>
+                    <ArrowUpRight size={13} />
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </main>
+
       <Footer />
     </div>
   );

@@ -73,7 +73,7 @@ const JOURNEY: JourneyMilestone[] = [
 export default function GridExperience() {
   return (
     <section className="py-14 border-b border-dashed border-zinc-700/80">
-      <SectionHeading badge="Leadership & Founding Roles">
+      <SectionHeading badge="Experience & Roles">
         Experience
       </SectionHeading>
 

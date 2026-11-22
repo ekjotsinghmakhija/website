@@ -2,11 +2,10 @@
 
 import { useState, useMemo } from "react";
 import { PERSONAL_PROJECTS } from "@/lib/personal-projects";
-import ProjectCard from "@/components/ui/ProjectCard";
-
-// 1. Import your layout components
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/sections/Footer";
+import { ArrowUpRight, ExternalLink, Code2 } from "lucide-react";
+import { GithubIcon } from "@/components/icons/GithubIcon";
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -27,30 +26,34 @@ export default function ProjectsPage() {
   );
 
   return (
-    <>
-      {/* 2. Add the Navbar back to the top */}
+    <div className="min-h-screen font-sans selection:bg-cyan-500 selection:text-black bg-[#030304] text-zinc-100">
       <Navbar />
 
-      {/* 3. Wrap the content in a main tag with padding-top (pt-24) so it clears the navbar */}
-      <main className="min-h-screen max-w-5xl mx-auto px-6 py-24">
-        <h1 className="text-4xl font-bold mb-4 tracking-tight text-white">
-          Engineering Portfolio
-        </h1>
-        <p className="text-zinc-400 mb-10">
-          A technical overview of my open-source contributions, system
-          architecture, and AI research.
-        </p>
+      <main className="min-h-screen max-w-6xl mx-auto px-4 sm:px-6 pt-28 pb-20">
+        {/* Header with dashed separation */}
+        <header className="pb-8 mb-8 border-b border-dashed border-zinc-700/80">
+          <div className="flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-cyan-400 mb-2">
+            <Code2 size={15} />
+            <span>Open Source & Systems Architecture</span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl font-serif text-white tracking-tight mb-3">
+            Engineering Portfolio
+          </h1>
+          <p className="text-sm sm:text-base text-zinc-400 max-w-2xl font-light leading-relaxed">
+            A technical overview of my open-source contributions, system architecture, database internals, and frontier AI research.
+          </p>
+        </header>
 
-        {/* The CTO Filter Buttons */}
-        <div className="flex flex-wrap gap-2 mb-12">
+        {/* Filter tags with subtle styling */}
+        <div className="flex flex-wrap gap-2 mb-10 pb-6 border-b border-dashed border-zinc-800/80">
           {allTags.map((tag) => (
             <button
               key={tag}
               onClick={() => setActiveFilter(tag)}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+              className={`px-3 py-1 rounded text-xs font-mono transition-colors ${
                 activeFilter === tag
-                  ? "bg-white text-black shadow-md"
-                  : "bg-zinc-800/50 text-zinc-400 hover:bg-zinc-800 hover:text-white border border-zinc-700/50"
+                  ? "bg-white text-zinc-950 font-bold"
+                  : "bg-zinc-950 text-zinc-400 border border-zinc-800 hover:text-white hover:border-zinc-600"
               }`}
             >
               {tag}
@@ -58,16 +61,79 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {/* Dynamic Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Grid with dashed border lines */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-700/80 border border-dashed border-zinc-700/80 rounded overflow-hidden">
           {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+            <div
+              key={project.id}
+              className="flex flex-col justify-between p-6 bg-zinc-950 hover:bg-zinc-900/40 transition-colors"
+            >
+              <div>
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-400">
+                        {project.role} • {project.visibility}
+                      </span>
+                      {project.featured && (
+                        <span className="text-[9px] font-mono uppercase px-1.5 py-0.2 rounded bg-zinc-900 border border-zinc-700 text-zinc-300">
+                          Featured
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="text-xl font-bold text-white mt-1.5">
+                      {project.title}
+                    </h3>
+                  </div>
+
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="p-1.5 rounded bg-zinc-900 text-zinc-400 hover:text-white border border-zinc-800 transition-colors"
+                      title="Explore Source"
+                    >
+                      <GithubIcon size={14} />
+                    </a>
+                  )}
+                </div>
+
+                <p className="text-xs text-zinc-400 leading-relaxed mb-6 font-light">
+                  {project.aiSummary}
+                </p>
+              </div>
+
+              <div>
+                <div className="pt-4 border-t border-dashed border-zinc-800/80 flex flex-wrap gap-1.5 mb-4">
+                  {project.techStack?.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 border border-zinc-800 text-zinc-400"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {project.url && (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400/90 hover:text-white transition-colors"
+                  >
+                    <span>Explore Source</span>
+                    <ArrowUpRight size={13} />
+                  </a>
+                )}
+              </div>
+            </div>
           ))}
         </div>
       </main>
 
-      {/* 4. Add the Footer back to the bottom */}
       <Footer />
-    </>
+    </div>
   );
 }
