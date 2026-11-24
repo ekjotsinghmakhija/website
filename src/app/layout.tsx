@@ -15,15 +15,17 @@ const newsreader = Newsreader({
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
   themeColor: "#030304",
 };
 
 export const metadata: Metadata = {
-  title: "Ekjot Singh",
+  metadataBase: new URL("https://ekjot.me"),
+  title: {
+    default: "Ekjot Singh",
+    template: "%s | Ekjot Singh",
+  },
   description:
-    "Founder & Lead Architect at Metanthropic. Researching the physics of intelligence and building interpretable AGI.",
+    "Founder & Lead Architect at Metanthropic. Researching the physics of intelligence, mechanistic interpretability, and building interpretable AGI.",
   icons: {
     icon: "/avatar.jpg",
   },
@@ -32,7 +34,14 @@ export const metadata: Metadata = {
     description: "Architecting the Physics of Intelligence.",
     type: "website",
     locale: "en_US",
-    url: "https://ekjotsingh.com",
+    url: "https://ekjot.me",
+    siteName: "Ekjot Singh",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ekjot Singh",
+    description: "Architecting the Physics of Intelligence.",
+    creator: "@ekjot_makhija",
   },
 };
 

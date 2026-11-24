@@ -1,0 +1,44 @@
+# Ekjot Singh
+
+> Founder & Lead Architect at Metanthropic. Systems programmer and AI researcher investigating the physics of intelligence, mechanistic interpretability, sparse autoencoder manifolds, and deterministic distributed infrastructure.
+
+- Website: https://ekjot.me
+- Canonical GitHub: https://github.com/ekjotsinghmakhija
+- X / Twitter: https://x.com/ekjot_makhija
+- Email: ekjotsingh.makhija@gmail.com
+- Lab: Metanthropic (https://metanthropic.vercel.app)
+
+## Core Research & Focus Areas
+- **Mechanistic Interpretability & Safety**: Latent Logic Topology, Attention Refraction (M-NAAR), Chronometric Flux Gating (CFG), and Oblique-Guard latent geometry stabilization.
+- **Sparse Autoencoders & Representation Learning**: Mitigating manifold collapse, disentangling kinetic vs potential model computation (KP-IDP).
+- **Frontier Reasoning Models**: Arvi 20B (Sparse MoE reasoning model matching frontier efficiency) and MahenOCR (1B vision-language model).
+- **Low-Level Systems & Distributed Infrastructure**: Object-relational engines (VostSQL), zero-polling PostgreSQL event triggers (pg_listen), high-performance memory management, and TCP-level networking.
+
+## Primary Pages & Sections
+- [Home](https://ekjot.me): Overview of research, high-impact venture engineering, active systems, and publications.
+- [Technical Notebook & Dispatches](https://ekjot.me/blog): Deep dives into machine unlearning, RLVR convergence, database engines, and systems programming.
+- [Frontier Research Publications](https://ekjot.me/publications): Formal research papers, technical specifications, and lab preprints.
+- [Systems & Projects Matrix](https://ekjot.me/projects): Open-source tools, compilers, emulators, and infrastructural utilities.
+- [Experience](https://ekjot.me/experience): Engineering leadership, founding Metanthropic, and architecting Tealbase.
+- [Technical Stack](https://ekjot.me/stack): Low-level systems toolchain, ML frameworks, and cloud infrastructure.
+
+## Selected Publications & Specifications
+- [M-NAAR: Metanthropic Neural Ablation via Attention Refraction](https://ekjot.me/blog/unlearning-trilemma-m-naar): Resolves the Unlearning Trilemma via attention refraction rather than weight destruction.
+- [Latent Logic Topology & Soundness-Aware Calibration (SAL)](https://ekjot.me/blog/latent-logic-topology): Operationalizing LLMs as engines of latent causal chains to solve the RLVR convergence paradox.
+- [KP-IDP: Kinetic-Potential Information Disentanglement Protocol](https://ekjot.me/blog/kp-idp): Proves decodability != causality by distinguishing dark computation from phantom readouts.
+- [Module 003-CFG: Chronometric Flux Gating](https://ekjot.me/blog/chronometric-flux-gating-cfg): Eliminates feature absorption and latent manifold collapse in Sparse Autoencoders.
+- [Project Oblique-Guard](https://ekjot.me/blog/oblique-guard-latent-geometry): Treats adversarial jailbreak vulnerability as an interference lattice artifact of superposition.
+- [Moral Bias in Finetuned LLMs](https://ekjot.me/blog/moral-bias-interpretability): Localizes the Knobe Effect moral asymmetry with Iso-Semantic Residual Injection (ISRI).
+- [Arvi 20B Reasoning MoE](https://ekjot.me/blog/arvi-20b-moe-release): 20B sparse MoE (3.6B active params) with sub-50ms execution on consumer hardware.
+- [MahenOCR: 1B Soundness-Aware VLM](https://ekjot.me/blog/mahenocr-vlm-architecture): End-to-end vision-language model with grounded token verification.
+
+## Selected Systems & Open Source Projects
+- **VostSQL**: Relational database engine built from scratch with custom query planner and disk pager (C/C++).
+- **Chromabase**: High-density archive CLI encoding arbitrary binary filesystems into video frames (Rust).
+- **httpfromtcp**: HTTP/1.1 protocol server engineered over raw TCP sockets without third-party frameworks (Go).
+- **pg_listen**: High-frequency zero-polling PostgreSQL event interceptor using native libpq (C).
+- **SIM8086**: Modular hardware emulator and disassembler for the Intel 8086 microprocessor (C++, Qt 6).
+- **Wibes Check**: Forensic open-source web intelligence scanner (Next.js, TypeScript).
+
+## Full Text & Extended Archive
+For LLM ingestion and full concatenated content, see [llms-full.txt](https://ekjot.me/llms-full.txt).

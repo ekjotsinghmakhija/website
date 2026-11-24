@@ -1,0 +1,91 @@
+# Ekjot Singh — Complete Knowledge Context for AI Agents (llms-full.txt)
+
+> Founder & Lead Architect at Metanthropic | Systems Engineer | Mechanistic Interpretability & AGI Researcher
+> Canonical Domain: https://ekjot.me
+> GitHub: https://github.com/ekjotsinghmakhija
+> Twitter / X: https://x.com/ekjot_makhija
+> Email: ekjotsingh.makhija@gmail.com
+
+---
+
+## 1. Executive Summary & Identity
+Ekjot Singh is the Founder and Lead Architect of Metanthropic, an independent research laboratory focused on mechanistic interpretability, safety-grounded reinforcement learning (RLVR), and neural architecture foundations. Concurrently, he designs deterministic systems, database engines, and systems-level tools written in C, C++, Rust, and Go.
+
+Key Milestones:
+- Pre-trained and released Arvi 20B: a 20B sparse Mixture-of-Experts (3.6B active parameters/token) with CoT reasoning matching proprietary models at < 10x compute footprint.
+- Authored formal architectural specifications including M-NAAR (Machine Unlearning), Latent Logic Topology (Soundness-Aware Calibration), KP-IDP (Kinetic-Potential Information Disentanglement), and Chronometric Flux Gating (CFG for Sparse Autoencoders).
+- Built native storage engines and platforms including Tealbase, VostSQL (C/C++ RDBMS), and Chromabase (Rust-based filesystem-to-pixel encoder).
+
+---
+
+## 2. Research Publications & Specifications (Abstracts & Findings)
+
+### 2.1 SPECIFICATION: Metanthropic Neural Ablation via Attention Refraction (M-NAAR)
+- **URL**: https://ekjot.me/blog/unlearning-trilemma-m-naar
+- **Summary**: Resolves the classic "Unlearning Trilemma" (preservation of utility, complete suppression of target knowledge, and computational tractability). Rather than destroying or gradient-reversing weights (which creates compensatory hallucinations or catastrophic forgetting), M-NAAR refracts attention away from high-entropy tokens associated with target concepts.
+- **Key Metric**: Achieves 0.00 hallucination rate with complete targeted concept ablation while retaining 99.4% base benchmark reasoning performance.
+
+### 2.2 Specification for Latent Logic Topology & Soundness-Aware Calibration (SAL)
+- **URL**: https://ekjot.me/blog/latent-logic-topology
+- **Summary**: Addresses the RLVR Convergence Paradox where reinforcement learning with verifiable rewards leads to brittle over-optimization. Identifies LLMs as dynamical systems of "Latent Causal Chains". Introduces the Soundness-Aware Level (SAL), an internal geometric diagnostic predicting post-alignment reasoning reliability with 87% accuracy.
+
+### 2.3 The Kinetic-Potential Information Disentanglement Protocol (KP-IDP)
+- **URL**: https://ekjot.me/blog/kp-idp
+- **Summary**: Dismantles the widely held interpretability assumption that "Linear Decodability equals Causality". Proves the existence of "Dark Computation" (active kinetic circuits driving decisions) versus "Phantom Readouts" (potential, dormant features picked up by linear probes). Solves the intervention-reversal paradox in mechanistic steering.
+
+### 2.4 Module 003-CFG: Chronometric Flux Gating
+- **URL**: https://ekjot.me/blog/chronometric-flux-gating-cfg
+- **Summary**: Dynamic regularization scheme for training Sparse Autoencoders (SAEs) on language model residual streams. Treats feature activation as a temporal vector across token trajectories, reducing dead features and feature absorption by 95% compared to conventional Top-K SAE baselines.
+
+### 2.5 PROJECT OBLIQUE-GUARD: Latent Geometry Stabilization
+- **URL**: https://ekjot.me/blog/oblique-guard-latent-geometry
+- **Summary**: Demonstrates that jailbreak susceptibility and prompt injections are deterministic geometric artifacts of vector superposition in high-dimensional activations. Oblique-Guard installs a geometric transformation layer that maps adversarial directions out of the decision boundary without degraded token likelihood.
+
+### 2.6 Analysing Moral Bias in Finetuned LLMs through Mechanistic Interpretability
+- **URL**: https://ekjot.me/blog/moral-bias-interpretability
+- **Summary**: Mechanistic dissection of moral valence attribution in aligned LLMs. Uncovers that supervised fine-tuning systematically replicates the "Knobe Effect" (judging negative outcomes as intentional and positive side-effects as unintentional). Introduces Iso-Semantic Residual Injection (ISRI) to neutralize bias without hurting logic.
+
+### 2.7 Arvi 20B: Open-Weight Sparse MoE Reasoning Model
+- **URL**: https://ekjot.me/blog/arvi-20b-moe-release
+- **Summary**: 20B total parameter Sparse Mixture of Experts utilizing 3.6B active parameters per forward pass. Pre-trained with native chain-of-thought verification, sub-50ms token latency under 4-bit AWQ on 16GB consumer GPUs, and distributed training via PyTorch FSDP + FlashAttention-3.
+
+### 2.8 MahenOCR: Soundness-Aware 1B Vision-Language Model
+- **URL**: https://ekjot.me/blog/mahenocr-vlm-architecture
+- **Summary**: Compact 1B parameter vision-language model trained for high-density document understanding, OCR transcription, and layout recovery using step-level verifiable reasoning.
+
+---
+
+## 3. Systems Architecture & Engineering Dispatches
+
+### 3.1 VostSQL: Object-Relational Database Engine (C / C++)
+- Custom storage engine featuring slotted-page disk management, buffer pool with clock-sweep replacement, recursive descent SQL parser, and Volcano-style iterator execution engine.
+
+### 3.2 Chromabase: Encoding Filesystems into Pixels (Rust)
+- High-density archival utility encoding binary payloads into resilient visual video streams utilizing redundant Reed-Solomon error correction and bitmasking against lossy platform compression codecs.
+
+### 3.3 httpfromtcp: Low-Level HTTP/1.1 Engine (Go)
+- Implements RFC 7230/7231 entirely on raw TCP socket handles, featuring custom pipelining, chunked transfer encoding, and zero external dependency footprint.
+
+### 3.4 pg_listen: Native Zero-Polling Event Interception (C)
+- Directly binds PostgreSQL libpq asynchronous notification loops (`LISTEN`/`NOTIFY`) into asynchronous event loops, delivering sub-millisecond database reactivity without continuous polling overhead.
+
+### 3.5 SIM8086: Hardware Emulation & Disassembler (C++ / Qt 6)
+- Cycle-accurate Intel 8086 CPU emulator modeling registers, effective address calculation, flag generation, and two-pass disassembly.
+
+---
+
+## 4. Technical Stack & Competencies
+- **Languages**: C, C++, Rust, Go, Python, TypeScript, SQL, x86 Assembly.
+- **AI / Deep Learning**: PyTorch, Distributed FSDP, FlashAttention, Triton, HuggingFace, SAEs, Mechanistic Interpretability tooling, AWQ / GGUF Quantization.
+- **Systems & Cloud**: Linux Kernel Internals, POSIX Sockets, PostgreSQL, Docker, Terraform / OpenTofu, Kubernetes, Redis, libpq.
+- **Frontend / Full Stack**: Next.js (App Router), React 19, Tailwind CSS, WebGL / 3D Canvas, Node.js.
+
+---
+
+## 5. Contact & Links
+- Website: https://ekjot.me
+- Research Preprints: https://ekjot.me/publications
+- Engineering Notebook: https://ekjot.me/blog
+- Personal Projects: https://ekjot.me/projects
+- GitHub: https://github.com/ekjotsinghmakhija
+- X: @ekjot_makhija
