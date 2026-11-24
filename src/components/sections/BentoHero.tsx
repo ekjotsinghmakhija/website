@@ -60,7 +60,7 @@ export default function BentoHero() {
         <div className="lg:col-span-5 flex flex-col">
           <div className="relative w-full h-[480px] sm:h-[540px] lg:h-full min-h-[460px] rounded-lg overflow-hidden border border-zinc-700 bg-zinc-950 shadow-xl">
             <Image
-              src="/images/avatar.jpg"
+              src="/images/landing-hero.png"
               alt="Ekjot Singh"
               fill
               priority

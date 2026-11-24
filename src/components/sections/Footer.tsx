@@ -41,7 +41,7 @@ export default function Footer() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
                 <span className="text-xs font-mono text-zinc-400 tracking-wider uppercase">
-                  Systems & Frontier AI Lab
+                  Epistemology of Computation & Frontier AI
                 </span>
               </div>
               <h4 className="text-xl sm:text-2xl font-serif text-white tracking-tight mb-3">
@@ -170,7 +170,7 @@ export default function Footer() {
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
             <span>© {currentYear} Ekjot Singh.</span>
             <span className="hidden sm:inline text-zinc-800">•</span>
-            <span>All architecture notes open-access under MIT / Apache-2.0.</span>
+            <span>All research specifications & engineering notes are published under public open-access commons.</span>
           </div>
 
           <div className="flex items-center gap-2 text-zinc-400">

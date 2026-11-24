@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     "Founder & Lead Architect at Metanthropic. Researching the physics of intelligence, mechanistic interpretability, and building interpretable AGI.",
   icons: {
-    icon: "/avatar.jpg",
+    icon: "/favicon-custom.jpg",
   },
   openGraph: {
     title: "Ekjot Singh",
