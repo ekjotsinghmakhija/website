@@ -1,12 +1,13 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-import { Download, Mail } from "lucide-react";
+import { Download, Mail, ChevronDown, ChevronUp } from "lucide-react";
 import { GithubIcon } from "@/components/icons/GithubIcon";
 import { LinkedinIcon } from "@/components/icons/LinkedinIcon";
 import { SOCIALS } from "@/lib/socials";
 
 export default function BentoHero() {
+  const [isBioExpanded, setIsBioExpanded] = useState(false);
   return (
     <section className="pt-28 pb-14 border-b border-dashed border-zinc-700/80">
       {/* Top Header: Name, Full-Width Role Subtitle & Action Buttons */}
@@ -77,13 +78,29 @@ export default function BentoHero() {
               <strong className="text-white font-semibold">Ekjot Singh</strong> is an AI researcher and systems architect working at the intersection of <u>foundational model pre-training</u>, <u>intrinsic AI safety</u>, and <u>high-performance distributed systems</u>. He serves as the <strong>Co-Founder & Chief Technology Officer</strong> at <strong>RadonHarbor</strong> and the <strong>Founder & Chief Scientist</strong> at <strong>Metanthropic AI</strong>.
             </p>
 
-            <p>
-              At <strong>Metanthropic AI</strong>, Ekjot directs an independent research lab focused on advancing model architectures and making AI systems inherently reliable, transparent, and safe by design. Rather than relying on post-training patches, his research integrates alignment and interpretability directly into the pre-training loop. Notable breakthroughs include <strong><u>Arvi 20B</u></strong>—a sparse Mixture-of-Experts (MoE) reasoning model engineered to deliver high-level reasoning capabilities at a fraction of standard computational costs—and <strong><u>MahenOCR</u></strong>, a 1B Vision-Language Model that achieved SOTA status on OCRBench and took <strong>#1 Place</strong> in the ICDAR 2025 DIMT Challenge for visual document understanding.
-            </p>
+            {/* Remaining paragraphs: Always visible on desktop (lg:block), toggleable on mobile */}
+            <div className={`${isBioExpanded ? "block" : "hidden"} lg:block space-y-5`}>
+              <p>
+                At <strong>Metanthropic AI</strong>, Ekjot directs an independent research lab focused on advancing model architectures and making AI systems inherently reliable, transparent, and safe by design. Rather than relying on post-training patches, his research integrates alignment and interpretability directly into the pre-training loop. Notable breakthroughs include <strong><u>Arvi 20B</u></strong>—a sparse Mixture-of-Experts (MoE) reasoning model engineered to deliver high-level reasoning capabilities at a fraction of standard computational costs—and <strong><u>MahenOCR</u></strong>, a 1B Vision-Language Model that achieved SOTA status on OCRBench and took <strong>#1 Place</strong> in the ICDAR 2025 DIMT Challenge for visual document understanding.
+              </p>
 
-            <p>
-              At <strong>RadonHarbor</strong>, Ekjot leads technical strategy and systems engineering to build infrastructure for autonomous AI execution. He architected <strong><u>AEGIS</u></strong>, a multi-agent operating system written in Rust and Python that utilizes secure WebAssembly (WASM) sandboxing to orchestrate complex, enterprise-grade workflows with zero-trust safety. His broader systems background includes designing <strong><u>Tealbase</u></strong> (an open-source backend platform built on Go and PostgreSQL) and <strong><u>ParachuteDB</u></strong> (a low-latency graph-vector database engineered for real-time AI retrieval).
-            </p>
+              <p>
+                At <strong>RadonHarbor</strong>, Ekjot leads technical strategy and systems engineering to build infrastructure for autonomous AI execution. He architected <strong><u>AEGIS</u></strong>, a multi-agent operating system written in Rust and Python that utilizes secure WebAssembly (WASM) sandboxing to orchestrate complex, enterprise-grade workflows with zero-trust safety. His broader systems background includes designing <strong><u>Tealbase</u></strong> (an open-source backend platform built on Go and PostgreSQL) and <strong><u>ParachuteDB</u></strong> (a low-latency graph-vector database engineered for real-time AI retrieval).
+              </p>
+            </div>
+
+            {/* Read More / Read Less trigger for mobile (< lg screens) */}
+            <div className="lg:hidden pt-1">
+              <button
+                type="button"
+                onClick={() => setIsBioExpanded(!isBioExpanded)}
+                className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 py-1 px-2.5 rounded bg-cyan-950/40 border border-cyan-800/60 transition-colors"
+                aria-expanded={isBioExpanded}
+              >
+                <span>{isBioExpanded ? "Read Less" : "Read Full Bio"}</span>
+                {isBioExpanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+              </button>
+            </div>
           </div>
         </div>
       </div>
