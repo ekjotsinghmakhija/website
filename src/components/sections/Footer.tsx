@@ -41,7 +41,7 @@ export default function Footer() {
               <div className="flex items-center gap-2 mb-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
                 <span className="text-xs font-mono text-zinc-400 tracking-wider uppercase">
-                  Epistemology of Computation & Frontier AI
+                  Physics of Intelligence & Systems
                 </span>
               </div>
               <h4 className="text-xl sm:text-2xl font-serif text-white tracking-tight mb-3">
