@@ -52,6 +52,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Ekjot Singh",
+              url: "https://ekjot.me",
+              image: "https://ekjot.me/avatar.jpg",
+              jobTitle: "Founder & Lead Architect",
+              worksFor: {
+                "@type": "Organization",
+                name: "Metanthropic",
+                url: "https://metanthropic.vercel.app",
+              },
+              sameAs: [
+                "https://github.com/ekjotsinghmakhija",
+                "https://x.com/ek10sh",
+                "https://www.linkedin.com/in/ekjot-singh-thefirst",
+              ],
+              knowsAbout: [
+                "Mechanistic Interpretability",
+                "Machine Unlearning",
+                "Sparse Autoencoders",
+                "Foundational Models",
+                "Distributed Database Engines",
+                "Systems Programming",
+              ],
+            }),
+          }}
+        />
+      </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} ${newsreader.variable} antialiased text-[#EDEDED]`}
       >

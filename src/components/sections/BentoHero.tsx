@@ -64,6 +64,7 @@ export default function BentoHero() {
               alt="Ekjot Singh"
               fill
               priority
+              sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover object-top"
             />
           </div>
