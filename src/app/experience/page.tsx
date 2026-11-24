@@ -1,8 +1,9 @@
 "use client";
 
+import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/sections/Footer";
-import { ArrowUpRight, ShieldCheck, Cpu, Terminal, Compass } from "lucide-react";
+import { ArrowUpRight, ShieldCheck, Cpu, Terminal, Compass, ChevronDown, ChevronUp } from "lucide-react";
 
 interface JourneyMilestone {
   period: string;
@@ -81,6 +82,11 @@ const JOURNEY: JourneyMilestone[] = [
 ];
 
 export default function ExperiencePage() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleExpand = (idx: number) => {
+    setExpandedIndex((prev) => (prev === idx ? null : idx));
+  };
   return (
     <div className="min-h-screen font-sans selection:bg-cyan-500 selection:text-black bg-[#030304] text-zinc-100">
       <Navbar />
@@ -102,7 +108,7 @@ export default function ExperiencePage() {
 
         {/* Timeline with dashed lines */}
         <div className="relative border-l border-dashed border-zinc-700/80 ml-3 sm:ml-4 space-y-12">
-          {JOURNEY.map((item) => (
+          {JOURNEY.map((item, index) => (
             <div key={item.company} className="relative pl-6 sm:pl-8 group">
               <div className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-zinc-400 border border-zinc-950 group-hover:bg-white transition-colors" />
 
@@ -141,7 +147,8 @@ export default function ExperiencePage() {
                   {item.summary}
                 </p>
 
-                <div className="space-y-3 mb-6">
+                {/* Responsibilities & Deliverables: Always visible on desktop (lg:block), collapsible on mobile */}
+                <div className={`${expandedIndex === index ? "block" : "hidden"} lg:block space-y-3 mb-6`}>
                   <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400">
                     Key Responsibilities & Deliverables:
                   </h4>
@@ -153,6 +160,19 @@ export default function ExperiencePage() {
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* Mobile View Scope / Less Toggle (< lg screens) */}
+                <div className="lg:hidden mb-5">
+                  <button
+                    type="button"
+                    onClick={() => toggleExpand(index)}
+                    className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 py-1 px-2.5 rounded bg-cyan-950/40 border border-cyan-800/60 transition-colors"
+                    aria-expanded={expandedIndex === index}
+                  >
+                    <span>{expandedIndex === index ? "Hide Details" : "View Scope & Deliverables"}</span>
+                    {expandedIndex === index ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+                  </button>
                 </div>
 
                 <div className="pt-4 border-t border-dashed border-zinc-850 flex flex-wrap gap-1.5">

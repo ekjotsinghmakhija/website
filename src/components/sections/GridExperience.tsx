@@ -1,7 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 
 interface JourneyMilestone {
   period: string;
@@ -71,6 +71,11 @@ const JOURNEY: JourneyMilestone[] = [
 ];
 
 export default function GridExperience() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleExpand = (idx: number) => {
+    setExpandedIndex((prev) => (prev === idx ? null : idx));
+  };
   return (
     <section className="py-14 border-b border-dashed border-zinc-700/80">
       <SectionHeading badge="Experience & Roles">
@@ -120,8 +125,8 @@ export default function GridExperience() {
                 {item.summary}
               </p>
 
-              {/* Core Responsibilities & Impact */}
-              <div className="space-y-2 mb-5">
+              {/* Core Responsibilities & Impact: Always visible on desktop (lg:block), collapsible on mobile */}
+              <div className={`${expandedIndex === index ? "block" : "hidden"} lg:block space-y-2 mb-5`}>
                 <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400">
                   Key Scope & Research Deliverables:
                 </h4>
@@ -133,6 +138,19 @@ export default function GridExperience() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              {/* Mobile View Scope / Less Toggle (< lg screens) */}
+              <div className="lg:hidden mb-4">
+                <button
+                  type="button"
+                  onClick={() => toggleExpand(index)}
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-cyan-400 hover:text-cyan-300 py-1 px-2.5 rounded bg-cyan-950/40 border border-cyan-800/60 transition-colors"
+                  aria-expanded={expandedIndex === index}
+                >
+                  <span>{expandedIndex === index ? "Hide Details" : "View Scope & Deliverables"}</span>
+                  {expandedIndex === index ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+                </button>
               </div>
 
               {/* Technology Tags */}
