@@ -65,7 +65,7 @@ export default function BentoHero() {
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover object-top"
+              className="object-cover scale-110 origin-[center_55%] -translate-y-[5%]"
             />
           </div>
         </div>
