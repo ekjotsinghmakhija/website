@@ -61,7 +61,7 @@ export default function GridProjects() {
   return (
     <section id="featured-work" className="py-14 border-b border-dashed border-zinc-700/80">
       <SectionHeading badge="Databases, Engines & Developer Platforms">
-        Flagship Systems & Infrastructure
+        Projects
       </SectionHeading>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-700/80 border border-dashed border-zinc-700/80 rounded overflow-hidden">
