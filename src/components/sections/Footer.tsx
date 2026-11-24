@@ -48,7 +48,7 @@ export default function Footer() {
                 Ekjot Singh
               </h4>
               <p className="text-sm text-zinc-400 leading-relaxed font-light max-w-sm mb-6">
-                Founder & Lead Architect at Metanthropic. Investigating mechanistic interpretability, sparse autoencoder topology, and low-level systems infrastructure.
+                Engineer researching neural network internals, mechanistic interpretability, and low-level systems.
               </p>
             </div>
 
